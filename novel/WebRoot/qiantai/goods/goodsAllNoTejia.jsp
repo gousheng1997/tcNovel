@@ -48,16 +48,14 @@
 						  	<table width="99%" border="0" cellpadding="2" cellspacing="1" bgcolor="#FFFFFF" align="center" style="margin-top:8px">
 					              <tr align="center" bgcolor="#FAFAF1" height="22">
 					                  <td>小说名称</td>
-					                  <td>市场价</td>
 					                  <td>小说图片</td>
-					                  <td>操作</td>
+					                  <td>查看详情</td>
 					              </tr>
 								  <s:iterator value="#request.goodsYesTejiaList" id="goods">
 								  <tr align='center' bgcolor="#FFFFFF" height="22">
 									  <td><s:property value="#goods.goodsName"/></td>
-									  <td>￥<s:property value="#goods.goodsShichangjia"/><br/></td>
-									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"> <img src="<%=path %>/<s:property value="#goods.goodsPic"/>" width="60" height="60" border="0"/> </a></td>
-									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"><img alt="" src="<%=path %>/images/icon_buy.gif" border=0/></a></td>
+									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"> <img src="<%=path %><s:property value="#goods.goodsPic"/>" width="80" height="80" border="0"/> </a></td>
+									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"><img alt="" src="<%=path %>/images/search.png" width="40" height="40" border="0"/></a></td>
 								  </tr>
 								  </s:iterator>
 		        			</table>

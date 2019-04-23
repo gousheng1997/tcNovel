@@ -7,18 +7,18 @@ import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.model.TPinglun;
+import com.model.Comment;
 
 /**
- * Data access object (DAO) for domain model class TPinglun.
+ * Data access object (DAO) for domain model class Comment.
  * 
- * @see com.model.TPinglun
+ * @see com.model.Comment
  * @author MyEclipse Persistence Tools
  */
 
-public class TPinglunDAO extends HibernateDaoSupport
+public class CommentDAO extends HibernateDaoSupport
 {
-	private static final Log log = LogFactory.getLog(TPinglunDAO.class);
+	private static final Log log = LogFactory.getLog(CommentDAO.class);
 
 	// property constants
 	public static final String KEFANG_ID = "kefangId";
@@ -32,9 +32,9 @@ public class TPinglunDAO extends HibernateDaoSupport
 		// do nothing
 	}
 
-	public void save(TPinglun transientInstance)
+	public void save(Comment transientInstance)
 	{
-		log.debug("saving TPinglun instance");
+		log.debug("saving Comment instance");
 		try
 		{
 			getHibernateTemplate().save(transientInstance);
@@ -46,9 +46,9 @@ public class TPinglunDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void delete(TPinglun persistentInstance)
+	public void delete(Comment persistentInstance)
 	{
-		log.debug("deleting TPinglun instance");
+		log.debug("deleting Comment instance");
 		try
 		{
 			getHibernateTemplate().delete(persistentInstance);
@@ -60,13 +60,13 @@ public class TPinglunDAO extends HibernateDaoSupport
 		}
 	}
 
-	public TPinglun findById(java.lang.Integer id)
+	public Comment findById(java.lang.Integer id)
 	{
-		log.debug("getting TPinglun instance with id: " + id);
+		log.debug("getting Comment instance with id: " + id);
 		try
 		{
-			TPinglun instance = (TPinglun) getHibernateTemplate().get(
-					"com.model.TPinglun", id);
+			Comment instance = (Comment) getHibernateTemplate().get(
+					"com.model.Comment", id);
 			return instance;
 		} catch (RuntimeException re)
 		{
@@ -75,9 +75,9 @@ public class TPinglunDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByExample(TPinglun instance)
+	public List findByExample(Comment instance)
 	{
-		log.debug("finding TPinglun instance by example");
+		log.debug("finding Comment instance by example");
 		try
 		{
 			List results = getHibernateTemplate().findByExample(instance);
@@ -93,11 +93,11 @@ public class TPinglunDAO extends HibernateDaoSupport
 
 	public List findByProperty(String propertyName, Object value)
 	{
-		log.debug("finding TPinglun instance with property: " + propertyName
+		log.debug("finding Comment instance with property: " + propertyName
 				+ ", value: " + value);
 		try
 		{
-			String queryString = "from TPinglun as model where model."
+			String queryString = "from Comment as model where model."
 					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re)
@@ -124,10 +124,10 @@ public class TPinglunDAO extends HibernateDaoSupport
 
 	public List findAll()
 	{
-		log.debug("finding all TPinglun instances");
+		log.debug("finding all Comment instances");
 		try
 		{
-			String queryString = "from TPinglun";
+			String queryString = "from Comment";
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re)
 		{
@@ -136,12 +136,12 @@ public class TPinglunDAO extends HibernateDaoSupport
 		}
 	}
 
-	public TPinglun merge(TPinglun detachedInstance)
+	public Comment merge(Comment detachedInstance)
 	{
-		log.debug("merging TPinglun instance");
+		log.debug("merging Comment instance");
 		try
 		{
-			TPinglun result = (TPinglun) getHibernateTemplate().merge(
+			Comment result = (Comment) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -152,9 +152,9 @@ public class TPinglunDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void attachDirty(TPinglun instance)
+	public void attachDirty(Comment instance)
 	{
-		log.debug("attaching dirty TPinglun instance");
+		log.debug("attaching dirty Comment instance");
 		try
 		{
 			getHibernateTemplate().saveOrUpdate(instance);
@@ -166,9 +166,9 @@ public class TPinglunDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void attachClean(TPinglun instance)
+	public void attachClean(Comment instance)
 	{
-		log.debug("attaching clean TPinglun instance");
+		log.debug("attaching clean Comment instance");
 		try
 		{
 			getHibernateTemplate().lock(instance, LockMode.NONE);
@@ -180,8 +180,8 @@ public class TPinglunDAO extends HibernateDaoSupport
 		}
 	}
 
-	public static TPinglunDAO getFromApplicationContext(ApplicationContext ctx)
+	public static CommentDAO getFromApplicationContext(ApplicationContext ctx)
 	{
-		return (TPinglunDAO) ctx.getBean("TPinglunDAO");
+		return (CommentDAO) ctx.getBean("CommentDAO");
 	}
 }

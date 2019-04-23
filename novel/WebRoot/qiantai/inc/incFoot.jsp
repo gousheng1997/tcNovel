@@ -11,12 +11,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-        <div class="foot_pic"></div>
-		<div class="left foot_msg">
-			
+<%--        <div class="foot_pic"></div>--%>
+		<div class="left foot_msg" align="center">
+            特别鸣谢：起点中文网 腾讯 阿里巴巴 京东 哔哩哔哩等
+            <br />以上公司均无赞助
 <%--			<a target="_blank" href="<%=path %>/login.jsp">管理登录</a>--%>
-			<br />
-			<br />
 		</div>
 		<div style="clear: both"></div>
   </body>

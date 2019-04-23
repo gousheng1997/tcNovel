@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>--------这里就需要有standard.jar这个包
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
@@ -48,15 +50,21 @@
 						  	<table width="99%" border="0" cellpadding="2" cellspacing="1" bgcolor="#FFFFFF" align="center" style="margin-top:8px">
 					              <tr align="center" bgcolor="#FAFAF1" height="22">
 					                  <td>小说名称</td>
-					                  <td>市场价</td>
-					                  <td>推荐</td>
+					                  <td>推荐熱度</td>
 					                  <td>小说图片</td>
-					                  <td>操作</td>
+					                  <td>查看詳情</td>
 					              </tr>
+								<c:if test="${request.goodsList== null || fn:length(request.goodsList) == 0}">
+									<tr>
+										<td></td>
+										<td></td>
+										<td style="color: #FF5500;font-size: 20px">暂无结果...</td>
+									</tr>
+								</c:if>
+
 								  <s:iterator value="#request.goodsList" id="goods">
 								  <tr align='center' bgcolor="#FFFFFF" height="22">
 									  <td><s:property value="#goods.goodsName"/></td>
-									  <td>￥<s:property value="#goods.goodsShichangjia"/></td>
 									  <td>
 									      <s:if test="#goods.goodsShichangjia==#goods.goodsTejia">
 									          无推荐
@@ -65,8 +73,8 @@
 									        <s:property value="#goods.goodsTejia"/>
 									      </s:else>
 									  </td>
-									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"> <img src="<%=path %>/<s:property value="#goods.goodsPic"/>" width="60" height="60" border="0"/> </a></td>
-									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"><img alt="" src="<%=path %>/images/icon_buy.gif" border=0/></a></td>
+									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"> <img src="<%=path %><s:property value="#goods.goodsPic"/>" width="80" height="80" border="0"/> </a></td>
+									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"><img alt="" src="<%=path %>/images/search.png"  width="40" height="40" border="0"/> </a></td>
 								  </tr>
 								  </s:iterator>
 		        			</table>

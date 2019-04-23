@@ -70,9 +70,9 @@ String path = request.getContextPath();
 			  document.all.tip.style.display = "none";
 		   }		
 		   
-		   function kefangPinglun(id)
+		   function kefangComment(id)
 	       {
-	            var url="<%=path %>/pinglunMana.action?kefangId="+id;
+	            var url="<%=path %>/commentMana.action?kefangId="+id;
 	            var pop=new Popup({ contentType:1,isReloadOnClose:false,width:650,height:450});
 	            pop.setContent("contentUrl",url);
 	            pop.setContent("title","评论管理");
@@ -131,7 +131,7 @@ String path = request.getContextPath();
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
 						<a href="#" onclick="goodsNoTejiaDel(<s:property value="#goods.goodsId"/>)" class="pn-loperator">删除</a>
-						<a style="color: red" href="#" onclick="kefangPinglun(<s:property value="#goods.goodsId"/>)" class="pn-loperator">评论管理</a>
+						<a style="color: red" href="#" onclick="kefangComment(<s:property value="#goods.goodsId"/>)" class="pn-loperator">评论管理</a>
 							<a style="color: red" href="<%=path %>/zhangjieMana.action?goodsId=<s:property value="#goods.goodsId"/>"  class="pn-loperator">章节管理</a>
 					</td>
 				</tr>

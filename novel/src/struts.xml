@@ -142,15 +142,15 @@
         <action name="goodSearch" class="goodsAction" method="goodSearch">
             <result name="success">/qiantai/goods/goodSearch.jsp</result>
         </action>
-         <action name="pinglunAdd" class="goodsAction" method="pinglunAdd">
+         <action name="commentAdd" class="goodsAction" method="commentAdd">
         </action>
-        <action name="pinglunAll" class="goodsAction" method="pinglunAll">
-             <result name="success">/qiantai/goods/pinglunAll.jsp</result>
+        <action name="commentAll" class="goodsAction" method="commentAll">
+             <result name="success">/qiantai/goods/commentAll.jsp</result>
         </action>
-        <action name="pinglunMana" class="goodsAction" method="pinglunMana">
-             <result name="success">/admin/goods/pinglunMana.jsp</result>
+        <action name="commentMana" class="goodsAction" method="commentMana">
+             <result name="success">/admin/goods/commentMana.jsp</result>
         </action>
-        <action name="pinglunDel" class="goodsAction" method="pinglunDel">
+        <action name="commentDel" class="goodsAction" method="commentDel">
         </action>
         <action name="zhangjieMana" class="goodsAction" method="zhangjieMana">
              <result name="success">/admin/zhangjie/zhangjieMana.jsp</result>

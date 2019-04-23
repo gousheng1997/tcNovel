@@ -40,9 +40,9 @@
 	 
 	
 	        
-	        function pinglunAll(id)
+	        function commentAll(id)
 	        {
-	            var url="<%=path %>/pinglunAll.action?kefangId="+id;
+	            var url="<%=path %>/commentAll.action?kefangId="+id;
 	            var pop=new Popup({ contentType:1,isReloadOnClose:false,width:650,height:450});
 	            pop.setContent("contentUrl",url);
 	            pop.setContent("title","评论");
@@ -50,9 +50,9 @@
 	            pop.show();
 	        }
        
-	       function pinglunAdd(id)
+	       function commentAdd(id)
 	       {
-	            var url="<%=path %>/qiantai/goods/pinglunAdd.jsp?kefangId="+id;
+	            var url="<%=path %>/qiantai/goods/commentAdd.jsp?kefangId="+id;
 	            var pop=new Popup({ contentType:1,isReloadOnClose:false,width:700,height:400});
 	            pop.setContent("contentUrl",url);
 	            pop.setContent("title","写评论");
@@ -80,9 +80,9 @@
                                       <tr><td width="30"></td><td style="font-size: 11px;">类别：</td><td style="font-size: 11px;"><s:property value="#request.goods.goodsCatelogName"/></td></tr>
                                         <tr><td width="30"></td><td style="font-size: 11px;">点赞：</td><td style="font-size: 11px;"><s:property value="#request.goods.goodsShichangjia"/></td></tr>
                                           <tr><td width="30"></td><td style="font-size: 11px;"></td><td style="font-size: 11px;"><s:property value="#request.goods.goodsYanse"/></td></tr>
-                                      <tr><td width="30"></td><td style="font-size: 11px;"> <a href="#" style="color: red" onclick="pinglunAll(<s:property value="#request.goods.goodsId"/>)">查看评论</a></td>
+                                      <tr><td width="30"></td><td style="font-size: 11px;"> <a href="#" style="color: red" onclick="commentAll(<s:property value="#request.goods.goodsId"/>)">查看评论</a></td>
                                       
-                                    <td style="font-size: 11px;"> <a href="#" style="color: red" onclick="pinglunAdd(<s:property value="#request.goods.goodsId"/>)">我要评论</a>   <a href="<%=path %>/dianzan.action?goodsId=<s:property value="#request.goods.goodsId"/>" style="color: red" >点赞</a></td></tr>
+                                    <td style="font-size: 11px;"> <a href="#" style="color: red" onclick="commentAdd(<s:property value="#request.goods.goodsId"/>)">我要评论</a>   <a href="<%=path %>/dianzan.action?goodsId=<s:property value="#request.goods.goodsId"/>" style="color: red" >点赞</a></td></tr>
                                     
                                   </table>
                             </form>

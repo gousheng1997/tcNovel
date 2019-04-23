@@ -11,10 +11,10 @@ import org.apache.struts2.ServletActionContext;
 
 import com.dao.TCatelogDAO;
 import com.dao.NovelDAO;
-import com.dao.TPinglunDAO;
+import com.dao.CommentDAO;
 import com.dao.TzhangjieDAO;
 import com.model.TCatelog;
-import com.model.TPinglun;
+import com.model.Comment;
 import com.model.Tzhangjie;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -38,7 +38,7 @@ public class goodsAction extends ActionSupport
 	
 	private NovelDAO goodsDAO;
 	private TCatelogDAO catelogDAO;
-	private TPinglunDAO pinglunDAO;
+	private CommentDAO commentDAO;
 	private int rukushuliang;
 	
 	
@@ -47,47 +47,47 @@ public class goodsAction extends ActionSupport
 	private String content;
 	private TzhangjieDAO zhangjieDAO;
 	
-	public String pinglunAdd()
+	public String commentAdd()
 	{
 		HttpServletRequest request=ServletActionContext.getRequest();
 		
-		TPinglun pinglun=new TPinglun();
-		pinglun.setContent(request.getParameter("content"));
-		pinglun.setShijian(new Date().toLocaleString());
-		pinglun.setKefangId(Integer.parseInt(request.getParameter("kefangId")));
+		Comment comment=new Comment();
+		comment.setContent(request.getParameter("content"));
+		comment.setShijian(new Date().toLocaleString());
+		comment.setKefangId(Integer.parseInt(request.getParameter("kefangId")));
 		
-		pinglunDAO.save(pinglun);
+		commentDAO.save(comment);
 		request.setAttribute("msg", "评论成功");
 		return "msg";
 	}
 	
-	public String pinglunAll()
+	public String commentAll()
 	{
 		HttpServletRequest request=ServletActionContext.getRequest();
 		
-		String s="from TPinglun where kefangId="+Integer.parseInt(request.getParameter("kefangId"));
-		List pinglunList=pinglunDAO.getHibernateTemplate().find(s);
-		request.setAttribute("pinglunList", pinglunList);
+		String s="from Comment where kefangId="+Integer.parseInt(request.getParameter("kefangId"));
+		List commentList=commentDAO.getHibernateTemplate().find(s);
+		request.setAttribute("commentList", commentList);
 		return ActionSupport.SUCCESS;
 	}
 	
 	
-	public String pinglunMana()
+	public String commentMana()
 	{
 		HttpServletRequest request=ServletActionContext.getRequest();
 		
-		String s="from TPinglun where kefangId="+Integer.parseInt(request.getParameter("kefangId"));
-		List pinglunList=pinglunDAO.getHibernateTemplate().find(s);
-		request.setAttribute("pinglunList", pinglunList);
+		String s="from Comment where kefangId="+Integer.parseInt(request.getParameter("kefangId"));
+		List commentList=commentDAO.getHibernateTemplate().find(s);
+		request.setAttribute("commentList", commentList);
 		return ActionSupport.SUCCESS;
 	}
 	
-	public String pinglunDel()
+	public String commentDel()
 	{
         HttpServletRequest request=ServletActionContext.getRequest();
 		
-        String s="delete from TPinglun where id="+Integer.parseInt(request.getParameter("id"));
-		pinglunDAO.getHibernateTemplate().bulkUpdate(s);
+        String s="delete from Comment where id="+Integer.parseInt(request.getParameter("id"));
+		commentDAO.getHibernateTemplate().bulkUpdate(s);
 		request.setAttribute("msg", "删除成功");
 		return "msg";
 	}
@@ -319,7 +319,7 @@ public class goodsAction extends ActionSupport
 
 		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
 		request.put("goodsList", goodsList);
-		
+
 		return ActionSupport.SUCCESS;
 	}
 	
@@ -554,12 +554,12 @@ public class goodsAction extends ActionSupport
 		this.path = path;
 	}
 
-	public TPinglunDAO getPinglunDAO() {
-		return pinglunDAO;
+	public CommentDAO getCommentDAO() {
+		return commentDAO;
 	}
 
-	public void setPinglunDAO(TPinglunDAO pinglunDAO) {
-		this.pinglunDAO = pinglunDAO;
+	public void setCommentDAO(CommentDAO commentDAO) {
+		this.commentDAO = commentDAO;
 	}
 	
 	

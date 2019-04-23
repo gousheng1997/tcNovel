@@ -18,13 +18,13 @@ String path = request.getContextPath();
   </head>
   
   <body>
-       <c:forEach items="${requestScope.pinglunList}" var="pinglun">
+       <c:forEach items="${requestScope.commentList}" var="comment">
 			<TABLE cellpadding="8" cellspacing="8">
 				<TR>
-					<td><c:out value="${pinglun.content }" escapeXml="false"></c:out></td>
+					<td><c:out value="${comment.content }" escapeXml="false"></c:out></td>
 				</TR>
 				<TR>
-					<td align="right"><c:out value="${pinglun.shijian }" escapeXml="false"></c:out></td>
+					<td align="right"><c:out value="${comment.shijian }" escapeXml="false"></c:out>&nbsp;&nbsp;<a href="<%=path %>/commentDel.action?id=${comment.id }">[删除]</a></td>
 				</TR>
 				<tr>
 				    <td>
