@@ -11,7 +11,7 @@
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url"
-			value="jdbc:mysql://127.0.0.1:3306/novel?useUnicode=true&amp;amp;amp;amp;amp;amp;characterEncoding=utf-8">
+			value="jdbc:mysql://127.0.0.1:3306/novel?useUnicode=true&amp;characterEncoding=utf8">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="123456"></property>
@@ -37,7 +37,7 @@
 			    <value>com/model/TGonggao.hbm.xml</value>
 			    <value>com/model/TUser.hbm.xml</value>
 			    <value>com/model/TCatelog.hbm.xml</value>
-			    <value>com/model/TGoods.hbm.xml</value>
+			    <value>com/model/Novel.hbm.xml</value>
 			    <value>com/model/TOrderItem.hbm.xml</value>
 			    <value>com/model/TPinglun.hbm.xml</value>
 			    <value>com/model/zhangjie.hbm.xml</value>
@@ -48,7 +48,7 @@
 	
 	<bean id="indexAction" class="com.action.indexAction" scope="prototype">
 	    <property name="goodsDAO">
-			<ref bean="TGoodsDAO" />
+			<ref bean="NovelDAO" />
 		</property>
 		<property name="orderItemDAO">
 			<ref bean="TOrderItemDAO" />
@@ -87,7 +87,7 @@
 	</bean>
 	<bean id="cartService" class="com.service.cartService">
 	    <property name="goodsDAO">
-			<ref bean="TGoodsDAO" />
+			<ref bean="NovelDAO" />
 		</property>
 	</bean>
 	
@@ -151,12 +151,12 @@
 			<ref bean="TCatelogDAO" />
 		</property>
 		<property name="goodsDAO">
-			<ref bean="TGoodsDAO" />
+			<ref bean="NovelDAO" />
 		</property>
 	</bean>
 	
 	
-	<bean id="TGoodsDAO" class="com.dao.TGoodsDAO">
+	<bean id="NovelDAO" class="com.dao.NovelDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -168,7 +168,7 @@
 	</bean>
 	<bean id="goodsAction" class="com.action.goodsAction" scope="prototype">
 		<property name="goodsDAO">
-			<ref bean="TGoodsDAO" />
+			<ref bean="NovelDAO" />
 		</property>
 		<property name="catelogDAO">
 			<ref bean="TCatelogDAO" />
@@ -205,7 +205,7 @@
 	
 	<bean id="buyAction" class="com.action.buyAction" scope="prototype">
 		<property name="goodsDAO">
-			<ref bean="TGoodsDAO" />
+			<ref bean="NovelDAO" />
 		</property>
 		<property name="orderDAO">
 			<ref bean="TOrderDAO" />

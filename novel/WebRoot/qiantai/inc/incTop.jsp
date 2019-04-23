@@ -77,7 +77,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li class="thisclass">
 					<A href="#" onclick="liuyanAll()">我要留言</A>
 				</li>
+
+				<span class="right">
+				<li class="thisclass">
+					<A href="<%=path %>/login.jsp">管理员登录</A>
+				</li>
+				</span>
 			</ul>
+
 		</div>
 		<form id="searchForm" action="<%=path %>/goodSearch.action" method="post">
 			<div class="topsearch">

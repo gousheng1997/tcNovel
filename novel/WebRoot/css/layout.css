@@ -32,7 +32,7 @@ a.channel:active {color: #000000;}
 .cbody1 {margin: 0px auto; width: 966px; background-color: #99ccffff;}
 .topmenu ul {font-weight: bold; margin: 0px auto; overflow: hidden; width: 100%; height: 35px;}
 .topmenu ul li {background: url(../img/topmenu_bg.gif) no-repeat left bottom; float: left; margin-left: -2px; text-align: center;}
-.topmenu ul li a {padding-right: 12px; display: block; PADDING-LEFT: 14px; float: left; color: #ffffff; LINE-height: 37px; height: 35px; text-decoration:none;}
+.topmenu ul li a {padding-right: 12px; display: block; PADDING-LEFT: 14px; float: left; color: #ffffff; LINE-height: 37px; height: 33px; text-decoration:none;}
 .topmenu ul li a:hover {background: url(../img/topmenu_o.gif) no-repeat center bottom; color: #cccccc; text-decoration:none;}
 .topmenu ul li a.thisclass {background: url(../img/topmenu_o.gif) no-repeat center bottom; color: #99ccffff;}
 

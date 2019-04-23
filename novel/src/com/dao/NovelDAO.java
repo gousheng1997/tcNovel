@@ -1,24 +1,24 @@
 package com.dao;
 
 import java.util.List;
+
+import com.model.Novel;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.model.TGoods;
-
 /**
- * Data access object (DAO) for domain model class TGoods.
+ * Data access object (DAO) for domain model class Novel.
  * 
- * @see com.model.TGoods
+ * @see Novel
  * @author MyEclipse Persistence Tools
  */
 
-public class TGoodsDAO extends HibernateDaoSupport
+public class NovelDAO extends HibernateDaoSupport
 {
-	private static final Log log = LogFactory.getLog(TGoodsDAO.class);
+	private static final Log log = LogFactory.getLog(NovelDAO.class);
 
 	// property constants
 	public static final String GOODS_NAME = "goodsName";
@@ -44,9 +44,9 @@ public class TGoodsDAO extends HibernateDaoSupport
 		// do nothing
 	}
 
-	public void save(TGoods transientInstance)
+	public void save(Novel transientInstance)
 	{
-		log.debug("saving TGoods instance");
+		log.debug("saving Novel instance");
 		try
 		{
 			getHibernateTemplate().save(transientInstance);
@@ -58,9 +58,9 @@ public class TGoodsDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void delete(TGoods persistentInstance)
+	public void delete(Novel persistentInstance)
 	{
-		log.debug("deleting TGoods instance");
+		log.debug("deleting Novel instance");
 		try
 		{
 			getHibernateTemplate().delete(persistentInstance);
@@ -72,13 +72,13 @@ public class TGoodsDAO extends HibernateDaoSupport
 		}
 	}
 
-	public TGoods findById(java.lang.Integer id)
+	public Novel findById(java.lang.Integer id)
 	{
-		log.debug("getting TGoods instance with id: " + id);
+		log.debug("getting Novel instance with id: " + id);
 		try
 		{
-			TGoods instance = (TGoods) getHibernateTemplate().get(
-					"com.model.TGoods", id);
+			Novel instance = (Novel) getHibernateTemplate().get(
+					"com.model.Novel", id);
 			return instance;
 		} catch (RuntimeException re)
 		{
@@ -87,9 +87,9 @@ public class TGoodsDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByExample(TGoods instance)
+	public List findByExample(Novel instance)
 	{
-		log.debug("finding TGoods instance by example");
+		log.debug("finding Novel instance by example");
 		try
 		{
 			List results = getHibernateTemplate().findByExample(instance);
@@ -105,11 +105,11 @@ public class TGoodsDAO extends HibernateDaoSupport
 
 	public List findByProperty(String propertyName, Object value)
 	{
-		log.debug("finding TGoods instance with property: " + propertyName
+		log.debug("finding Novel instance with property: " + propertyName
 				+ ", value: " + value);
 		try
 		{
-			String queryString = "from TGoods as model where model."
+			String queryString = "from novel as model where model."
 					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re)
@@ -166,10 +166,10 @@ public class TGoodsDAO extends HibernateDaoSupport
 
 	public List findAll()
 	{
-		log.debug("finding all TGoods instances");
+		log.debug("finding all Novel instances");
 		try
 		{
-			String queryString = "from TGoods";
+			String queryString = "from novel";
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re)
 		{
@@ -178,12 +178,12 @@ public class TGoodsDAO extends HibernateDaoSupport
 		}
 	}
 
-	public TGoods merge(TGoods detachedInstance)
+	public Novel merge(Novel detachedInstance)
 	{
-		log.debug("merging TGoods instance");
+		log.debug("merging Novel instance");
 		try
 		{
-			TGoods result = (TGoods) getHibernateTemplate().merge(
+			Novel result = (Novel) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -194,9 +194,9 @@ public class TGoodsDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void attachDirty(TGoods instance)
+	public void attachDirty(Novel instance)
 	{
-		log.debug("attaching dirty TGoods instance");
+		log.debug("attaching dirty Novel instance");
 		try
 		{
 			getHibernateTemplate().saveOrUpdate(instance);
@@ -208,9 +208,9 @@ public class TGoodsDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void attachClean(TGoods instance)
+	public void attachClean(Novel instance)
 	{
-		log.debug("attaching clean TGoods instance");
+		log.debug("attaching clean Novel instance");
 		try
 		{
 			getHibernateTemplate().lock(instance, LockMode.NONE);
@@ -222,8 +222,8 @@ public class TGoodsDAO extends HibernateDaoSupport
 		}
 	}
 
-	public static TGoodsDAO getFromApplicationContext(ApplicationContext ctx)
+	public static NovelDAO getFromApplicationContext(ApplicationContext ctx)
 	{
-		return (TGoodsDAO) ctx.getBean("TGoodsDAO");
+		return (NovelDAO) ctx.getBean("NovelDAO");
 	}
 }

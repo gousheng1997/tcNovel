@@ -74,8 +74,8 @@
         <li> <s:property value="#goods.goodsName"/></li>
        </s:iterator>
       </ul>
-         <img src="./img/prev.png" width="20px" height="40px" id="prev">
-      <img src="./img/next.png" width="20px" height="40px" id="next">
+         <img src="/img/prev.png" width="40px" height="80px" id="prev">
+      <img src="/img/next.png" width="40px" height="80px" id="next">
       <div class="bg"></div> <!-- 图片底部背景层部分-->
       <ul class="indexList"><!-- 图片右下角序号部分 -->
       <% int i=1; %>
@@ -281,7 +281,7 @@
       imgLen = imgArr.length,
       infoArr = getElementsByClassName("infoList")[0].getElementsByTagName("li"), //获取图片info组
       indexArr = getElementsByClassName("indexList")[0].getElementsByTagName("li"); //获取控制index组
-     // 定时器自动变换2.5秒每次
+     // 定时器自动变换5.5秒每次
   var autoChange = setInterval(function(){ 
     if(curIndex < imgLen -1){ 
       curIndex ++; 

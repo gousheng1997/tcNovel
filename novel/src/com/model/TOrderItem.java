@@ -17,7 +17,7 @@ public class TOrderItem implements java.io.Serializable
 
 	private Integer goodsQuantity;
 	
-	private TGoods goods;//表里没有。自己加的
+	private Novel goods;//表里没有。自己加的
 
 	// Constructors
 
@@ -61,12 +61,12 @@ public class TOrderItem implements java.io.Serializable
 		return this.goodsId;
 	}
 
-	public TGoods getGoods()
+	public Novel getGoods()
 	{
 		return goods;
 	}
 
-	public void setGoods(TGoods goods)
+	public void setGoods(Novel goods)
 	{
 		this.goods = goods;
 	}

@@ -10,11 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.dao.TCatelogDAO;
-import com.dao.TGoodsDAO;
+import com.dao.NovelDAO;
 import com.dao.TOrderDAO;
 import com.dao.TOrderItemDAO;
-import com.model.TGoods;
+import com.model.Novel;
 import com.model.TOrder;
 import com.model.TOrderItem;
 import com.model.TUser;
@@ -28,7 +27,7 @@ public class buyAction extends ActionSupport
 	
 	private int orderId;
 	
-	private TGoodsDAO goodsDAO;
+	private NovelDAO goodsDAO;
 	private TOrderDAO orderDAO;
 	private TOrderItemDAO orderItemDAO;
 	
@@ -40,7 +39,7 @@ public class buyAction extends ActionSupport
 	
 	public String addToCart()
 	{
-		TGoods goods=goodsDAO.findById(goodsId);
+		Novel goods=goodsDAO.findById(goodsId);
 		TOrderItem orderItem=new TOrderItem();
 		orderItem.setGoods(goods);
 		orderItem.setGoodsQuantity(quantity);
@@ -93,7 +92,7 @@ public class buyAction extends ActionSupport
 			TOrderItem orderItem = (TOrderItem) it.next();
 			orderItem.setOrderId(order.getOrderId());
 			orderItem.setGoodsId(orderItem.getGoods().getGoodsId());
-	//		goodsDAO.getHibernateTemplate().bulkUpdate("update TGoods set goodsKucun=goodsKucun-"+orderItem.getGoodsQuantity() +" where goodsId="+orderItem.getGoods().getGoodsId());
+	//		goodsDAO.getHibernateTemplate().bulkUpdate("update Novel set goodsKucun=goodsKucun-"+orderItem.getGoodsQuantity() +" where goodsId="+orderItem.getGoods().getGoodsId());
 			orderItemDAO.save(orderItem);
 		}
 		
@@ -221,7 +220,7 @@ public class buyAction extends ActionSupport
 		{
 
 			TOrderItem orderItem = (TOrderItem) it.next();
-			TGoods goods = orderItem.getGoods();
+			Novel goods = orderItem.getGoods();
 			System.out.println(goods.getGoodsName()+"：商品名称");
 			int quantity = orderItem.getGoodsQuantity();
 			System.out.println(quantity+"：商品数量");
@@ -232,7 +231,7 @@ public class buyAction extends ActionSupport
 	}
 	
 	
-	public TGoodsDAO getGoodsDAO()
+	public NovelDAO getGoodsDAO()
 	{
 		return goodsDAO;
 	}
@@ -265,7 +264,7 @@ public class buyAction extends ActionSupport
 
 
 
-	public void setGoodsDAO(TGoodsDAO goodsDAO)
+	public void setGoodsDAO(NovelDAO goodsDAO)
 	{
 		this.goodsDAO = goodsDAO;
 	}

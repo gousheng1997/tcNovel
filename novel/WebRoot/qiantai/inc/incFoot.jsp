@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="foot_pic"></div>
 		<div class="left foot_msg">
 			
-			<a target="_blank" href="<%=path %>/login.jsp">管理登录</a>
+<%--			<a target="_blank" href="<%=path %>/login.jsp">管理登录</a>--%>
 			<br />
 			<br />
 		</div>

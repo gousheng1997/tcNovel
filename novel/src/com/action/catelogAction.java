@@ -6,7 +6,7 @@ import java.util.Map;
 import org.apache.struts2.ServletActionContext;
 
 import com.dao.TCatelogDAO;
-import com.dao.TGoodsDAO;
+import com.dao.NovelDAO;
 import com.model.TCatelog;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -20,7 +20,7 @@ public class catelogAction extends ActionSupport
 	private String path;
 	
 	private TCatelogDAO catelogDAO;
-	private TGoodsDAO goodsDAO;
+	private NovelDAO goodsDAO;
 	
 	
 	public String catelogMana()
@@ -57,7 +57,7 @@ public class catelogAction extends ActionSupport
 	
 	public String catelogDel()
 	{
-		String sql="from TGoods where goodsDel='no' and goodsCatelogId="+catelogId;
+		String sql="from Novel where goodsDel='no' and goodsCatelogId="+catelogId;
 		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
 		if(goodsList.size()>0)
 		{
@@ -159,14 +159,14 @@ public class catelogAction extends ActionSupport
 
 
 
-	public TGoodsDAO getGoodsDAO()
+	public NovelDAO getGoodsDAO()
 	{
 		return goodsDAO;
 	}
 
 
 
-	public void setGoodsDAO(TGoodsDAO goodsDAO)
+	public void setGoodsDAO(NovelDAO goodsDAO)
 	{
 		this.goodsDAO = goodsDAO;
 	}

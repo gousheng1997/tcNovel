@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import com.model.TGoods;
+import com.model.Novel;
 import com.model.TOrderItem;
 
 public class Cart
@@ -59,7 +59,7 @@ public class Cart
 		{
 
 			TOrderItem orderItem = (TOrderItem) it.next();
-			TGoods goods = orderItem.getGoods();
+			Novel goods = orderItem.getGoods();
 			int quantity = orderItem.getGoodsQuantity();
 			totalPrice += goods.getGoodsTejia() * quantity;
 		}

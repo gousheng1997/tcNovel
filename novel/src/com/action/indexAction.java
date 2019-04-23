@@ -8,15 +8,13 @@ import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.dao.TCatelogDAO;
-import com.dao.TGoodsDAO;
+import com.dao.NovelDAO;
 import com.dao.TOrderItemDAO;
-import com.model.TGoods;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class indexAction extends ActionSupport
 {
-	private TGoodsDAO goodsDAO;
+	private NovelDAO goodsDAO;
 	
 	private TOrderItemDAO orderItemDAO;
 	
@@ -27,7 +25,7 @@ public class indexAction extends ActionSupport
 		
 		
 		
-		String sql="from TGoods where goodsDel='no' and goodsIsnottejia='yes' order by goodsId desc";
+		String sql="from Novel where goodsDel='no' and goodsIsnottejia='yes' order by goodsId desc";
 		List goodsYesTejiaList=goodsDAO.getHibernateTemplate().find(sql);
 		if(goodsYesTejiaList.size()>5)
 		{
@@ -37,7 +35,7 @@ public class indexAction extends ActionSupport
 		
 		
 		
-		sql="from TGoods where goodsDel='no' and goodsIsnottejia='no' order by goodsId desc";
+		sql="from Novel where goodsDel='no' and goodsIsnottejia='no' order by goodsId desc";
 		List goodsNoTejiaList=goodsDAO.getHibernateTemplate().find(sql);
 		if(goodsNoTejiaList.size()>5)
 		{
@@ -48,7 +46,7 @@ public class indexAction extends ActionSupport
 		
 		//paihangbang
 		List goodsList=new ArrayList();
-		sql="from TGoods where goodsDel='no'  order by goodsShichangjia desc";
+		sql="from Novel where goodsDel='no'  order by goodsShichangjia desc";
 		 goodsList=orderItemDAO.getHibernateTemplate().find(sql);
 				if(goodsList.size()>5)
 		{
@@ -62,12 +60,12 @@ public class indexAction extends ActionSupport
 	}
 	
 
-	public TGoodsDAO getGoodsDAO()
+	public NovelDAO getGoodsDAO()
 	{
 		return goodsDAO;
 	}
 
-	public void setGoodsDAO(TGoodsDAO goodsDAO)
+	public void setGoodsDAO(NovelDAO goodsDAO)
 	{
 		this.goodsDAO = goodsDAO;
 	}

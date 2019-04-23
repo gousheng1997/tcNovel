@@ -1,27 +1,19 @@
 package com.action;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.model.Novel;
 import org.apache.struts2.ServletActionContext;
 
 import com.dao.TCatelogDAO;
-import com.dao.TGoodsDAO;
+import com.dao.NovelDAO;
 import com.dao.TPinglunDAO;
 import com.dao.TzhangjieDAO;
 import com.model.TCatelog;
-import com.model.TGoods;
 import com.model.TPinglun;
 import com.model.Tzhangjie;
 import com.opensymphony.xwork2.ActionContext;
@@ -44,7 +36,7 @@ public class goodsAction extends ActionSupport
 	private String message;
 	private String path;
 	
-	private TGoodsDAO goodsDAO;
+	private NovelDAO goodsDAO;
 	private TCatelogDAO catelogDAO;
 	private TPinglunDAO pinglunDAO;
 	private int rukushuliang;
@@ -106,7 +98,7 @@ public class goodsAction extends ActionSupport
 	
 	public String goodsNoTejiaAdd()
 	{
-		TGoods goods=new TGoods();
+		Novel goods=new Novel();
 		goods.setGoodsCatelogId(goodsCatelogId);
 		goods.setGoodsName(goodsName);
 		goods.setGoodsMiaoshu(goodsMiaoshu);
@@ -135,7 +127,7 @@ public class goodsAction extends ActionSupport
 	
 	public String goodsNoTejiaDel()
 	{
-		TGoods goods=goodsDAO.findById(goodsId);
+		Novel goods=goodsDAO.findById(goodsId);
 		goods.setGoodsDel("yes");
 		goodsDAO.attachDirty(goods);
 		this.setMessage("操作成功");
@@ -145,11 +137,11 @@ public class goodsAction extends ActionSupport
 	
 	public String goodsManaNoTejia()
 	{
-		String sql="from TGoods where goodsDel='no' order by goodsIsnottejia";
+		String sql="from Novel where goodsDel='no' order by goodsIsnottejia";
 		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
 		for(int i=0;i<goodsList.size();i++)
 		{
-			TGoods goods=(TGoods)goodsList.get(i);
+			Novel goods=(Novel)goodsList.get(i);
 			System.out.println(goods.getGoodsCatelogId());
 			goods.setGoodsCatelogName(catelogDAO.findById(goods.getGoodsCatelogId()).getCatelogName());
 		}
@@ -160,7 +152,7 @@ public class goodsAction extends ActionSupport
 	
 	public String goodsShezhiTejia()
 	{
-		TGoods goods=goodsDAO.findById(goodsId);
+		Novel goods=goodsDAO.findById(goodsId);
 		goods.setGoodsIsnottejia("yes");
 		goods.setGoodsTejia(goodsTejia);
 		goodsDAO.attachDirty(goods);
@@ -170,7 +162,7 @@ public class goodsAction extends ActionSupport
 	
 	public String goodsKucun()
 	{
-		String sql="from TGoods where goodsDel='no' order by goodsIsnottejia";
+		String sql="from Novel where goodsDel='no' order by goodsIsnottejia";
 		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		request.put("goodsList", goodsList);
@@ -179,7 +171,7 @@ public class goodsAction extends ActionSupport
 	
 	public String goodsRuku()
 	{
-		TGoods goods=goodsDAO.findById(goodsId);
+		Novel goods=goodsDAO.findById(goodsId);
 		goods.setGoodsKucun(goods.getGoodsKucun()+rukushuliang);
 		goods.setGoodsTejia(goodsTejia);
 		goodsDAO.attachDirty(goods);
@@ -188,7 +180,7 @@ public class goodsAction extends ActionSupport
 	
 	/*public String goodsYesTejiaAdd()
 	{
-		TGoods goods=new TGoods();
+		Novel goods=new Novel();
 		goods.setGoodsCatelogId(goodsCatelogId);
 		goods.setGoodsName(goodsName);
 		goods.setGoodsMiaoshu(goodsMiaoshu);
@@ -207,7 +199,7 @@ public class goodsAction extends ActionSupport
 	
 	public String goodsYesTejiaDel()
 	{
-		TGoods goods=goodsDAO.findById(goodsId);
+		Novel goods=goodsDAO.findById(goodsId);
 		goods.setGoodsDel("yes");
 		goodsDAO.attachDirty(goods);
 		this.setMessage("操作成功");
@@ -218,11 +210,11 @@ public class goodsAction extends ActionSupport
 	
 	public String goodsManaYesTejia()
 	{
-		String sql="from TGoods where goodsDel='no' and goodsIsnottejia='yes' order by goodsCatelogId";
+		String sql="from Novel where goodsDel='no' and goodsIsnottejia='yes' order by goodsCatelogId";
 		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
 		for(int i=0;i<goodsList.size();i++)
 		{
-			TGoods goods=(TGoods)goodsList.get(i);
+			Novel goods=(Novel)goodsList.get(i);
 			goods.setGoodsCatelogName(catelogDAO.findById(goods.getGoodsCatelogId()).getCatelogName());
 		}
 		Map request=(Map)ServletActionContext.getContext().get("request");
@@ -234,7 +226,7 @@ public class goodsAction extends ActionSupport
 	{
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		
-		TGoods goods=goodsDAO.findById(goodsId);
+		Novel goods=goodsDAO.findById(goodsId);
 		request.put("goods", goods);
 		return ActionSupport.SUCCESS;
 	}
@@ -243,7 +235,7 @@ public class goodsAction extends ActionSupport
 	{
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		
-		TGoods goods=goodsDAO.findById(goodsId);
+		Novel goods=goodsDAO.findById(goodsId);
 		goods.setGoodsShichangjia(goods.getGoodsShichangjia()+1);
 		goodsDAO.attachDirty(goods);
 		TCatelog catelog=catelogDAO.findById(goods.getGoodsCatelogId());
@@ -261,7 +253,7 @@ public class goodsAction extends ActionSupport
 	{
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		
-		TGoods goods=goodsDAO.findById(goodsId);
+		Novel goods=goodsDAO.findById(goodsId);
 		
 		TCatelog catelog=catelogDAO.findById(goods.getGoodsCatelogId());
 		goods.setGoodsCatelogName(catelog.getCatelogName());
@@ -279,7 +271,7 @@ public class goodsAction extends ActionSupport
         Map request=(Map)ServletActionContext.getContext().get("request");
 		
 		
-		String sql="from TGoods where goodsDel='no' and goodsIsnottejia='yes' order by goodsCatelogId";
+		String sql="from Novel where goodsDel='no' and goodsIsnottejia='yes' order by goodsCatelogId";
 		List goodsYesTejiaList=goodsDAO.getHibernateTemplate().find(sql);
 		request.put("goodsYesTejiaList", goodsYesTejiaList);
 		return ActionSupport.SUCCESS;
@@ -291,7 +283,7 @@ public class goodsAction extends ActionSupport
         Map request=(Map)ServletActionContext.getContext().get("request");
 		
 		
-		String sql="from TGoods where goodsDel='no' and goodsIsnottejia='no' order by goodsCatelogId";
+		String sql="from Novel where goodsDel='no' and goodsIsnottejia='no' order by goodsCatelogId";
 		List goodsYesTejiaList=goodsDAO.getHibernateTemplate().find(sql);
 		request.put("goodsYesTejiaList", goodsYesTejiaList);
 		return ActionSupport.SUCCESS;
@@ -302,7 +294,7 @@ public class goodsAction extends ActionSupport
 	{
         Map request=(Map)ServletActionContext.getContext().get("request");
 		
-		String sql="from TGoods where goodsDel='no' and goodsCatelogId=? order by goodsCatelogId";
+		String sql="from Novel where goodsDel='no' and goodsCatelogId=? order by goodsCatelogId";
 		Object[] con={catelogId};
 		List goodsByCatelogList=goodsDAO.getHibernateTemplate().find(sql,con);
 		request.put("goodsByCatelogList", goodsByCatelogList);
@@ -318,13 +310,13 @@ public class goodsAction extends ActionSupport
 		String sql="";
 		if(catelogId==0)
 		{
-			sql="from TGoods where goodsDel='no' and goodsName like '%"+goodsName+"%'"+" order by goodsCatelogId";
+			sql="from Novel where goodsDel='no' and goodsName like '%"+goodsName+"%'"+" order by goodsCatelogId";
 		}
 		else
 		{
-			sql="from TGoods where goodsDel='no' and goodsCatelogId="+catelogId+" and goodsName like '%"+goodsName+"%'"+" order by goodsCatelogId";
+			sql="from Novel where goodsDel='no' and goodsCatelogId="+catelogId+" and goodsName like '%"+goodsName+"%'"+" order by goodsCatelogId";
 		}
-		
+
 		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
 		request.put("goodsList", goodsList);
 		
@@ -377,7 +369,7 @@ public class goodsAction extends ActionSupport
 		Map request=(Map)ServletActionContext.getContext().get("request");
 	
 		Tzhangjie zhangjie=zhangjieDAO.findById(zhangjieId);
-		TGoods goods=goodsDAO.findById(zhangjie.getGoodsId());
+		Novel goods=goodsDAO.findById(zhangjie.getGoodsId());
 		request.put("zhangjie", zhangjie);
 		request.put("goods", goods);
 		return ActionSupport.SUCCESS;
@@ -446,11 +438,11 @@ public class goodsAction extends ActionSupport
 	{
 		this.goodsCatelogId = goodsCatelogId;
 	}
-	public TGoodsDAO getGoodsDAO()
+	public NovelDAO getGoodsDAO()
 	{
 		return goodsDAO;
 	}
-	public void setGoodsDAO(TGoodsDAO goodsDAO)
+	public void setGoodsDAO(NovelDAO goodsDAO)
 	{
 		this.goodsDAO = goodsDAO;
 	}

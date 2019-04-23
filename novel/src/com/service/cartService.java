@@ -5,12 +5,12 @@ import javax.servlet.http.HttpSession;
 import org.directwebremoting.WebContext;
 import org.directwebremoting.WebContextFactory;
 
-import com.dao.TGoodsDAO;
+import com.dao.NovelDAO;
 import com.util.Cart;
 
 public class cartService
 {
-	private TGoodsDAO goodsDAO;
+	private NovelDAO goodsDAO;
 	public String modiNum(int goodsId,int quantity)
 	{
 		try
@@ -68,12 +68,12 @@ public class cartService
 		 return "yes";
 	}
 
-	public TGoodsDAO getGoodsDAO()
+	public NovelDAO getGoodsDAO()
 	{
 		return goodsDAO;
 	}
 
-	public void setGoodsDAO(TGoodsDAO goodsDAO)
+	public void setGoodsDAO(NovelDAO goodsDAO)
 	{
 		this.goodsDAO = goodsDAO;
 	}
