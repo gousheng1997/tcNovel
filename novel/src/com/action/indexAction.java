@@ -33,13 +33,13 @@ public class indexAction extends ActionSupport
 		request.put("novelList", novelList);
 
 		//推薦欄目
-		sql="from Novel where novelDel='no' and novelIsrecommend='yes' order by novelId desc";
-		List novelYesRecommendWeightList=novelDAO.getHibernateTemplate().find(sql);
-		if(novelYesRecommendWeightList.size()>5)
+        sql="from Novel where novelDel='no' and novelRecommendWeight >0 order by novelRecommendWeight desc";
+		List novelRecommendList=novelDAO.getHibernateTemplate().find(sql);
+		if(novelRecommendList.size()>5)
 		{
-			novelYesRecommendWeightList=novelYesRecommendWeightList.subList(0, 5);
+            novelRecommendList=novelRecommendList.subList(0, 5);
 		}
-		request.put("novelYesRecommendWeightList", novelYesRecommendWeightList);
+		request.put("novelRecommendList", novelRecommendList);
 		
 		
 		//最新作品

@@ -224,14 +224,14 @@ public class novelAction extends ActionSupport
 	}
 	
 	
-	public String novelAllYesRecommendWeight()
+	public String novelRecommendList()
 	{
         Map request=(Map)ServletActionContext.getContext().get("request");
 		
 		
-		String sql="from Novel where novelDel='no' and novelIsrecommend='yes' order by novelCatelogId";
-		List novelYesRecommendWeightList=novelDAO.getHibernateTemplate().find(sql);
-		request.put("novelYesRecommendWeightList", novelYesRecommendWeightList);
+		String sql="from Novel where novelDel='no' and novelRecommendWeight >0 order by novelRecommendWeight desc";
+		List novelRecommendList=novelDAO.getHibernateTemplate().find(sql);
+		request.put("novelRecommendList", novelRecommendList);
 		return ActionSupport.SUCCESS;
 	}
 	

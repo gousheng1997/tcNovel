@@ -52,10 +52,10 @@
 					                  <td>小说图片</td>
 					                  <td>查看详情</td>
 					              </tr>
-								  <s:iterator value="#request.novelYesRecommendWeightList" id="novel">
+								  <s:iterator value="#request.novelRecommendList" id="novel">
 								  <tr align='center' bgcolor="#FFFFFF" height="22">
 									  <td><s:property value="#novel.novelName"/></td>
-									  <td>￥<s:property value="#novel.novelRecommendWeight"/></td>
+									  <td><s:property value="#novel.novelRecommendWeight"/></td>
 									  <td><a href="<%=path %>/novelDetail.action?novelId=<s:property value="#novel.novelId"/>"> <img src="<%=path %><s:property value="#novel.novelPic"/>" width="80" height="80" border="0"/> </a></td>
 									  <td><a href="<%=path %>/novelDetail.action?novelId=<s:property value="#novel.novelId"/>"><img alt="" src="<%=path %>/images/search.png" border="0" width="40" height="40"/></a></td>
 								  </tr>
