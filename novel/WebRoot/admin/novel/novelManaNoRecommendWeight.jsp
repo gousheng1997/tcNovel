@@ -27,17 +27,17 @@ String path = request.getContextPath();
 				 openWin(url,n,w,h,s);
            }
            
-           function novelNoTejiaDel(novelId)
+           function novelNoRecommendWeightDel(novelId)
            {
                if(confirm('您确定删除吗？'))
                {
-                   window.location.href="<%=path %>/novelNoTejiaDel.action?novelId="+novelId;
+                   window.location.href="<%=path %>/novelNoRecommendWeightDel.action?novelId="+novelId;
                }
            }
            
-           function novelNoTejiaAdd()
+           function novelNoRecommendWeightAdd()
            {
-                 var url="<%=path %>/admin/novel/novelNoTejiaAdd.jsp";
+                 var url="<%=path %>/admin/novel/novelNoRecommendWeightAdd.jsp";
                  //var n="";
                  //var w="480px";
                  //var h="500px";
@@ -46,10 +46,10 @@ String path = request.getContextPath();
 				 window.location.href=url;
            }
            
-           function novelShezhiTejia(novelId)
+           function novelShezhiRecommendWeight(novelId)
            {
                 var pop=new Popup({ contentType:1,isReloadOnClose:false,width:400,height:200});
-	            pop.setContent("contentUrl","<%=path %>/admin/novel/novelShezhiTejia.jsp?novelId="+novelId);
+	            pop.setContent("contentUrl","<%=path %>/admin/novel/novelShezhiRecommendWeight.jsp?novelId="+novelId);
 	            pop.setContent("title","文件上传");
 	            pop.build();
 	            pop.show();
@@ -119,18 +119,18 @@ String path = request.getContextPath();
 					     <s:property value="#novel.novelAuthor"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					     <s:if test="#novel.novelIsnottejia=='no'">无推荐&nbsp;&nbsp;&nbsp;
-					         <a href="#" style="color: red" onclick="novelShezhiTejia(<s:property value="#novel.novelId"/>)">设为推荐</a>
+					     <s:if test="#novel.novelIsrecommend=='no'">无推荐&nbsp;&nbsp;&nbsp;
+					         <a href="#" style="color: red" onclick="novelShezhiRecommendWeight(<s:property value="#novel.novelId"/>)">设为推荐</a>
 					     </s:if>
-					     <s:if test="#novel.novelIsnottejia=='yes'">
-					        <s:property value="#novel.novelTejia"/>
+					     <s:if test="#novel.novelIsrecommend=='yes'">
+					        <s:property value="#novel.novelRecommendWeight"/>
 					     </s:if>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
 					     <s:property value="#novel.novelLikeNum"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						<a href="#" onclick="novelNoTejiaDel(<s:property value="#novel.novelId"/>)" class="pn-loperator">删除</a>
+						<a href="#" onclick="novelNoRecommendWeightDel(<s:property value="#novel.novelId"/>)" class="pn-loperator">删除</a>
 						<a style="color: red" href="#" onclick="kefangComment(<s:property value="#novel.novelId"/>)" class="pn-loperator">评论管理</a>
 							<a style="color: red" href="<%=path %>/zhangjieMana.action?novelId=<s:property value="#novel.novelId"/>"  class="pn-loperator">章节管理</a>
 					</td>
@@ -141,7 +141,7 @@ String path = request.getContextPath();
 			<table width='98%'  border='0'style="margin-top:8px;margin-left: 5px;">
 			  <tr>
 			    <td>
-			        <input type="button" value="添加" style="width: 80px;" onclick="novelNoTejiaAdd()" />
+			        <input type="button" value="添加" style="width: 80px;" onclick="novelNoRecommendWeightAdd()" />
 			    </td>
 			  </tr>
 		    </table>

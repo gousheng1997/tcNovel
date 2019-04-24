@@ -31,9 +31,9 @@ public class NovelDAO extends HibernateDaoSupport
 
 	public static final String NOVEL_SHICHANGJIA = "novelLikeNum";
 
-	public static final String NOVEL_TEJIA = "novelTejia";
+	public static final String NOVEL_RECOMMENDWEIGHT = "novelRecommendWeight";
 
-	public static final String NOVEL_ISNOTTEJIA = "novelIsnottejia";
+	public static final String NOVEL_ISRECOMMEND = "novelIsrecommend";
 
 
 
@@ -144,14 +144,14 @@ public class NovelDAO extends HibernateDaoSupport
 		return findByProperty(NOVEL_SHICHANGJIA, novelLikeNum);
 	}
 
-	public List findByNovelTejia(Object novelTejia)
+	public List findByNovelRecommendWeight(Object novelRecommendWeight)
 	{
-		return findByProperty(NOVEL_TEJIA, novelTejia);
+		return findByProperty(NOVEL_RECOMMENDWEIGHT, novelRecommendWeight);
 	}
 
-	public List findByNovelIsnottejia(Object novelIsnottejia)
+	public List findByNovelIsrecommend(Object novelIsrecommend)
 	{
-		return findByProperty(NOVEL_ISNOTTEJIA, novelIsnottejia);
+		return findByProperty(NOVEL_ISRECOMMEND, novelIsrecommend);
 	}
 
 

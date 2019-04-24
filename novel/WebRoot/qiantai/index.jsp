@@ -59,7 +59,7 @@
 			<div id="wrapper" style="width:100%;overflow:hidden;white-space:nowrap;"><!-- 最外层部分 -->
     <div id="banner"><!-- 轮播部分 -->
       <ul class="imgList"><!-- 图片部分 -->
-       <s:iterator value="#request.novelYesTejiaList" id="novel">
+       <s:iterator value="#request.novelYesRecommendWeightList" id="novel">
       <li>
       <a href="<%=path %>novelDetail.action?novelId=<s:property value="#novel.novelId"/>">
 	<img width="940px" height="300px"  src="<%=path %><s:property value="#novel.novelPic"/>"/>
@@ -70,7 +70,7 @@
     
       <div class="bg"></div> <!-- 图片底部背景层部分-->
       <ul class="infoList"><!-- 图片左下角文字信息部分 -->
-       <s:iterator value="#request.novelYesTejiaList" id="novel" >
+       <s:iterator value="#request.novelYesRecommendWeightList" id="novel" >
         <li> <s:property value="#novel.novelName"/></li>
        </s:iterator>
       </ul>
@@ -79,7 +79,7 @@
       <div class="bg"></div> <!-- 图片底部背景层部分-->
       <ul class="indexList"><!-- 图片右下角序号部分 -->
       <% int i=1; %>
-       <s:iterator value="#request.novelYesTejiaList" id="novel" >
+       <s:iterator value="#request.novelYesRecommendWeightList" id="novel" >
             <li><%=i++ %> </li>
         </s:iterator>
        
@@ -141,13 +141,13 @@
 					<div class="list pic_news">
 						<div class="list_bar">
 							 <span style="float:left">热门推荐</span>
-							 <span style="float:right"><a href="<%=path %>novelAllYesTejia.action">更多>></a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							 <span style="float:right"><a href="<%=path %>novelAllYesRecommendWeight.action">更多>></a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						</div>
 						<div id="tw" class="list_content">
 							<div style="width:100%;overflow:hidden;white-space:nowrap;">
 								<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
 									<tr>
-									    <s:iterator value="#request.novelYesTejiaList" id="novel">
+									    <s:iterator value="#request.novelYesRecommendWeightList" id="novel">
 										<td>
 											<table width="100%" cellpadding="0" cellspacing="0" border="0">
 												<tr>
@@ -183,13 +183,13 @@
 					<div class="list pic_news">
 						<div class="list_bar">
 							 <span style="float:left">最新作品</span>
-							 <span style="float:right"><a href="<%=path %>novelAllNoTejia.action">更多>></a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							 <span style="float:right"><a href="<%=path %>novelAllNoRecommendWeight.action">更多>></a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						</div>
 						<div id="tw" class="list_content">
 							<div style="width:100%;overflow:hidden;white-space:nowrap;">
 								<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
 									<tr>
-									    <s:iterator value="#request.novelNoTejiaList" id="novel">
+									    <s:iterator value="#request.novelNoRecommendWeightList" id="novel">
 										<td>
 											<table width="100%" cellpadding="0" cellspacing="0" border="0">
 												<tr>

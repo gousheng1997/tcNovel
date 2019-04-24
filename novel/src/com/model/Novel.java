@@ -22,9 +22,9 @@ public class Novel implements java.io.Serializable
 
 	private Integer novelLikeNum;
 
-	private Integer novelTejia;
+	private Integer novelRecommendWeight;
 
-	private String novelIsnottejia;
+	private String novelIsrecommend;
 
 
 
@@ -45,7 +45,7 @@ public class Novel implements java.io.Serializable
 
 	/** full constructor */
 	public Novel(String novelName, String novelMiaoshu, String novelPic,
-				 String novelYanse, Integer novelLikeNum, Integer novelTejia,
+				 String novelYanse, Integer novelLikeNum, Integer novelRecommendWeight,
 
 				 Integer novelCatelogId)
 	{
@@ -54,8 +54,8 @@ public class Novel implements java.io.Serializable
 		this.novelPic = novelPic;
 		this.novelYanse = novelYanse;
 		this.novelLikeNum = novelLikeNum;
-		this.novelTejia = novelTejia;
-		this.novelIsnottejia = novelIsnottejia;
+		this.novelRecommendWeight = novelRecommendWeight;
+		this.novelIsrecommend = novelIsrecommend;
 
 		this.novelCatelogId = novelCatelogId;
 	}
@@ -142,24 +142,24 @@ public class Novel implements java.io.Serializable
 		this.novelLikeNum = novelLikeNum;
 	}
 
-	public Integer getNovelTejia()
+	public Integer getNovelRecommendWeight()
 	{
-		return this.novelTejia;
+		return this.novelRecommendWeight;
 	}
 
-	public void setNovelTejia(Integer novelTejia)
+	public void setNovelRecommendWeight(Integer novelRecommendWeight)
 	{
-		this.novelTejia = novelTejia;
+		this.novelRecommendWeight = novelRecommendWeight;
 	}
 
-	public String getNovelIsnottejia()
+	public String getNovelIsrecommend()
 	{
-		return this.novelIsnottejia;
+		return this.novelIsrecommend;
 	}
 
-	public void setNovelIsnottejia(String novelIsnottejia)
+	public void setNovelIsrecommend(String novelIsrecommend)
 	{
-		this.novelIsnottejia = novelIsnottejia;
+		this.novelIsrecommend = novelIsrecommend;
 	}
 
 	public String getNovelAuthor() {

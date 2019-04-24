@@ -83,9 +83,9 @@
 								  <s:iterator value="#items">
 								  <tr align='center' bgcolor="#FFFFFF" height="22">
 									  <td><s:property value="value.novel.novelName"/></td>
-									  <td>￥<s:property value="value.novel.novelTejia"/><br/></td>
+									  <td>￥<s:property value="value.novel.novelRecommendWeight"/><br/></td>
 									  <td><input type="text" class="textBox" onChange="modiNum(<s:property value="value.novel.novelId"/>,this.value)" value="<s:property value="value.novelQuantity"/>" size="4"/></td>
-									  <td>￥<s:property value="value.novelQuantity * value.novel.novelTejia"/></td>
+									  <td>￥<s:property value="value.novelQuantity * value.novel.novelRecommendWeight"/></td>
 									  <td><input onClick="delNovelFromCart(<s:property value="value.novel.novelId"/>)" type="image" src="<%=path %>/images/delete_01.gif" border="0"/></td>
 								  </tr>
 								  </s:iterator>

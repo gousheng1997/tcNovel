@@ -23,23 +23,23 @@ public class indexAction extends ActionSupport
 		
 		
 		
-		String sql="from Novel where novelDel='no' and novelIsnottejia='yes' order by novelId desc";
-		List novelYesTejiaList=novelDAO.getHibernateTemplate().find(sql);
-		if(novelYesTejiaList.size()>5)
+		String sql="from Novel where novelDel='no' and novelIsrecommend='yes' order by novelId desc";
+		List novelYesRecommendWeightList=novelDAO.getHibernateTemplate().find(sql);
+		if(novelYesRecommendWeightList.size()>5)
 		{
-			novelYesTejiaList=novelYesTejiaList.subList(0, 5);
+			novelYesRecommendWeightList=novelYesRecommendWeightList.subList(0, 5);
 		}
-		request.put("novelYesTejiaList", novelYesTejiaList);
+		request.put("novelYesRecommendWeightList", novelYesRecommendWeightList);
 		
 		
 		
-		sql="from Novel where novelDel='no' and novelIsnottejia='no' order by novelId desc";
-		List novelNoTejiaList=novelDAO.getHibernateTemplate().find(sql);
-		if(novelNoTejiaList.size()>5)
+		sql="from Novel where novelDel='no' and novelIsrecommend='no' order by novelId desc";
+		List novelNoRecommendWeightList=novelDAO.getHibernateTemplate().find(sql);
+		if(novelNoRecommendWeightList.size()>5)
 		{
-			novelNoTejiaList=novelNoTejiaList.subList(0, 5);
+			novelNoRecommendWeightList=novelNoRecommendWeightList.subList(0, 5);
 		}
-		request.put("novelNoTejiaList", novelNoTejiaList);
+		request.put("novelNoRecommendWeightList", novelNoRecommendWeightList);
 
 		//paihangbang
 		List novelList=new ArrayList();

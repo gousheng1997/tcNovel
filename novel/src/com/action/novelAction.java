@@ -28,7 +28,7 @@ public class novelAction extends ActionSupport
 	private String fujian;
 	private String novelYanse;
 	private int novelLikeNum;
-	private int novelTejia;
+	private int novelRecommendWeight;
 	
 	private int catelogId;
 	private String novelKucun;
@@ -96,7 +96,7 @@ public class novelAction extends ActionSupport
 	//评论end
 	
 	
-	public String novelNoTejiaAdd()
+	public String novelNoRecommendWeightAdd()
 	{
 		Novel novel=new Novel();
 		novel.setNovelCatelogId(novelCatelogId);
@@ -104,15 +104,15 @@ public class novelAction extends ActionSupport
 		novel.setNovelMiaoshu(novelMiaoshu);
 		novel.setNovelPic(fujian);
 		novel.setNovelLikeNum(novelLikeNum);
-		if(novelTejia==0)//特格为0表示没有特价
+		if(novelRecommendWeight==0)//特格为0表示没有特价
 		{
-			novel.setNovelTejia(novelLikeNum);// 如果不是特价商品。把这个商品的特价设置为市场价格
-			novel.setNovelIsnottejia("no");
+			novel.setNovelRecommendWeight(novelLikeNum);// 如果不是特价商品。把这个商品的特价设置为市场价格
+			novel.setNovelIsrecommend("no");
 		}
 		else
 		{
-			novel.setNovelTejia(novelTejia);
-			novel.setNovelIsnottejia("yes");
+			novel.setNovelRecommendWeight(novelRecommendWeight);
+			novel.setNovelIsrecommend("yes");
 		}
 		
 		novel.setNovelKucun(novelKucun);
@@ -120,24 +120,24 @@ public class novelAction extends ActionSupport
 		
 		novelDAO.save(novel);
 		this.setMessage("操作成功");
-		this.setPath("novelManaNoTejia.action");
+		this.setPath("novelManaNoRecommendWeight.action");
 		return "succeed";
 		
 	}
 	
-	public String novelNoTejiaDel()
+	public String novelNoRecommendWeightDel()
 	{
 		Novel novel=novelDAO.findById(novelId);
 		novel.setNovelDel("yes");
 		novelDAO.attachDirty(novel);
 		this.setMessage("操作成功");
-		this.setPath("novelManaNoTejia.action");
+		this.setPath("novelManaNoRecommendWeight.action");
 		return "succeed";
 	}
 	
-	public String novelManaNoTejia()
+	public String novelManaNoRecommendWeight()
 	{
-		String sql="from Novel where novelDel='no' order by novelIsnottejia";
+		String sql="from Novel where novelDel='no' order by novelIsrecommend";
 		List novelList=novelDAO.getHibernateTemplate().find(sql);
 		for(int i=0;i<novelList.size();i++)
 		{
@@ -150,11 +150,11 @@ public class novelAction extends ActionSupport
 		return ActionSupport.SUCCESS;
 	}
 	
-	public String novelShezhiTejia()
+	public String novelShezhiRecommendWeight()
 	{
 		Novel novel=novelDAO.findById(novelId);
-		novel.setNovelIsnottejia("yes");
-		novel.setNovelTejia(novelTejia);
+		novel.setNovelIsrecommend("yes");
+		novel.setNovelRecommendWeight(novelRecommendWeight);
 		novelDAO.attachDirty(novel);
 		return ActionSupport.SUCCESS;
 	}
@@ -162,7 +162,7 @@ public class novelAction extends ActionSupport
 	
 	public String novelKucun()
 	{
-		String sql="from Novel where novelDel='no' order by novelIsnottejia";
+		String sql="from Novel where novelDel='no' order by novelIsrecommend";
 		List novelList=novelDAO.getHibernateTemplate().find(sql);
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		request.put("novelList", novelList);
@@ -173,12 +173,12 @@ public class novelAction extends ActionSupport
 	{
 		Novel novel=novelDAO.findById(novelId);
 		novel.setNovelKucun(novel.getNovelKucun()+rukushuliang);
-		novel.setNovelTejia(novelTejia);
+		novel.setNovelRecommendWeight(novelRecommendWeight);
 		novelDAO.attachDirty(novel);
 		return ActionSupport.SUCCESS;
 	}
 	
-	/*public String novelYesTejiaAdd()
+	/*public String novelYesRecommendWeightAdd()
 	{
 		Novel novel=new Novel();
 		novel.setNovelCatelogId(novelCatelogId);
@@ -187,30 +187,30 @@ public class novelAction extends ActionSupport
 		novel.setNovelPic(fujian);
 		novel.setNovelYanse(novelYanse);
 		novel.setNovelLikeNum(novelLikeNum);
-		novel.setNovelTejia(novelTejia);
-		novel.setNovelIsnottejia("yes");
+		novel.setNovelRecommendWeight(novelRecommendWeight);
+		novel.setNovelIsrecommend("yes");
 		novel.setNovelDel("no");
 		novelDAO.save(novel);
 		this.setMessage("操作成功");
-		this.setPath("novelManaYesTejia.action");
+		this.setPath("novelManaYesRecommendWeight.action");
 		return "succeed";
 		
 	}
 	
-	public String novelYesTejiaDel()
+	public String novelYesRecommendWeightDel()
 	{
 		Novel novel=novelDAO.findById(novelId);
 		novel.setNovelDel("yes");
 		novelDAO.attachDirty(novel);
 		this.setMessage("操作成功");
-		this.setPath("novelManaYesTejia.action");
+		this.setPath("novelManaYesRecommendWeight.action");
 		return "succeed";
 	}
 	
 	
-	public String novelManaYesTejia()
+	public String novelManaYesRecommendWeight()
 	{
-		String sql="from Novel where novelDel='no' and novelIsnottejia='yes' order by novelCatelogId";
+		String sql="from Novel where novelDel='no' and novelIsrecommend='yes' order by novelCatelogId";
 		List novelList=novelDAO.getHibernateTemplate().find(sql);
 		for(int i=0;i<novelList.size();i++)
 		{
@@ -266,26 +266,26 @@ public class novelAction extends ActionSupport
 	}
 	
 	
-	public String novelAllYesTejia()
+	public String novelAllYesRecommendWeight()
 	{
         Map request=(Map)ServletActionContext.getContext().get("request");
 		
 		
-		String sql="from Novel where novelDel='no' and novelIsnottejia='yes' order by novelCatelogId";
-		List novelYesTejiaList=novelDAO.getHibernateTemplate().find(sql);
-		request.put("novelYesTejiaList", novelYesTejiaList);
+		String sql="from Novel where novelDel='no' and novelIsrecommend='yes' order by novelCatelogId";
+		List novelYesRecommendWeightList=novelDAO.getHibernateTemplate().find(sql);
+		request.put("novelYesRecommendWeightList", novelYesRecommendWeightList);
 		return ActionSupport.SUCCESS;
 	}
 	
 	
-	public String novelAllNoTejia()
+	public String novelAllNoRecommendWeight()
 	{
         Map request=(Map)ServletActionContext.getContext().get("request");
 		
 		
-		String sql="from Novel where novelDel='no' and novelIsnottejia='no' order by novelCatelogId";
-		List novelYesTejiaList=novelDAO.getHibernateTemplate().find(sql);
-		request.put("novelYesTejiaList", novelYesTejiaList);
+		String sql="from Novel where novelDel='no' and novelIsrecommend='no' order by novelCatelogId";
+		List novelYesRecommendWeightList=novelDAO.getHibernateTemplate().find(sql);
+		request.put("novelYesRecommendWeightList", novelYesRecommendWeightList);
 		return ActionSupport.SUCCESS;
 	}
 	
@@ -521,13 +521,13 @@ public class novelAction extends ActionSupport
 	{
 		this.novelLikeNum = novelLikeNum;
 	}
-	public int getNovelTejia()
+	public int getNovelRecommendWeight()
 	{
-		return novelTejia;
+		return novelRecommendWeight;
 	}
-	public void setNovelTejia(int novelTejia)
+	public void setNovelRecommendWeight(int novelRecommendWeight)
 	{
-		this.novelTejia = novelTejia;
+		this.novelRecommendWeight = novelRecommendWeight;
 	}
 	public String getNovelYanse()
 	{

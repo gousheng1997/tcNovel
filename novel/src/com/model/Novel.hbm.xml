@@ -30,11 +30,11 @@
         <property name="novelLikeNum" type="java.lang.Integer">
             <column name="novel_like_num" />
         </property>
-        <property name="novelTejia" type="java.lang.Integer">
-            <column name="novel_tejia" />
+        <property name="novelRecommendWeight" type="java.lang.Integer">
+            <column name="novel_recommend_weight" />
         </property>
-        <property name="novelIsnottejia" type="java.lang.String">
-            <column name="novel_isnottejia" length="50" />
+        <property name="novelIsrecommend" type="java.lang.String">
+            <column name="novel_isrecommend" length="50" />
         </property>
 
         <property name="novelCatelogId" type="java.lang.Integer">

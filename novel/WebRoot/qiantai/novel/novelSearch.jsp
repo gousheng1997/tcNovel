@@ -66,11 +66,11 @@
 								  <tr align='center' bgcolor="#FFFFFF" height="22">
 									  <td><s:property value="#novel.novelName"/></td>
 									  <td>
-									      <s:if test="#novel.novelLikeNum==#novel.novelTejia">
+									      <s:if test="#novel.novelLikeNum==#novel.novelRecommendWeight">
 									          无推荐
 									      </s:if>
 									      <s:else>
-									        <s:property value="#novel.novelTejia"/>
+									        <s:property value="#novel.novelRecommendWeight"/>
 									      </s:else>
 									  </td>
 									  <td><a href="<%=path %>/novelDetail.action?novelId=<s:property value="#novel.novelId"/>"> <img src="<%=path %><s:property value="#novel.novelPic"/>" width="80" height="80" border="0"/> </a></td>

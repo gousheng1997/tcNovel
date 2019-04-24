@@ -72,7 +72,7 @@ String path = request.getContextPath();
 		            alert("请填写小说价格");
 		            return false;
 		        }
-		        if(document.formAdd.novelTejia.value=="")
+		        if(document.formAdd.novelRecommendWeight.value=="")
 		        {
 		            alert("请填写小说特价");
 		            return false;
@@ -83,7 +83,7 @@ String path = request.getContextPath();
 	</head>
 
 	<body leftmargin="2" topmargin="9" background='<%=path %>/images/allbg.gif'>
-			<form action="<%=path %>/novelNoTejiaAdd.action" name="formAdd" method="post" enctype="multipart/form-data">
+			<form action="<%=path %>/novelNoRecommendWeightAdd.action" name="formAdd" method="post" enctype="multipart/form-data">
 				     <table width="98%" align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC" style="margin-bottom:8px">
 						<tr bgcolor="#EEF4EA">
 					        <td colspan="3" background="<%=path %>/images/wbg.gif" class='title'><span>小说添加</span></td>
@@ -147,7 +147,7 @@ String path = request.getContextPath();
 						         特格：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="novelTejia" size="20" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+						        <input type="text" name="novelRecommendWeight" size="20" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
 						        (<font color="red">特格为0表示没有特价</font>)
 						    </td>
 						</tr>

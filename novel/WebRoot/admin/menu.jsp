@@ -124,7 +124,7 @@ String path = request.getContextPath();
 	        <dd style='display:block' class='sitem' id='items5_1'>
 	          <ul class='sitemu'>
 	             <li><a href='<%=path %>/catelogMana.action' target='main'>小说类别管理</a> </li>
-	             <li><a href='<%=path %>/novelManaNoTejia.action' target='main'>小说管理</a> </li>
+	             <li><a href='<%=path %>/novelManaNoRecommendWeight.action' target='main'>小说管理</a> </li>
 	          </ul>
 	        </dd>
 	      </dl>

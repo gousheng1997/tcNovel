@@ -108,14 +108,14 @@
         
         
         
-        <action name="novelNoTejiaAdd" class="novelAction" method="novelNoTejiaAdd">
+        <action name="novelNoRecommendWeightAdd" class="novelAction" method="novelNoRecommendWeightAdd">
         </action>
-        <action name="novelNoTejiaDel" class="novelAction" method="novelNoTejiaDel">
+        <action name="novelNoRecommendWeightDel" class="novelAction" method="novelNoRecommendWeightDel">
         </action>
-        <action name="novelManaNoTejia" class="novelAction" method="novelManaNoTejia">
-            <result name="success">/admin/novel/novelManaNoTejia.jsp</result>
+        <action name="novelManaNoRecommendWeight" class="novelAction" method="novelManaNoRecommendWeight">
+            <result name="success">/admin/novel/novelManaNoRecommendWeight.jsp</result>
         </action>
-        <action name="novelShezhiTejia" class="novelAction" method="novelShezhiTejia">
+        <action name="novelShezhiRecommendWeight" class="novelAction" method="novelShezhiRecommendWeight">
             <result name="success">/common/succ.jsp</result>
         </action>
         <action name="novelKucun" class="novelAction" method="novelKucun">
@@ -130,11 +130,11 @@
         <action name="novelDetail" class="novelAction" method="novelDetail">
             <result name="success">/qiantai/novel/novelDetail.jsp</result>
         </action>
-        <action name="novelAllYesTejia" class="novelAction" method="novelAllYesTejia">
-            <result name="success">/qiantai/novel/novelAllYesTejia.jsp</result>
+        <action name="novelAllYesRecommendWeight" class="novelAction" method="novelAllYesRecommendWeight">
+            <result name="success">/qiantai/novel/novelAllYesRecommendWeight.jsp</result>
         </action>
-        <action name="novelAllNoTejia" class="novelAction" method="novelAllNoTejia">
-            <result name="success">/qiantai/novel/novelAllNoTejia.jsp</result>
+        <action name="novelAllNoRecommendWeight" class="novelAction" method="novelAllNoRecommendWeight">
+            <result name="success">/qiantai/novel/novelAllNoRecommendWeight.jsp</result>
         </action>
         <action name="novelByCatelog" class="novelAction" method="novelByCatelog">
             <result name="success">/qiantai/novel/novelByCatelog.jsp</result>
