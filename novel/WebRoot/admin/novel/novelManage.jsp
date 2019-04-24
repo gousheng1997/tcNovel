@@ -123,6 +123,7 @@ String path = request.getContextPath();
 					         <a href="#" style="color: red" onclick="novelShezhiRecommendWeight(<s:property value="#novel.novelId"/>)">设为推荐</a>
 					     </s:if>
 					     <s:if test="#novel.novelIsrecommend=='yes'">
+							 <a href="#" style="color: red" onclick="novelShezhiRecommendWeight(<s:property value="#novel.novelId"/>)">更改</a>
 					        <s:property value="#novel.novelRecommendWeight"/>
 					     </s:if>
 					</td>

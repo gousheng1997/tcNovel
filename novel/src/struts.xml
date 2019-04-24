@@ -112,8 +112,8 @@
         </action>
         <action name="novelNoRecommendWeightDel" class="novelAction" method="novelNoRecommendWeightDel">
         </action>
-        <action name="novelManaNoRecommendWeight" class="novelAction" method="novelManaNoRecommendWeight">
-            <result name="success">/admin/novel/novelManaNoRecommendWeight.jsp</result>
+        <action name="novelManage" class="novelAction" method="novelManage">
+            <result name="success">/admin/novel/novelManage.jsp</result>
         </action>
         <action name="novelShezhiRecommendWeight" class="novelAction" method="novelShezhiRecommendWeight">
             <result name="success">/common/succ.jsp</result>

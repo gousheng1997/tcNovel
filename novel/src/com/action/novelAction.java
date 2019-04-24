@@ -104,9 +104,9 @@ public class novelAction extends ActionSupport
 		novel.setNovelMiaoshu(novelMiaoshu);
 		novel.setNovelPic(fujian);
 		novel.setNovelLikeNum(novelLikeNum);
-		if(novelRecommendWeight==0)//特格为0表示没有特价
+		if(novelRecommendWeight==0)//
 		{
-			novel.setNovelRecommendWeight(novelLikeNum);// 如果不是特价商品。把这个商品的特价设置为市场价格
+			novel.setNovelRecommendWeight(novelLikeNum);//
 			novel.setNovelIsrecommend("no");
 		}
 		else
@@ -120,7 +120,7 @@ public class novelAction extends ActionSupport
 		
 		novelDAO.save(novel);
 		this.setMessage("操作成功");
-		this.setPath("novelManaNoRecommendWeight.action");
+		this.setPath("novelManage.action");
 		return "succeed";
 		
 	}
@@ -131,11 +131,11 @@ public class novelAction extends ActionSupport
 		novel.setNovelDel("yes");
 		novelDAO.attachDirty(novel);
 		this.setMessage("操作成功");
-		this.setPath("novelManaNoRecommendWeight.action");
+		this.setPath("novelManage.action");
 		return "succeed";
 	}
 	
-	public String novelManaNoRecommendWeight()
+	public String novelManage()
 	{
 		String sql="from Novel where novelDel='no' order by novelIsrecommend";
 		List novelList=novelDAO.getHibernateTemplate().find(sql);
@@ -178,49 +178,7 @@ public class novelAction extends ActionSupport
 		return ActionSupport.SUCCESS;
 	}
 	
-	/*public String novelYesRecommendWeightAdd()
-	{
-		Novel novel=new Novel();
-		novel.setNovelCatelogId(novelCatelogId);
-		novel.setNovelName(novelName);
-		novel.setNovelMiaoshu(novelMiaoshu);
-		novel.setNovelPic(fujian);
-		novel.setNovelYanse(novelYanse);
-		novel.setNovelLikeNum(novelLikeNum);
-		novel.setNovelRecommendWeight(novelRecommendWeight);
-		novel.setNovelIsrecommend("yes");
-		novel.setNovelDel("no");
-		novelDAO.save(novel);
-		this.setMessage("操作成功");
-		this.setPath("novelManaYesRecommendWeight.action");
-		return "succeed";
-		
-	}
-	
-	public String novelYesRecommendWeightDel()
-	{
-		Novel novel=novelDAO.findById(novelId);
-		novel.setNovelDel("yes");
-		novelDAO.attachDirty(novel);
-		this.setMessage("操作成功");
-		this.setPath("novelManaYesRecommendWeight.action");
-		return "succeed";
-	}
-	
-	
-	public String novelManaYesRecommendWeight()
-	{
-		String sql="from Novel where novelDel='no' and novelIsrecommend='yes' order by novelCatelogId";
-		List novelList=novelDAO.getHibernateTemplate().find(sql);
-		for(int i=0;i<novelList.size();i++)
-		{
-			Novel novel=(Novel)novelList.get(i);
-			novel.setNovelCatelogName(catelogDAO.findById(novel.getNovelCatelogId()).getCatelogName());
-		}
-		Map request=(Map)ServletActionContext.getContext().get("request");
-		request.put("novelList", novelList);
-		return ActionSupport.SUCCESS;
-	}*/
+
 	
 	public String novelDetailHou()
 	{
