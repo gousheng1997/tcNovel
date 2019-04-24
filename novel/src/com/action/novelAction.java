@@ -223,12 +223,11 @@ public class novelAction extends ActionSupport
 		return ActionSupport.SUCCESS;
 	}
 	
-	
-	public String novelRecommendList()
+	//獲取推薦作品信息列表
+	public String GetRecommendNovelList()
 	{
         Map request=(Map)ServletActionContext.getContext().get("request");
-		
-		
+
 		String sql="from Novel where novelDel='no' and novelRecommendWeight >0 order by novelRecommendWeight desc";
 		List novelRecommendList=novelDAO.getHibernateTemplate().find(sql);
 		request.put("novelRecommendList", novelRecommendList);

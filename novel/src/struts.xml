@@ -130,7 +130,7 @@
         <action name="novelDetail" class="novelAction" method="novelDetail">
             <result name="success">/qiantai/novel/novelDetail.jsp</result>
         </action>
-        <action name="novelRecommendList" class="novelAction" method="novelRecommendList">
+        <action name="novelRecommendList" class="novelAction" method="GetRecommendNovelList">
             <result name="success">/qiantai/novel/novelRecommend.jsp</result>
         </action>
         <action name="novelNewest" class="novelAction" method="getNewestNovelList">
