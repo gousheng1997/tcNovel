@@ -235,8 +235,8 @@ public class novelAction extends ActionSupport
 		return ActionSupport.SUCCESS;
 	}
 	
-	
-	public String novelNewest()
+	//獲取最新作品信息列表
+	public String getNewestNovelList()
 	{
         Map request=(Map)ServletActionContext.getContext().get("request");
 		
