@@ -107,7 +107,7 @@
 							<div style="width:100%;overflow:hidden;white-space:nowrap;">
 								<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
 									<tr>
-									    <s:iterator value="#request.novelList" id="novel">
+									    <s:iterator value="#request.novelRankList" id="novel">
 										<td>
 											<table width="100%" cellpadding="0" cellspacing="0" border="0">
 												<tr>

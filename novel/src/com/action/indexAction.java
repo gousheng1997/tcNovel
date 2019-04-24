@@ -23,14 +23,14 @@ public class indexAction extends ActionSupport
 		Map request=(Map)ServletActionContext.getContext().get("request");
 
 		//ÅÅÐÐ°ñ
-		List novelList=new ArrayList();
+		List novelRankList=new ArrayList();
 		String sql="from Novel where novelDel='no'  order by novelLikeNum desc";
-		novelList=	novelDAO.getHibernateTemplate().find(sql);
-		if(novelList.size()>5)
+        novelRankList=	novelDAO.getHibernateTemplate().find(sql);
+		if(novelRankList.size()>5)
 		{
-			novelList=novelList.subList(0, 5);
+            novelRankList=novelRankList.subList(0, 5);
 		}
-		request.put("novelList", novelList);
+		request.put("novelRankList", novelRankList);
 
 		//ÍÆË]™ÚÄ¿
         sql="from Novel where novelDel='no' and novelRecommendWeight >0 order by novelRecommendWeight desc";
