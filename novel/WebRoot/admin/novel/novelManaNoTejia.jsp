@@ -92,7 +92,7 @@ String path = request.getContextPath();
 					<td width="10%">小说名称</td>
 					<td width="10%">小说描述</td>
 					<td width="10%">分类</td>
-					<td width="10%">小说封面/td>
+					<td width="10%">小说封面</td>
 					<td width="10%">小说作者</td>
 					<td width="10%">推荐设置</td>
 					<td width="10%">小说热度</td>
@@ -127,7 +127,7 @@ String path = request.getContextPath();
 					     </s:if>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					     <s:property value="#novel.novelKucun"/>
+					     <s:property value="#novel.novelLikeNum"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
 						<a href="#" onclick="novelNoTejiaDel(<s:property value="#novel.novelId"/>)" class="pn-loperator">删除</a>

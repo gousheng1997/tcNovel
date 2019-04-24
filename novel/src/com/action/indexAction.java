@@ -43,7 +43,7 @@ public class indexAction extends ActionSupport
 
 		//paihangbang
 		List novelList=new ArrayList();
-		sql="from Novel where novelDel='no'  order by novelShichangjia desc";
+		sql="from Novel where novelDel='no'  order by novelLikeNum desc";
 		 novelList=	novelDAO.getHibernateTemplate().find(sql);
 				if(novelList.size()>5)
 		{

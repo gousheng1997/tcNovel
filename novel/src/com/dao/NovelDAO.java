@@ -29,13 +29,13 @@ public class NovelDAO extends HibernateDaoSupport
 
 	public static final String NOVEL_YANSE = "novelYanse";
 
-	public static final String NOVEL_SHICHANGJIA = "novelShichangjia";
+	public static final String NOVEL_SHICHANGJIA = "novelLikeNum";
 
 	public static final String NOVEL_TEJIA = "novelTejia";
 
 	public static final String NOVEL_ISNOTTEJIA = "novelIsnottejia";
 
-	public static final String NOVEL_ISNOTTUIJIAN = "novelIsnottuijian";
+
 
 	public static final String NOVEL_CATELOG_ID = "novelCatelogId";
 
@@ -139,9 +139,9 @@ public class NovelDAO extends HibernateDaoSupport
 		return findByProperty(NOVEL_YANSE, novelYanse);
 	}
 
-	public List findByNovelShichangjia(Object novelShichangjia)
+	public List findByNovelLikeNum(Object novelLikeNum)
 	{
-		return findByProperty(NOVEL_SHICHANGJIA, novelShichangjia);
+		return findByProperty(NOVEL_SHICHANGJIA, novelLikeNum);
 	}
 
 	public List findByNovelTejia(Object novelTejia)
@@ -154,10 +154,6 @@ public class NovelDAO extends HibernateDaoSupport
 		return findByProperty(NOVEL_ISNOTTEJIA, novelIsnottejia);
 	}
 
-	public List findByNovelIsnottuijian(Object novelIsnottuijian)
-	{
-		return findByProperty(NOVEL_ISNOTTUIJIAN, novelIsnottuijian);
-	}
 
 	public List findByNovelCatelogId(Object novelCatelogId)
 	{

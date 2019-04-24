@@ -27,8 +27,8 @@
         <property name="novelYanse" type="java.lang.String">
             <column name="novel_yanse" length="50" />
         </property>
-        <property name="novelShichangjia" type="java.lang.Integer">
-            <column name="novel_shichangjia" />
+        <property name="novelLikeNum" type="java.lang.Integer">
+            <column name="novel_like_num" />
         </property>
         <property name="novelTejia" type="java.lang.Integer">
             <column name="novel_tejia" />
@@ -36,9 +36,7 @@
         <property name="novelIsnottejia" type="java.lang.String">
             <column name="novel_isnottejia" length="50" />
         </property>
-        <property name="novelIsnottuijian" type="java.lang.String">
-            <column name="novel_isnottuijian" length="50" />
-        </property>
+
         <property name="novelCatelogId" type="java.lang.Integer">
             <column name="novel_catelog_id" />
         </property>

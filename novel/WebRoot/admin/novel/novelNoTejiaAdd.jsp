@@ -67,7 +67,7 @@ String path = request.getContextPath();
 		            alert("请填写小说名称");
 		            return false;
 		        }
-		        if(document.formAdd.novelShichangjia.value=="")
+		        if(document.formAdd.novelLikeNum.value=="")
 		        {
 		            alert("请填写小说价格");
 		            return false;
@@ -139,7 +139,7 @@ String path = request.getContextPath();
 						         市场价格：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="novelShichangjia" size="20" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+						        <input type="text" name="novelLikeNum" size="20" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
 						    </td>
 						</tr>
 						<tr style="display: none" align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">

@@ -66,7 +66,7 @@
 								  <tr align='center' bgcolor="#FFFFFF" height="22">
 									  <td><s:property value="#novel.novelName"/></td>
 									  <td>
-									      <s:if test="#novel.novelShichangjia==#novel.novelTejia">
+									      <s:if test="#novel.novelLikeNum==#novel.novelTejia">
 									          无推荐
 									      </s:if>
 									      <s:else>

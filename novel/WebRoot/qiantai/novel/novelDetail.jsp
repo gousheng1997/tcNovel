@@ -78,7 +78,7 @@
                                       <tr><td width="30"></td><td style="font-size: 11px;">简介：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelMiaoshu" escape="false"/></td></tr>
                                       <tr><td width="30"></td><td style="font-size: 11px;">作者：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelAuthor"/></td></tr>
                                       <tr><td width="30"></td><td style="font-size: 11px;">类别：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelCatelogName"/></td></tr>
-                                        <tr><td width="30"></td><td style="font-size: 11px;">点赞：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelShichangjia"/></td></tr>
+                                        <tr><td width="30"></td><td style="font-size: 11px;">点赞：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelLikeNum"/></td></tr>
                                           <tr><td width="30"></td><td style="font-size: 11px;"></td><td style="font-size: 11px;"><s:property value="#request.novel.novelYanse"/></td></tr>
                                       <tr><td width="30"></td><td style="font-size: 11px;"> <a href="#" style="color: red" onclick="commentAll(<s:property value="#request.novel.novelId"/>)">查看评论</a></td>
                                       

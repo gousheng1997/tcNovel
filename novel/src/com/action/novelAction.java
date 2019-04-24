@@ -27,7 +27,7 @@ public class novelAction extends ActionSupport
 	private String novelMiaoshu;
 	private String fujian;
 	private String novelYanse;
-	private int novelShichangjia;
+	private int novelLikeNum;
 	private int novelTejia;
 	
 	private int catelogId;
@@ -103,10 +103,10 @@ public class novelAction extends ActionSupport
 		novel.setNovelName(novelName);
 		novel.setNovelMiaoshu(novelMiaoshu);
 		novel.setNovelPic(fujian);
-		novel.setNovelShichangjia(novelShichangjia);
+		novel.setNovelLikeNum(novelLikeNum);
 		if(novelTejia==0)//特格为0表示没有特价
 		{
-			novel.setNovelTejia(novelShichangjia);// 如果不是特价商品。把这个商品的特价设置为市场价格
+			novel.setNovelTejia(novelLikeNum);// 如果不是特价商品。把这个商品的特价设置为市场价格
 			novel.setNovelIsnottejia("no");
 		}
 		else
@@ -186,7 +186,7 @@ public class novelAction extends ActionSupport
 		novel.setNovelMiaoshu(novelMiaoshu);
 		novel.setNovelPic(fujian);
 		novel.setNovelYanse(novelYanse);
-		novel.setNovelShichangjia(novelShichangjia);
+		novel.setNovelLikeNum(novelLikeNum);
 		novel.setNovelTejia(novelTejia);
 		novel.setNovelIsnottejia("yes");
 		novel.setNovelDel("no");
@@ -236,7 +236,7 @@ public class novelAction extends ActionSupport
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		
 		Novel novel=novelDAO.findById(novelId);
-		novel.setNovelShichangjia(novel.getNovelShichangjia()+1);
+		novel.setNovelLikeNum(novel.getNovelLikeNum()+1);
 		novelDAO.attachDirty(novel);
 		TCatelog catelog=catelogDAO.findById(novel.getNovelCatelogId());
 		novel.setNovelCatelogName(catelog.getCatelogName());
@@ -513,13 +513,13 @@ public class novelAction extends ActionSupport
 		this.catelogDAO = catelogDAO;
 	}
 
-	public int getNovelShichangjia()
+	public int getNovelLikeNum()
 	{
-		return novelShichangjia;
+		return novelLikeNum;
 	}
-	public void setNovelShichangjia(int novelShichangjia)
+	public void setNovelLikeNum(int novelLikeNum)
 	{
-		this.novelShichangjia = novelShichangjia;
+		this.novelLikeNum = novelLikeNum;
 	}
 	public int getNovelTejia()
 	{

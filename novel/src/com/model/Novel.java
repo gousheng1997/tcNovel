@@ -20,13 +20,13 @@ public class Novel implements java.io.Serializable
 	private String novelYanse;
 	private String novelAuthor;
 
-	private Integer novelShichangjia;
+	private Integer novelLikeNum;
 
 	private Integer novelTejia;
 
 	private String novelIsnottejia;
 
-	private String novelIsnottuijian;
+
 
 	private Integer novelCatelogId;
 	
@@ -45,18 +45,18 @@ public class Novel implements java.io.Serializable
 
 	/** full constructor */
 	public Novel(String novelName, String novelMiaoshu, String novelPic,
-				 String novelYanse, Integer novelShichangjia, Integer novelTejia,
-				 String novelIsnottejia, String novelIsnottuijian,
+				 String novelYanse, Integer novelLikeNum, Integer novelTejia,
+
 				 Integer novelCatelogId)
 	{
 		this.novelName = novelName;
 		this.novelMiaoshu = novelMiaoshu;
 		this.novelPic = novelPic;
 		this.novelYanse = novelYanse;
-		this.novelShichangjia = novelShichangjia;
+		this.novelLikeNum = novelLikeNum;
 		this.novelTejia = novelTejia;
 		this.novelIsnottejia = novelIsnottejia;
-		this.novelIsnottuijian = novelIsnottuijian;
+
 		this.novelCatelogId = novelCatelogId;
 	}
 
@@ -132,14 +132,14 @@ public class Novel implements java.io.Serializable
 		this.novelYanse = novelYanse;
 	}
 
-	public Integer getNovelShichangjia()
+	public Integer getNovelLikeNum()
 	{
-		return this.novelShichangjia;
+		return this.novelLikeNum;
 	}
 
-	public void setNovelShichangjia(Integer novelShichangjia)
+	public void setNovelLikeNum(Integer novelLikeNum)
 	{
-		this.novelShichangjia = novelShichangjia;
+		this.novelLikeNum = novelLikeNum;
 	}
 
 	public Integer getNovelTejia()
@@ -170,15 +170,9 @@ public class Novel implements java.io.Serializable
 		this.novelAuthor = novelAuthor;
 	}
 
-	public String getNovelIsnottuijian()
-	{
-		return this.novelIsnottuijian;
-	}
 
-	public void setNovelIsnottuijian(String novelIsnottuijian)
-	{
-		this.novelIsnottuijian = novelIsnottuijian;
-	}
+
+
 
 	public Integer getNovelCatelogId()
 	{
