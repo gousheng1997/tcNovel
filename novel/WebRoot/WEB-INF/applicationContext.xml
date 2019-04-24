@@ -38,10 +38,9 @@
 			    <value>com/model/TUser.hbm.xml</value>
 			    <value>com/model/TCatelog.hbm.xml</value>
 			    <value>com/model/Novel.hbm.xml</value>
-			    <value>com/model/TOrderItem.hbm.xml</value>
 			    <value>com/model/Comment.hbm.xml</value>
 			    <value>com/model/zhangjie.hbm.xml</value>
-			    <value>com/model/TOrder.hbm.xml</value></list>
+			</list>
 		</property>
 	</bean>
 	
@@ -49,9 +48,6 @@
 	<bean id="indexAction" class="com.action.indexAction" scope="prototype">
 	    <property name="novelDAO">
 			<ref bean="NovelDAO" />
-		</property>
-		<property name="orderItemDAO">
-			<ref bean="TOrderItemDAO" />
 		</property>
 	</bean>
 	
@@ -83,11 +79,6 @@
 		</property>
 		<property name="userDAO">
 			<ref bean="TUserDAO" />
-		</property>
-	</bean>
-	<bean id="cartService" class="com.service.cartService">
-	    <property name="novelDAO">
-			<ref bean="NovelDAO" />
 		</property>
 	</bean>
 	
@@ -180,39 +171,4 @@
 			<ref bean="TzhangjieDAO" />
 		</property>
 	</bean>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<bean id="TOrderItemDAO" class="com.dao.TOrderItemDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="TOrderDAO" class="com.dao.TOrderDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	
-	
-	
-	
-	<bean id="buyAction" class="com.action.buyAction" scope="prototype">
-		<property name="novelDAO">
-			<ref bean="NovelDAO" />
-		</property>
-		<property name="orderDAO">
-			<ref bean="TOrderDAO" />
-		</property>
-		<property name="orderItemDAO">
-			<ref bean="TOrderItemDAO" />
-		</property>
-	</bean>
-	
 	</beans>

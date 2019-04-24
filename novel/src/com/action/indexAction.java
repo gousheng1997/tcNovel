@@ -9,14 +9,12 @@ import java.util.Map;
 import org.apache.struts2.ServletActionContext;
 
 import com.dao.NovelDAO;
-import com.dao.TOrderItemDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class indexAction extends ActionSupport
 {
 	private NovelDAO novelDAO;
-	
-	private TOrderItemDAO orderItemDAO;
+
 	
 	
 	public String index()
@@ -42,12 +40,11 @@ public class indexAction extends ActionSupport
 			novelNoTejiaList=novelNoTejiaList.subList(0, 5);
 		}
 		request.put("novelNoTejiaList", novelNoTejiaList);
-		
-		
+
 		//paihangbang
 		List novelList=new ArrayList();
 		sql="from Novel where novelDel='no'  order by novelShichangjia desc";
-		 novelList=orderItemDAO.getHibernateTemplate().find(sql);
+		 novelList=	novelDAO.getHibernateTemplate().find(sql);
 				if(novelList.size()>5)
 		{
 			novelList=novelList.subList(0, 5);
@@ -70,17 +67,4 @@ public class indexAction extends ActionSupport
 		this.novelDAO = novelDAO;
 	}
 
-
-	public TOrderItemDAO getOrderItemDAO()
-	{
-		return orderItemDAO;
-	}
-
-
-	public void setOrderItemDAO(TOrderItemDAO orderItemDAO)
-	{
-		this.orderItemDAO = orderItemDAO;
-	}
-	
-	
 }

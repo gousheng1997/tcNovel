@@ -169,42 +169,6 @@
           <action name="dianzan" class="novelAction" method="dianzan">
             <result name="success">/qiantai/novel/novelDetail.jsp</result>
         </action>
-        
-        
-        
-        <action name="testCart" class="buyAction" method="testCart">
-        </action>
-        <action name="addToCart" class="buyAction" method="addToCart">
-        </action>
-        <action name="myCart" class="buyAction" method="myCart">
-            <result name="success">/qiantai/myCart/myCart.jsp</result>
-        </action>
-        <action name="orderQueren" class="buyAction" method="orderQueren">
-            <result name="success">/qiantai/order/orderQueren.jsp</result>
-        </action>
-        <action name="orderSubmit" class="buyAction" method="orderSubmit">
-            <result name="success">/qiantai/order/orderSubmit.jsp</result>
-        </action>
-        <action name="myOrder" class="buyAction" method="myOrder">
-            <result name="success">/qiantai/order/myOrder.jsp</result>
-        </action>
-        <action name="orderDetail" class="buyAction" method="orderDetail">
-            <result name="success">/qiantai/order/orderDetail.jsp</result>
-        </action>
-        <action name="orderDel" class="buyAction" method="orderDel">
-        </action>
-        <action name="orderMana" class="buyAction" method="orderMana">
-            <result name="success">/admin/order/orderMana.jsp</result>
-        </action>
-        <action name="orderDelByAd" class="buyAction" method="orderDelByAd">
-        </action>
-        <action name="orderShouli" class="buyAction" method="orderShouli">
-        </action>
-        <action name="caiwuMana" class="buyAction" method="caiwuMana">
-            <result name="success">/admin/caiwu/caiwuMana.jsp</result>
-        </action>
-        <action name="caiwuTongji" class="buyAction" method="caiwuTongji">
-            <result name="success">/admin/caiwu/caiwuTongji.jsp</result>
-        </action>
+
     </package>
 </struts>
