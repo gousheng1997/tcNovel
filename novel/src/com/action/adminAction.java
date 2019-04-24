@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.dao.TAdminDAO;
-import com.model.TAdmin;
+import com.dao.AdminDAO;
+import com.model.Admin;
 import com.opensymphony.xwork2.ActionSupport;
 import com.util.Pagination;
 
@@ -21,12 +21,12 @@ public class adminAction extends ActionSupport
 	
 	private int index=1;
 
-	private TAdminDAO adminDAO;
+	private AdminDAO adminDAO;
 	
 	
 	public String adminAdd()
 	{
-		TAdmin admin=new TAdmin();
+		Admin admin=new Admin();
 		admin.setUserName(userName);
 		admin.setUserPw(userPw);
 		adminDAO.save(admin);
@@ -76,12 +76,12 @@ public class adminAction extends ActionSupport
 	
 	
 
-	public TAdminDAO getAdminDAO()
+	public AdminDAO getAdminDAO()
 	{
 		return adminDAO;
 	}
 
-	public void setAdminDAO(TAdminDAO adminDAO)
+	public void setAdminDAO(AdminDAO adminDAO)
 	{
 		this.adminDAO = adminDAO;
 	}

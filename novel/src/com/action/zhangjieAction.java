@@ -7,7 +7,7 @@ import java.util.Map;
 import org.apache.struts2.ServletActionContext;
 
 import com.dao.TzhangjieDAO;
-import com.model.TAdmin;
+import com.model.Admin;
 import com.model.Tzhangjie;
 import com.model.TUser;
 import com.opensymphony.xwork2.ActionContext;

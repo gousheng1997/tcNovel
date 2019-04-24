@@ -7,17 +7,17 @@ import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.model.TAdmin;
+import com.model.Admin;
 
 /**
- * Data access object (DAO) for domain model class TAdmin.
+ * Data access object (DAO) for domain model class Admin.
  * 
- * @see com.model.TAdmin
+ * @see com.model.Admin
  * @author MyEclipse Persistence Tools
  */
 
-public class TAdminDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(TAdminDAO.class);
+public class AdminDAO extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(AdminDAO.class);
 
 	// property constants
 	public static final String USER_NAME = "userName";
@@ -28,8 +28,8 @@ public class TAdminDAO extends HibernateDaoSupport {
 		// do nothing
 	}
 
-	public void save(TAdmin transientInstance) {
-		log.debug("saving TAdmin instance");
+	public void save(Admin transientInstance) {
+		log.debug("saving Admin instance");
 		try {
 			getHibernateTemplate().save(transientInstance);
 			log.debug("save successful");
@@ -39,8 +39,8 @@ public class TAdminDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void delete(TAdmin persistentInstance) {
-		log.debug("deleting TAdmin instance");
+	public void delete(Admin persistentInstance) {
+		log.debug("deleting Admin instance");
 		try {
 			getHibernateTemplate().delete(persistentInstance);
 			log.debug("delete successful");
@@ -50,11 +50,11 @@ public class TAdminDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public TAdmin findById(java.lang.Integer id) {
-		log.debug("getting TAdmin instance with id: " + id);
+	public Admin findById(java.lang.Integer id) {
+		log.debug("getting Admin instance with id: " + id);
 		try {
-			TAdmin instance = (TAdmin) getHibernateTemplate().get(
-					"com.model.TAdmin", id);
+			Admin instance = (Admin) getHibernateTemplate().get(
+					"com.model.Admin", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -62,8 +62,8 @@ public class TAdminDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByExample(TAdmin instance) {
-		log.debug("finding TAdmin instance by example");
+	public List findByExample(Admin instance) {
+		log.debug("finding Admin instance by example");
 		try {
 			List results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
@@ -76,10 +76,10 @@ public class TAdminDAO extends HibernateDaoSupport {
 	}
 
 	public List findByProperty(String propertyName, Object value) {
-		log.debug("finding TAdmin instance with property: " + propertyName
+		log.debug("finding Admin instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
-			String queryString = "from TAdmin as model where model."
+			String queryString = "from Admin as model where model."
 					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
@@ -97,9 +97,9 @@ public class TAdminDAO extends HibernateDaoSupport {
 	}
 
 	public List findAll() {
-		log.debug("finding all TAdmin instances");
+		log.debug("finding all Admin instances");
 		try {
-			String queryString = "from TAdmin";
+			String queryString = "from Admin";
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
@@ -107,10 +107,10 @@ public class TAdminDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public TAdmin merge(TAdmin detachedInstance) {
-		log.debug("merging TAdmin instance");
+	public Admin merge(Admin detachedInstance) {
+		log.debug("merging Admin instance");
 		try {
-			TAdmin result = (TAdmin) getHibernateTemplate().merge(
+			Admin result = (Admin) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -120,8 +120,8 @@ public class TAdminDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void attachDirty(TAdmin instance) {
-		log.debug("attaching dirty TAdmin instance");
+	public void attachDirty(Admin instance) {
+		log.debug("attaching dirty Admin instance");
 		try {
 			getHibernateTemplate().saveOrUpdate(instance);
 			log.debug("attach successful");
@@ -131,8 +131,8 @@ public class TAdminDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void attachClean(TAdmin instance) {
-		log.debug("attaching clean TAdmin instance");
+	public void attachClean(Admin instance) {
+		log.debug("attaching clean Admin instance");
 		try {
 			getHibernateTemplate().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
@@ -142,7 +142,7 @@ public class TAdminDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static TAdminDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (TAdminDAO) ctx.getBean("TAdminDAO");
+	public static AdminDAO getFromApplicationContext(ApplicationContext ctx) {
+		return (AdminDAO) ctx.getBean("AdminDAO");
 	}
 }

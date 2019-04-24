@@ -32,7 +32,7 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>com/model/TAdmin.hbm.xml</value>
+				<value>com/model/Admin.hbm.xml</value>
 			    <value>com/model/TLiuyan.hbm.xml</value>
 			    <value>com/model/TGonggao.hbm.xml</value>
 			    <value>com/model/TUser.hbm.xml</value>
@@ -79,7 +79,7 @@
 	<!-- 后台的登录 -->
 	<bean id="loginService" class="com.service.loginService">
 		<property name="adminDAO">
-			<ref bean="TAdminDAO" />
+			<ref bean="AdminDAO" />
 		</property>
 		<property name="userDAO">
 			<ref bean="TUserDAO" />
@@ -94,14 +94,14 @@
 	
 	
 	
-	<bean id="TAdminDAO" class="com.dao.TAdminDAO">
+	<bean id="AdminDAO" class="com.dao.AdminDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="adminAction" class="com.action.adminAction" scope="prototype">
 		<property name="adminDAO">
-			<ref bean="TAdminDAO" />
+			<ref bean="AdminDAO" />
 		</property>
 	</bean>
 	

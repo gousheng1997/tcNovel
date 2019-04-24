@@ -7,20 +7,20 @@ import javax.servlet.http.HttpSession;
 import org.directwebremoting.WebContext;
 import org.directwebremoting.WebContextFactory;
 
-import com.dao.TAdminDAO;
+import com.dao.AdminDAO;
 import com.dao.TUserDAO;
-import com.model.TAdmin;
+import com.model.Admin;
 import com.model.TUser;
 
 public class loginService
 {
-	private TAdminDAO adminDAO;
+	private AdminDAO adminDAO;
 	private TUserDAO userDAO;
-	public TAdminDAO getAdminDAO()
+	public AdminDAO getAdminDAO()
 	{
 		return adminDAO;
 	}
-	public void setAdminDAO(TAdminDAO adminDAO)
+	public void setAdminDAO(AdminDAO adminDAO)
 	{
 		this.adminDAO = adminDAO;
 	}
@@ -51,7 +51,7 @@ public class loginService
 		
 		if(userType==0)//系统管理员登陆
 		{
-			String sql="from TAdmin where userName=? and userPw=?";
+			String sql="from Admin where userName=? and userPw=?";
 			Object[] con={userName,userPw};
 			List adminList=adminDAO.getHibernateTemplate().find(sql,con);
 			if(adminList.size()==0)
@@ -62,7 +62,7 @@ public class loginService
 			{
 				 WebContext ctx = WebContextFactory.get(); 
 				 HttpSession session=ctx.getSession(); 
-				 TAdmin admin=(TAdmin)adminList.get(0);
+				 Admin admin=(Admin)adminList.get(0);
 				 session.setAttribute("userType", 0);
 	             session.setAttribute("admin", admin);
 	             result="yes";
@@ -94,7 +94,7 @@ public class loginService
 		WebContext ctx = WebContextFactory.get(); 
 		HttpSession session=ctx.getSession(); 
 		 
-		TAdmin admin=(TAdmin)session.getAttribute("admin");
+		Admin admin=(Admin)session.getAttribute("admin");
 		admin.setUserPw(userPwNew);
 		
 		adminDAO.getHibernateTemplate().update(admin);
