@@ -18,9 +18,9 @@ String path = request.getContextPath();
 		<script language="JavaScript" src="<%=path %>/js/public.js" type="text/javascript"></script>
 		
         <script language="javascript">
-           function zhangjieAdd(goodsId)
+           function zhangjieAdd(novelId)
            {
-              var url="<%=path %>/admin/zhangjie/zhangjieAdd.jsp?goodsId="+goodsId;
+              var url="<%=path %>/admin/zhangjie/zhangjieAdd.jsp?novelId="+novelId;
               window.location.href=url;
            }
            
@@ -68,7 +68,7 @@ String path = request.getContextPath();
 			<table width='98%'  border='0'style="margin-top:8px;margin-left: 5px;">
 			  <tr>
 			    <td>
-			      <input type="button" value="添加章节" style="width: 80px;" onclick="zhangjieAdd('${goodsId}')" />
+			      <input type="button" value="添加章节" style="width: 80px;" onclick="zhangjieAdd('${novelId}')" />
 			    </td>
 			  </tr>
 		    </table>

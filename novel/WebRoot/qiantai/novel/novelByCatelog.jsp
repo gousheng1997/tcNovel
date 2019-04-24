@@ -48,14 +48,23 @@
 						  	<table width="99%" border="0" cellpadding="2" cellspacing="1" bgcolor="#FFFFFF" align="center" style="margin-top:8px">
 					              <tr align="center" bgcolor="#FAFAF1" height="22">
 					                  <td>小说名称</td>
+					                  <td>推荐热度</td>
 					                  <td>小说图片</td>
 					                  <td>查看详情</td>
 					              </tr>
-								  <s:iterator value="#request.goodsYesTejiaList" id="goods">
+								  <s:iterator value="#request.novelByCatelogList" id="novel">
 								  <tr align='center' bgcolor="#FFFFFF" height="22">
-									  <td><s:property value="#goods.goodsName"/></td>
-									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"> <img src="<%=path %><s:property value="#goods.goodsPic"/>" width="80" height="80" border="0"/> </a></td>
-									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"><img alt="" src="<%=path %>/images/search.png" width="40" height="40" border="0"/></a></td>
+									  <td><s:property value="#novel.novelName"/></td>
+									  <td>
+									      <s:if test="#novel.novelShichangjia==#novel.novelTejia">
+									          无推荐
+									      </s:if>
+									      <s:else>
+									        <s:property value="#novel.novelTejia"/>
+									      </s:else>
+									  </td>
+									  <td><a href="<%=path %>/novelDetail.action?novelId=<s:property value="#novel.novelId"/>"> <img src="<%=path %><s:property value="#novel.novelPic"/>" width="80" height="80" border="0"/> </a></td>
+									  <td><a href="<%=path %>/novelDetail.action?novelId=<s:property value="#novel.novelId"/>"><img alt="" src="<%=path %>/images/search.png" width="40" height="40" border="0"/></a></td>
 								  </tr>
 								  </s:iterator>
 		        			</table>
@@ -77,7 +86,7 @@
 						</div>
 					</div>
 				</div>
-                <div class="left_row">
+               <div class="left_row">
 				    <div class="list">
 				        <div class="list_bar">小说分类</div>
 				        <div class="list_content">
@@ -94,7 +103,7 @@
 				</div> 
 				<div class="left_row">
 				    <div class="list">
-				        <div class="list_bar">网站公告</div>
+				        <div class="list_bar">资讯查看</div>
 				        <div class="list_content">
 				            <div id="div"> 
 				                   <div style="overflow:hidden;height:150px;">

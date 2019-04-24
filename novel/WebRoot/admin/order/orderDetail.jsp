@@ -49,8 +49,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		.C_Help_Title a{ background:url(<%=path %>/images/icon_sell.gif) no-repeat center;font-weight:bold;  color:#fff; height:24px;  padding-left:15px; width:175px; padding-top:5px;}
 		.C_Help_Title a,.C_Help_Title a:link,.C_Help_Title a:visited{ color:#fff;}
 		
-		.C_Goods_Title{ border:1px solid #ccc; background:url(<%=path %>/images/Bule_46.gif) repeat-x; margin-bottom:5px; height:32px;}
-		.C_Goods_Border{ border-top:4px solid #4380CC; padding-top:10px;}
+		.C_Novel_Title{ border:1px solid #ccc; background:url(<%=path %>/images/Bule_46.gif) repeat-x; margin-bottom:5px; height:32px;}
+		.C_Novel_Border{ border-top:4px solid #4380CC; padding-top:10px;}
 		.C_Item_bg{ background:url(<%=path %>/images/Bule_56.gif) repeat-y; padding:3px 8px;}
 		.C_pages{ padding:5px 10px; text-align:center;}
 		
@@ -170,10 +170,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <s:iterator value="#request.orderItemList" id="orderItem">
 		  <tr class="text" align="center" bgcolor="#FFFFFF">
 			  <td>
-				<s:property value="#orderItem.goods.goodsName"/>
+				<s:property value="#orderItem.novel.novelName"/>
 			  </td>
-			  <td><s:property value="#orderItem.goodsQuantity"/></td>
-			  <td><s:property value="#orderItem.goods.goodsTejia"/></td>
+			  <td><s:property value="#orderItem.novelQuantity"/></td>
+			  <td><s:property value="#orderItem.novel.novelTejia"/></td>
 		  </tr>
 		  </s:iterator>
   	</table>

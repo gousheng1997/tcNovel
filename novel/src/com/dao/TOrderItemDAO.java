@@ -23,9 +23,9 @@ public class TOrderItemDAO extends HibernateDaoSupport
 	// property constants
 	public static final String ORDER_ID = "orderId";
 
-	public static final String GOODS_ID = "goodsId";
+	public static final String NOVEL_ID = "novelId";
 
-	public static final String GOODS_QUANTITY = "goodsQuantity";
+	public static final String NOVEL_QUANTITY = "novelQuantity";
 
 	protected void initDao()
 	{
@@ -112,14 +112,14 @@ public class TOrderItemDAO extends HibernateDaoSupport
 		return findByProperty(ORDER_ID, orderId);
 	}
 
-	public List findByGoodsId(Object goodsId)
+	public List findByNovelId(Object novelId)
 	{
-		return findByProperty(GOODS_ID, goodsId);
+		return findByProperty(NOVEL_ID, novelId);
 	}
 
-	public List findByGoodsQuantity(Object goodsQuantity)
+	public List findByNovelQuantity(Object novelQuantity)
 	{
-		return findByProperty(GOODS_QUANTITY, goodsQuantity);
+		return findByProperty(NOVEL_QUANTITY, novelQuantity);
 	}
 
 	public List findAll()

@@ -54,7 +54,7 @@
 					                  <td>小说图片</td>
 					                  <td>查看詳情</td>
 					              </tr>
-								<c:if test="${request.goodsList== null || fn:length(request.goodsList) == 0}">
+								<c:if test="${request.novelList== null || fn:length(request.novelList) == 0}">
 									<tr>
 										<td></td>
 										<td></td>
@@ -62,19 +62,19 @@
 									</tr>
 								</c:if>
 
-								  <s:iterator value="#request.goodsList" id="goods">
+								  <s:iterator value="#request.novelList" id="novel">
 								  <tr align='center' bgcolor="#FFFFFF" height="22">
-									  <td><s:property value="#goods.goodsName"/></td>
+									  <td><s:property value="#novel.novelName"/></td>
 									  <td>
-									      <s:if test="#goods.goodsShichangjia==#goods.goodsTejia">
+									      <s:if test="#novel.novelShichangjia==#novel.novelTejia">
 									          无推荐
 									      </s:if>
 									      <s:else>
-									        <s:property value="#goods.goodsTejia"/>
+									        <s:property value="#novel.novelTejia"/>
 									      </s:else>
 									  </td>
-									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"> <img src="<%=path %><s:property value="#goods.goodsPic"/>" width="80" height="80" border="0"/> </a></td>
-									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"><img alt="" src="<%=path %>/images/search.png"  width="40" height="40" border="0"/> </a></td>
+									  <td><a href="<%=path %>/novelDetail.action?novelId=<s:property value="#novel.novelId"/>"> <img src="<%=path %><s:property value="#novel.novelPic"/>" width="80" height="80" border="0"/> </a></td>
+									  <td><a href="<%=path %>/novelDetail.action?novelId=<s:property value="#novel.novelId"/>"><img alt="" src="<%=path %>/images/search.png"  width="40" height="40" border="0"/> </a></td>
 								  </tr>
 								  </s:iterator>
 		        			</table>

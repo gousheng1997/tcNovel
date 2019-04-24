@@ -9,32 +9,32 @@ public class Novel implements java.io.Serializable
 
 	// Fields
 
-	private Integer goodsId;
+	private Integer novelId;
 
-	private String goodsName;
+	private String novelName;
 
-	private String goodsMiaoshu;
+	private String novelMiaoshu;
 
-	private String goodsPic;
+	private String novelPic;
 
-	private String goodsYanse;
-	private String goodsAuthor;
+	private String novelYanse;
+	private String novelAuthor;
 
-	private Integer goodsShichangjia;
+	private Integer novelShichangjia;
 
-	private Integer goodsTejia;
+	private Integer novelTejia;
 
-	private String goodsIsnottejia;
+	private String novelIsnottejia;
 
-	private String goodsIsnottuijian;
+	private String novelIsnottuijian;
 
-	private Integer goodsCatelogId;
+	private Integer novelCatelogId;
 	
-	private String goodsKucun;
+	private String novelKucun;
 	
-	private String goodsDel;
+	private String novelDel;
 	
-	private String goodsCatelogName;//数据库表没有，自己添加的
+	private String novelCatelogName;//数据库表没有，自己添加的
 
 	// Constructors
 
@@ -44,160 +44,160 @@ public class Novel implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Novel(String goodsName, String goodsMiaoshu, String goodsPic,
-				 String goodsYanse, Integer goodsShichangjia, Integer goodsTejia,
-				 String goodsIsnottejia, String goodsIsnottuijian,
-				 Integer goodsCatelogId)
+	public Novel(String novelName, String novelMiaoshu, String novelPic,
+				 String novelYanse, Integer novelShichangjia, Integer novelTejia,
+				 String novelIsnottejia, String novelIsnottuijian,
+				 Integer novelCatelogId)
 	{
-		this.goodsName = goodsName;
-		this.goodsMiaoshu = goodsMiaoshu;
-		this.goodsPic = goodsPic;
-		this.goodsYanse = goodsYanse;
-		this.goodsShichangjia = goodsShichangjia;
-		this.goodsTejia = goodsTejia;
-		this.goodsIsnottejia = goodsIsnottejia;
-		this.goodsIsnottuijian = goodsIsnottuijian;
-		this.goodsCatelogId = goodsCatelogId;
+		this.novelName = novelName;
+		this.novelMiaoshu = novelMiaoshu;
+		this.novelPic = novelPic;
+		this.novelYanse = novelYanse;
+		this.novelShichangjia = novelShichangjia;
+		this.novelTejia = novelTejia;
+		this.novelIsnottejia = novelIsnottejia;
+		this.novelIsnottuijian = novelIsnottuijian;
+		this.novelCatelogId = novelCatelogId;
 	}
 
 	// Property accessors
 
-	public Integer getGoodsId()
+	public Integer getNovelId()
 	{
-		return this.goodsId;
+		return this.novelId;
 	}
 
-	public String getGoodsDel()
+	public String getNovelDel()
 	{
-		return goodsDel;
+		return novelDel;
 	}
 
-	public String getGoodsKucun()
+	public String getNovelKucun()
 	{
-		return goodsKucun;
+		return novelKucun;
 	}
 
-	public void setGoodsKucun(String goodsKucun)
+	public void setNovelKucun(String novelKucun)
 	{
-		this.goodsKucun = goodsKucun;
+		this.novelKucun = novelKucun;
 	}
 
-	public void setGoodsDel(String goodsDel)
+	public void setNovelDel(String novelDel)
 	{
-		this.goodsDel = goodsDel;
+		this.novelDel = novelDel;
 	}
 
-	public void setGoodsId(Integer goodsId)
+	public void setNovelId(Integer novelId)
 	{
-		this.goodsId = goodsId;
+		this.novelId = novelId;
 	}
 
-	public String getGoodsName()
+	public String getNovelName()
 	{
-		return this.goodsName;
+		return this.novelName;
 	}
 
-	public void setGoodsName(String goodsName)
+	public void setNovelName(String novelName)
 	{
-		this.goodsName = goodsName;
+		this.novelName = novelName;
 	}
 
-	public String getGoodsMiaoshu()
+	public String getNovelMiaoshu()
 	{
-		return this.goodsMiaoshu;
+		return this.novelMiaoshu;
 	}
 
-	public void setGoodsMiaoshu(String goodsMiaoshu)
+	public void setNovelMiaoshu(String novelMiaoshu)
 	{
-		this.goodsMiaoshu = goodsMiaoshu;
+		this.novelMiaoshu = novelMiaoshu;
 	}
 
-	public String getGoodsPic()
+	public String getNovelPic()
 	{
-		return this.goodsPic;
+		return this.novelPic;
 	}
 
-	public void setGoodsPic(String goodsPic)
+	public void setNovelPic(String novelPic)
 	{
-		this.goodsPic = goodsPic;
+		this.novelPic = novelPic;
 	}
 
-	public String getGoodsYanse()
+	public String getNovelYanse()
 	{
-		return this.goodsYanse;
+		return this.novelYanse;
 	}
 
-	public void setGoodsYanse(String goodsYanse)
+	public void setNovelYanse(String novelYanse)
 	{
-		this.goodsYanse = goodsYanse;
+		this.novelYanse = novelYanse;
 	}
 
-	public Integer getGoodsShichangjia()
+	public Integer getNovelShichangjia()
 	{
-		return this.goodsShichangjia;
+		return this.novelShichangjia;
 	}
 
-	public void setGoodsShichangjia(Integer goodsShichangjia)
+	public void setNovelShichangjia(Integer novelShichangjia)
 	{
-		this.goodsShichangjia = goodsShichangjia;
+		this.novelShichangjia = novelShichangjia;
 	}
 
-	public Integer getGoodsTejia()
+	public Integer getNovelTejia()
 	{
-		return this.goodsTejia;
+		return this.novelTejia;
 	}
 
-	public void setGoodsTejia(Integer goodsTejia)
+	public void setNovelTejia(Integer novelTejia)
 	{
-		this.goodsTejia = goodsTejia;
+		this.novelTejia = novelTejia;
 	}
 
-	public String getGoodsIsnottejia()
+	public String getNovelIsnottejia()
 	{
-		return this.goodsIsnottejia;
+		return this.novelIsnottejia;
 	}
 
-	public void setGoodsIsnottejia(String goodsIsnottejia)
+	public void setNovelIsnottejia(String novelIsnottejia)
 	{
-		this.goodsIsnottejia = goodsIsnottejia;
+		this.novelIsnottejia = novelIsnottejia;
 	}
 
-	public String getGoodsAuthor() {
-		return goodsAuthor;
+	public String getNovelAuthor() {
+		return novelAuthor;
 	}
 
-	public void setGoodsAuthor(String goodsAuthor) {
-		this.goodsAuthor = goodsAuthor;
+	public void setNovelAuthor(String novelAuthor) {
+		this.novelAuthor = novelAuthor;
 	}
 
-	public String getGoodsIsnottuijian()
+	public String getNovelIsnottuijian()
 	{
-		return this.goodsIsnottuijian;
+		return this.novelIsnottuijian;
 	}
 
-	public void setGoodsIsnottuijian(String goodsIsnottuijian)
+	public void setNovelIsnottuijian(String novelIsnottuijian)
 	{
-		this.goodsIsnottuijian = goodsIsnottuijian;
+		this.novelIsnottuijian = novelIsnottuijian;
 	}
 
-	public Integer getGoodsCatelogId()
+	public Integer getNovelCatelogId()
 	{
-		return this.goodsCatelogId;
+		return this.novelCatelogId;
 	}
 
-	public void setGoodsCatelogId(Integer goodsCatelogId)
+	public void setNovelCatelogId(Integer novelCatelogId)
 	{
-		this.goodsCatelogId = goodsCatelogId;
+		this.novelCatelogId = novelCatelogId;
 	}
 
-	public String getGoodsCatelogName()
+	public String getNovelCatelogName()
 	{
-		return goodsCatelogName;
+		return novelCatelogName;
 	}
 
-	public void setGoodsCatelogName(String goodsCatelogName)
+	public void setNovelCatelogName(String novelCatelogName)
 	{
-		this.goodsCatelogName = goodsCatelogName;
+		this.novelCatelogName = novelCatelogName;
 	}
 
 }

@@ -86,11 +86,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</ul>
 
 		</div>
-		<form id="searchForm" action="<%=path %>/goodSearch.action" method="post">
+		<form id="searchForm" action="<%=path %>/novelSearch.action" method="post">
 			<div class="topsearch">
 				<div class="title"></div>
 				<div id="page_search_left">
-					<input class="inputText" id="goodsName" size="16" onkeypress="if(event.keyCode==13){searchFormSubmit();return false;}" name="goodsName" type="text" />
+					<input class="inputText" id="novelName" size="16" onkeypress="if(event.keyCode==13){searchFormSubmit();return false;}" name="novelName" type="text" />
 				</div>
 				<div id="page_search_btn">
 					<input type="submit" value="搜索">

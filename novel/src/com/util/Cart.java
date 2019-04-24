@@ -21,34 +21,34 @@ public class Cart
 		}
 	}
 
-	public void addGoods(Integer goodsId, TOrderItem orderItem)
+	public void addNovel(Integer novelId, TOrderItem orderItem)
 	{
 
-		if (items.containsKey(goodsId))
+		if (items.containsKey(novelId))
 		{
 
-			TOrderItem _orderitem = items.get(goodsId);
-			_orderitem.setGoodsQuantity(_orderitem.getGoodsQuantity()+ orderItem.getGoodsQuantity());
-			items.put(goodsId, _orderitem);
+			TOrderItem _orderitem = items.get(novelId);
+			_orderitem.setNovelQuantity(_orderitem.getNovelQuantity()+ orderItem.getNovelQuantity());
+			items.put(novelId, _orderitem);
 		} else
 		{
 
-			items.put(goodsId, orderItem);
+			items.put(novelId, orderItem);
 		}
 	}
 	
-	public void delGoods(Integer goodsId)
+	public void delNovel(Integer novelId)
 	{
-		items.remove(goodsId);
+		items.remove(novelId);
 	}
 	
 
-	public void updateCart(Integer goodsId, int quantity)
+	public void updateCart(Integer novelId, int quantity)
 	{
 
-		TOrderItem orderItem = items.get(goodsId);
-		orderItem.setGoodsQuantity(quantity);
-		items.put(goodsId, orderItem);
+		TOrderItem orderItem = items.get(novelId);
+		orderItem.setNovelQuantity(quantity);
+		items.put(novelId, orderItem);
 	}
 
 	public int getTotalPrice()
@@ -59,9 +59,9 @@ public class Cart
 		{
 
 			TOrderItem orderItem = (TOrderItem) it.next();
-			Novel goods = orderItem.getGoods();
-			int quantity = orderItem.getGoodsQuantity();
-			totalPrice += goods.getGoodsTejia() * quantity;
+			Novel novel = orderItem.getNovel();
+			int quantity = orderItem.getNovelQuantity();
+			totalPrice += novel.getNovelTejia() * quantity;
 		}
 		return totalPrice;
 	}

@@ -25,7 +25,7 @@ String path = request.getContextPath();
         
         <script language="javascript">
             var i=0;
-		    function goodsCatelogSelect()
+		    function novelCatelogSelect()
 		    {
 		        if(i==0)
 		        {
@@ -39,9 +39,9 @@ String path = request.getContextPath();
 		    function callback(data)
 			{
 			    document.getElementById("indicator").style.display="none";
-			    //document.getElementById("goodsCatelogId1").style.display="none";
-			    DWRUtil.addOptions("goodsCatelogId",data,"catelogId","catelogName");
-			    //document.getElementById("goodsCatelogId").style.display="block";
+			    //document.getElementById("novelCatelogId1").style.display="none";
+			    DWRUtil.addOptions("novelCatelogId",data,"catelogId","catelogName");
+			    //document.getElementById("novelCatelogId").style.display="block";
 			}
 			
 			function up()
@@ -57,22 +57,22 @@ String path = request.getContextPath();
 		    
 		    function check()
 		    {
-		        if(document.formAdd.goodsCatelogId.value==0)
+		        if(document.formAdd.novelCatelogId.value==0)
 		        {
 		            alert("请选择类别");
 		            return false;
 		        }
-		        if(document.formAdd.goodsName.value=="")
+		        if(document.formAdd.novelName.value=="")
 		        {
 		            alert("请填写小说名称");
 		            return false;
 		        }
-		        if(document.formAdd.goodsShichangjia.value=="")
+		        if(document.formAdd.novelShichangjia.value=="")
 		        {
 		            alert("请填写小说价格");
 		            return false;
 		        }
-		        if(document.formAdd.goodsTejia.value=="")
+		        if(document.formAdd.novelTejia.value=="")
 		        {
 		            alert("请填写小说特价");
 		            return false;
@@ -83,7 +83,7 @@ String path = request.getContextPath();
 	</head>
 
 	<body leftmargin="2" topmargin="9" background='<%=path %>/images/allbg.gif'>
-			<form action="<%=path %>/goodsNoTejiaAdd.action" name="formAdd" method="post" enctype="multipart/form-data">
+			<form action="<%=path %>/novelNoTejiaAdd.action" name="formAdd" method="post" enctype="multipart/form-data">
 				     <table width="98%" align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC" style="margin-bottom:8px">
 						<tr bgcolor="#EEF4EA">
 					        <td colspan="3" background="<%=path %>/images/wbg.gif" class='title'><span>小说添加</span></td>
@@ -96,7 +96,7 @@ String path = request.getContextPath();
 						        <table>
 						           <tr>
 						               <td>
-						                  <select name="goodsCatelogId" id="goodsCatelogId" onclick="goodsCatelogSelect()">
+						                  <select name="novelCatelogId" id="novelCatelogId" onclick="novelCatelogSelect()">
 								             <option value="0">--请选择小说类别--</option>
 								          </select>
 						               </td>
@@ -112,7 +112,7 @@ String path = request.getContextPath();
 						         小说名称：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="goodsName" size="20"/>
+						        <input type="text" name="novelName" size="20"/>
 						    </td>
 						</tr>
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
@@ -120,7 +120,7 @@ String path = request.getContextPath();
 						        小说描述：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <FCK:editor instanceName="goodsMiaoshu"  basePath="/fckeditor" width="500" height="200" value="请输入内容" toolbarSet="Basic">
+						        <FCK:editor instanceName="novelMiaoshu"  basePath="/fckeditor" width="500" height="200" value="请输入内容" toolbarSet="Basic">
                                 </FCK:editor>
 						    </td>
 						</tr>
@@ -139,7 +139,7 @@ String path = request.getContextPath();
 						         市场价格：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="goodsShichangjia" size="20" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+						        <input type="text" name="novelShichangjia" size="20" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
 						    </td>
 						</tr>
 						<tr style="display: none" align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
@@ -147,7 +147,7 @@ String path = request.getContextPath();
 						         特格：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="goodsTejia" size="20" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+						        <input type="text" name="novelTejia" size="20" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
 						        (<font color="red">特格为0表示没有特价</font>)
 						    </td>
 						</tr>
@@ -156,7 +156,7 @@ String path = request.getContextPath();
 						         商家电话：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="goodsKucun" size="20" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+						        <input type="text" name="novelKucun" size="20" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
 						    </td>
 						</tr>
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">

@@ -108,66 +108,66 @@
         
         
         
-        <action name="goodsNoTejiaAdd" class="goodsAction" method="goodsNoTejiaAdd">
+        <action name="novelNoTejiaAdd" class="novelAction" method="novelNoTejiaAdd">
         </action>
-        <action name="goodsNoTejiaDel" class="goodsAction" method="goodsNoTejiaDel">
+        <action name="novelNoTejiaDel" class="novelAction" method="novelNoTejiaDel">
         </action>
-        <action name="goodsManaNoTejia" class="goodsAction" method="goodsManaNoTejia">
-            <result name="success">/admin/goods/goodsManaNoTejia.jsp</result>
+        <action name="novelManaNoTejia" class="novelAction" method="novelManaNoTejia">
+            <result name="success">/admin/novel/novelManaNoTejia.jsp</result>
         </action>
-        <action name="goodsShezhiTejia" class="goodsAction" method="goodsShezhiTejia">
+        <action name="novelShezhiTejia" class="novelAction" method="novelShezhiTejia">
             <result name="success">/common/succ.jsp</result>
         </action>
-        <action name="goodsKucun" class="goodsAction" method="goodsKucun">
-            <result name="success">/admin/goods/goodsKuncun.jsp</result>
+        <action name="novelKucun" class="novelAction" method="novelKucun">
+            <result name="success">/admin/novel/novelKuncun.jsp</result>
         </action>
-        <action name="goodsRuku" class="goodsAction" method="goodsRuku">
+        <action name="novelRuku" class="novelAction" method="novelRuku">
             <result name="success">/common/succ.jsp</result>
         </action>
-        <action name="goodsDetailHou" class="goodsAction" method="goodsDetailHou">
-            <result name="success">/admin/goods/goodsDetailHou.jsp</result>
+        <action name="novelDetailHou" class="novelAction" method="novelDetailHou">
+            <result name="success">/admin/novel/novelDetailHou.jsp</result>
         </action>
-        <action name="goodsDetail" class="goodsAction" method="goodsDetail">
-            <result name="success">/qiantai/goods/goodsDetail.jsp</result>
+        <action name="novelDetail" class="novelAction" method="novelDetail">
+            <result name="success">/qiantai/novel/novelDetail.jsp</result>
         </action>
-        <action name="goodsAllYesTejia" class="goodsAction" method="goodsAllYesTejia">
-            <result name="success">/qiantai/goods/goodsAllYesTejia.jsp</result>
+        <action name="novelAllYesTejia" class="novelAction" method="novelAllYesTejia">
+            <result name="success">/qiantai/novel/novelAllYesTejia.jsp</result>
         </action>
-        <action name="goodsAllNoTejia" class="goodsAction" method="goodsAllNoTejia">
-            <result name="success">/qiantai/goods/goodsAllNoTejia.jsp</result>
+        <action name="novelAllNoTejia" class="novelAction" method="novelAllNoTejia">
+            <result name="success">/qiantai/novel/novelAllNoTejia.jsp</result>
         </action>
-        <action name="goodsByCatelog" class="goodsAction" method="goodsByCatelog">
-            <result name="success">/qiantai/goods/goodsByCatelog.jsp</result>
+        <action name="novelByCatelog" class="novelAction" method="novelByCatelog">
+            <result name="success">/qiantai/novel/novelByCatelog.jsp</result>
         </action>
-        <action name="goodSearch" class="goodsAction" method="goodSearch">
-            <result name="success">/qiantai/goods/goodSearch.jsp</result>
+        <action name="novelSearch" class="novelAction" method="novelSearch">
+            <result name="success">/qiantai/novel/novelSearch.jsp</result>
         </action>
-         <action name="commentAdd" class="goodsAction" method="commentAdd">
+         <action name="commentAdd" class="novelAction" method="commentAdd">
         </action>
-        <action name="commentAll" class="goodsAction" method="commentAll">
-             <result name="success">/qiantai/goods/commentAll.jsp</result>
+        <action name="commentAll" class="novelAction" method="commentAll">
+             <result name="success">/qiantai/novel/commentAll.jsp</result>
         </action>
-        <action name="commentMana" class="goodsAction" method="commentMana">
-             <result name="success">/admin/goods/commentMana.jsp</result>
+        <action name="commentMana" class="novelAction" method="commentMana">
+             <result name="success">/admin/novel/commentMana.jsp</result>
         </action>
-        <action name="commentDel" class="goodsAction" method="commentDel">
+        <action name="commentDel" class="novelAction" method="commentDel">
         </action>
-        <action name="zhangjieMana" class="goodsAction" method="zhangjieMana">
+        <action name="zhangjieMana" class="novelAction" method="zhangjieMana">
              <result name="success">/admin/zhangjie/zhangjieMana.jsp</result>
         </action>
-          <action name="zhangjieAdd" class="goodsAction" method="zhangjieAdd">
+          <action name="zhangjieAdd" class="novelAction" method="zhangjieAdd">
         </action>
-          <action name="zhangjieDel" class="goodsAction" method="zhangjieDel">
+          <action name="zhangjieDel" class="novelAction" method="zhangjieDel">
         </action>
-         <action name="zhangjieDetail" class="goodsAction" method="zhangjieDetail">
+         <action name="zhangjieDetail" class="novelAction" method="zhangjieDetail">
             <result>/admin/zhangjie/zhangjieDetail.jsp</result>
         </action>
-         <action name="zhangjieDetailQiantai" class="goodsAction" method="zhangjieDetailQiantai">
-            <result>/qiantai/goods/zhangjieDetailQiantai.jsp</result>
+         <action name="zhangjieDetailQiantai" class="novelAction" method="zhangjieDetailQiantai">
+            <result>/qiantai/novel/zhangjieDetailQiantai.jsp</result>
         </action>
         
-          <action name="dianzan" class="goodsAction" method="dianzan">
-            <result name="success">/qiantai/goods/goodsDetail.jsp</result>
+          <action name="dianzan" class="novelAction" method="dianzan">
+            <result name="success">/qiantai/novel/novelDetail.jsp</result>
         </action>
         
         

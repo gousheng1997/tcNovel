@@ -28,15 +28,15 @@ String path = request.getContextPath();
         </script>
 	</head>
 <%
-String goodsId=request.getParameter("goodsId");
+String novelId=request.getParameter("novelId");
 
 %>
 	<body leftmargin="2" topmargin="9" background='<%=path %>/images/allbg.gif'>
 			<form action="<%=path %>/zhangjieAdd.action" name="formAdd" method="post">
 				     <table width="98%" align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC" style="margin-bottom:8px">
-				     <input type="hidden" name="goodsId" value="<%=goodsId%>"/>
+				     <input type="hidden" name="novelId" value="<%=novelId%>"/>
 						<tr bgcolor="#EEF4EA">
-					        <td colspan="3" background="<%=path %>/images/wbg.gif" class='title'><span>添加章节<%=goodsId%></span></td>
+					        <td colspan="3" background="<%=path %>/images/wbg.gif" class='title'><span>添加章节<%=novelId%></span></td>
 					    </tr>
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						    <td width="25%" bgcolor="#FFFFFF" align="right">

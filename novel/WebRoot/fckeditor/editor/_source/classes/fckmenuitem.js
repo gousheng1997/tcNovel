@@ -105,7 +105,7 @@ FCKMenuItem.prototype.Activate = function()
 	if ( this.HasSubMenu )
 	{
 		// Show the child menu block. The ( +2, -2 ) correction is done because
-		// of the padding in the skin. It is not a good solution because one
+		// of the padding in the skin. It is not a novel solution because one
 		// could change the skin and so the final result would not be accurate.
 		// For now it is ok because we are controlling the skin.
 		this.SubMenu.Show( this.MainElement.offsetWidth + 2, -2, this.MainElement ) ;

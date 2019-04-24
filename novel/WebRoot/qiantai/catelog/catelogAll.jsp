@@ -19,7 +19,7 @@
 		             <td height="28" id="roll-line-1607838439" width="100%">
 		                <div class="" style="padding:2px 0px;">
 		                   <div class="f-left"><img src="<%=path %>/img/head-mark3.gif" align="middle" class="img-vm" border="0"/> 
-		                      <a href="<%=path %>/goodsByCatelog.action?catelogId=<s:property value="#catelog.catelogId"/>">
+		                      <a href="<%=path %>/novelByCatelog.action?catelogId=<s:property value="#catelog.catelogId"/>">
 		                         <span style=""><s:property value="#catelog.catelogName"/></span>
 		                      </a>
 		                   </div>

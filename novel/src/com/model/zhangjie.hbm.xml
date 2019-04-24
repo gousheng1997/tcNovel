@@ -19,8 +19,8 @@
         <property name="zhangjiename" type="java.lang.String">
             <column name="zhangjiename" />
         </property>
-       <property name="goodsId" type="java.lang.Integer">
-            <column name="goods_id" />
+       <property name="novelId" type="java.lang.Integer">
+            <column name="novel_id" />
         </property>
     </class>
 </hibernate-mapping>

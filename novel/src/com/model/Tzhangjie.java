@@ -17,7 +17,7 @@ public class Tzhangjie implements java.io.Serializable
 	
 	private String zhangjiename;
 	
-	private Integer goodsId;
+	private Integer novelId;
 
 	public Integer getId() {
 		return id;
@@ -51,12 +51,12 @@ public class Tzhangjie implements java.io.Serializable
 		this.zhangjiename = zhangjiename;
 	}
 
-	public Integer getGoodsId() {
-		return goodsId;
+	public Integer getNovelId() {
+		return novelId;
 	}
 
-	public void setGoodsId(Integer goodsId) {
-		this.goodsId = goodsId;
+	public void setNovelId(Integer novelId) {
+		this.novelId = novelId;
 	}
 
 	// Constructors

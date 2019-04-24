@@ -19,24 +19,24 @@ import com.model.Tzhangjie;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class goodsAction extends ActionSupport
+public class novelAction extends ActionSupport
 {
-	private int goodsId;
-	private int goodsCatelogId;
-	private String goodsName;
-	private String goodsMiaoshu;
+	private int novelId;
+	private int novelCatelogId;
+	private String novelName;
+	private String novelMiaoshu;
 	private String fujian;
-	private String goodsYanse;
-	private int goodsShichangjia;
-	private int goodsTejia;
+	private String novelYanse;
+	private int novelShichangjia;
+	private int novelTejia;
 	
 	private int catelogId;
-	private String goodsKucun;
+	private String novelKucun;
 	
 	private String message;
 	private String path;
 	
-	private NovelDAO goodsDAO;
+	private NovelDAO novelDAO;
 	private TCatelogDAO catelogDAO;
 	private CommentDAO commentDAO;
 	private int rukushuliang;
@@ -96,138 +96,138 @@ public class goodsAction extends ActionSupport
 	//评论end
 	
 	
-	public String goodsNoTejiaAdd()
+	public String novelNoTejiaAdd()
 	{
-		Novel goods=new Novel();
-		goods.setGoodsCatelogId(goodsCatelogId);
-		goods.setGoodsName(goodsName);
-		goods.setGoodsMiaoshu(goodsMiaoshu);
-		goods.setGoodsPic(fujian);
-		goods.setGoodsShichangjia(goodsShichangjia);
-		if(goodsTejia==0)//特格为0表示没有特价
+		Novel novel=new Novel();
+		novel.setNovelCatelogId(novelCatelogId);
+		novel.setNovelName(novelName);
+		novel.setNovelMiaoshu(novelMiaoshu);
+		novel.setNovelPic(fujian);
+		novel.setNovelShichangjia(novelShichangjia);
+		if(novelTejia==0)//特格为0表示没有特价
 		{
-			goods.setGoodsTejia(goodsShichangjia);// 如果不是特价商品。把这个商品的特价设置为市场价格
-			goods.setGoodsIsnottejia("no");
+			novel.setNovelTejia(novelShichangjia);// 如果不是特价商品。把这个商品的特价设置为市场价格
+			novel.setNovelIsnottejia("no");
 		}
 		else
 		{
-			goods.setGoodsTejia(goodsTejia);
-			goods.setGoodsIsnottejia("yes");
+			novel.setNovelTejia(novelTejia);
+			novel.setNovelIsnottejia("yes");
 		}
 		
-		goods.setGoodsKucun(goodsKucun);
-		goods.setGoodsDel("no");
+		novel.setNovelKucun(novelKucun);
+		novel.setNovelDel("no");
 		
-		goodsDAO.save(goods);
+		novelDAO.save(novel);
 		this.setMessage("操作成功");
-		this.setPath("goodsManaNoTejia.action");
+		this.setPath("novelManaNoTejia.action");
 		return "succeed";
 		
 	}
 	
-	public String goodsNoTejiaDel()
+	public String novelNoTejiaDel()
 	{
-		Novel goods=goodsDAO.findById(goodsId);
-		goods.setGoodsDel("yes");
-		goodsDAO.attachDirty(goods);
+		Novel novel=novelDAO.findById(novelId);
+		novel.setNovelDel("yes");
+		novelDAO.attachDirty(novel);
 		this.setMessage("操作成功");
-		this.setPath("goodsManaNoTejia.action");
+		this.setPath("novelManaNoTejia.action");
 		return "succeed";
 	}
 	
-	public String goodsManaNoTejia()
+	public String novelManaNoTejia()
 	{
-		String sql="from Novel where goodsDel='no' order by goodsIsnottejia";
-		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
-		for(int i=0;i<goodsList.size();i++)
+		String sql="from Novel where novelDel='no' order by novelIsnottejia";
+		List novelList=novelDAO.getHibernateTemplate().find(sql);
+		for(int i=0;i<novelList.size();i++)
 		{
-			Novel goods=(Novel)goodsList.get(i);
-			System.out.println(goods.getGoodsCatelogId());
-			goods.setGoodsCatelogName(catelogDAO.findById(goods.getGoodsCatelogId()).getCatelogName());
+			Novel novel=(Novel)novelList.get(i);
+			System.out.println(novel.getNovelCatelogId());
+			novel.setNovelCatelogName(catelogDAO.findById(novel.getNovelCatelogId()).getCatelogName());
 		}
 		Map request=(Map)ServletActionContext.getContext().get("request");
-		request.put("goodsList", goodsList);
+		request.put("novelList", novelList);
 		return ActionSupport.SUCCESS;
 	}
 	
-	public String goodsShezhiTejia()
+	public String novelShezhiTejia()
 	{
-		Novel goods=goodsDAO.findById(goodsId);
-		goods.setGoodsIsnottejia("yes");
-		goods.setGoodsTejia(goodsTejia);
-		goodsDAO.attachDirty(goods);
+		Novel novel=novelDAO.findById(novelId);
+		novel.setNovelIsnottejia("yes");
+		novel.setNovelTejia(novelTejia);
+		novelDAO.attachDirty(novel);
 		return ActionSupport.SUCCESS;
 	}
 	
 	
-	public String goodsKucun()
+	public String novelKucun()
 	{
-		String sql="from Novel where goodsDel='no' order by goodsIsnottejia";
-		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
+		String sql="from Novel where novelDel='no' order by novelIsnottejia";
+		List novelList=novelDAO.getHibernateTemplate().find(sql);
 		Map request=(Map)ServletActionContext.getContext().get("request");
-		request.put("goodsList", goodsList);
+		request.put("novelList", novelList);
 		return ActionSupport.SUCCESS;
 	}
 	
-	public String goodsRuku()
+	public String novelRuku()
 	{
-		Novel goods=goodsDAO.findById(goodsId);
-		goods.setGoodsKucun(goods.getGoodsKucun()+rukushuliang);
-		goods.setGoodsTejia(goodsTejia);
-		goodsDAO.attachDirty(goods);
+		Novel novel=novelDAO.findById(novelId);
+		novel.setNovelKucun(novel.getNovelKucun()+rukushuliang);
+		novel.setNovelTejia(novelTejia);
+		novelDAO.attachDirty(novel);
 		return ActionSupport.SUCCESS;
 	}
 	
-	/*public String goodsYesTejiaAdd()
+	/*public String novelYesTejiaAdd()
 	{
-		Novel goods=new Novel();
-		goods.setGoodsCatelogId(goodsCatelogId);
-		goods.setGoodsName(goodsName);
-		goods.setGoodsMiaoshu(goodsMiaoshu);
-		goods.setGoodsPic(fujian);
-		goods.setGoodsYanse(goodsYanse);
-		goods.setGoodsShichangjia(goodsShichangjia);
-		goods.setGoodsTejia(goodsTejia);
-		goods.setGoodsIsnottejia("yes");
-		goods.setGoodsDel("no");
-		goodsDAO.save(goods);
+		Novel novel=new Novel();
+		novel.setNovelCatelogId(novelCatelogId);
+		novel.setNovelName(novelName);
+		novel.setNovelMiaoshu(novelMiaoshu);
+		novel.setNovelPic(fujian);
+		novel.setNovelYanse(novelYanse);
+		novel.setNovelShichangjia(novelShichangjia);
+		novel.setNovelTejia(novelTejia);
+		novel.setNovelIsnottejia("yes");
+		novel.setNovelDel("no");
+		novelDAO.save(novel);
 		this.setMessage("操作成功");
-		this.setPath("goodsManaYesTejia.action");
+		this.setPath("novelManaYesTejia.action");
 		return "succeed";
 		
 	}
 	
-	public String goodsYesTejiaDel()
+	public String novelYesTejiaDel()
 	{
-		Novel goods=goodsDAO.findById(goodsId);
-		goods.setGoodsDel("yes");
-		goodsDAO.attachDirty(goods);
+		Novel novel=novelDAO.findById(novelId);
+		novel.setNovelDel("yes");
+		novelDAO.attachDirty(novel);
 		this.setMessage("操作成功");
-		this.setPath("goodsManaYesTejia.action");
+		this.setPath("novelManaYesTejia.action");
 		return "succeed";
 	}
 	
 	
-	public String goodsManaYesTejia()
+	public String novelManaYesTejia()
 	{
-		String sql="from Novel where goodsDel='no' and goodsIsnottejia='yes' order by goodsCatelogId";
-		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
-		for(int i=0;i<goodsList.size();i++)
+		String sql="from Novel where novelDel='no' and novelIsnottejia='yes' order by novelCatelogId";
+		List novelList=novelDAO.getHibernateTemplate().find(sql);
+		for(int i=0;i<novelList.size();i++)
 		{
-			Novel goods=(Novel)goodsList.get(i);
-			goods.setGoodsCatelogName(catelogDAO.findById(goods.getGoodsCatelogId()).getCatelogName());
+			Novel novel=(Novel)novelList.get(i);
+			novel.setNovelCatelogName(catelogDAO.findById(novel.getNovelCatelogId()).getCatelogName());
 		}
 		Map request=(Map)ServletActionContext.getContext().get("request");
-		request.put("goodsList", goodsList);
+		request.put("novelList", novelList);
 		return ActionSupport.SUCCESS;
 	}*/
 	
-	public String goodsDetailHou()
+	public String novelDetailHou()
 	{
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		
-		Novel goods=goodsDAO.findById(goodsId);
-		request.put("goods", goods);
+		Novel novel=novelDAO.findById(novelId);
+		request.put("novel", novel);
 		return ActionSupport.SUCCESS;
 	}
 	
@@ -235,90 +235,90 @@ public class goodsAction extends ActionSupport
 	{
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		
-		Novel goods=goodsDAO.findById(goodsId);
-		goods.setGoodsShichangjia(goods.getGoodsShichangjia()+1);
-		goodsDAO.attachDirty(goods);
-		TCatelog catelog=catelogDAO.findById(goods.getGoodsCatelogId());
-		goods.setGoodsCatelogName(catelog.getCatelogName());
+		Novel novel=novelDAO.findById(novelId);
+		novel.setNovelShichangjia(novel.getNovelShichangjia()+1);
+		novelDAO.attachDirty(novel);
+		TCatelog catelog=catelogDAO.findById(novel.getNovelCatelogId());
+		novel.setNovelCatelogName(catelog.getCatelogName());
 		
-		List zhangjieList=zhangjieDAO.findByProperty("goodsId", goodsId);
+		List zhangjieList=zhangjieDAO.findByProperty("novelId", novelId);
 		request.put("zhangjieList", zhangjieList);
 		
-		request.put("goods", goods);
+		request.put("novel", novel);
 		return ActionSupport.SUCCESS;
 	}
 	
 	
-	public String goodsDetail()
+	public String novelDetail()
 	{
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		
-		Novel goods=goodsDAO.findById(goodsId);
+		Novel novel=novelDAO.findById(novelId);
 		
-		TCatelog catelog=catelogDAO.findById(goods.getGoodsCatelogId());
-		goods.setGoodsCatelogName(catelog.getCatelogName());
+		TCatelog catelog=catelogDAO.findById(novel.getNovelCatelogId());
+		novel.setNovelCatelogName(catelog.getCatelogName());
 		
-		List zhangjieList=zhangjieDAO.findByProperty("goodsId", goodsId);
+		List zhangjieList=zhangjieDAO.findByProperty("novelId", novelId);
 		request.put("zhangjieList", zhangjieList);
 		
-		request.put("goods", goods);
+		request.put("novel", novel);
 		return ActionSupport.SUCCESS;
 	}
 	
 	
-	public String goodsAllYesTejia()
+	public String novelAllYesTejia()
 	{
         Map request=(Map)ServletActionContext.getContext().get("request");
 		
 		
-		String sql="from Novel where goodsDel='no' and goodsIsnottejia='yes' order by goodsCatelogId";
-		List goodsYesTejiaList=goodsDAO.getHibernateTemplate().find(sql);
-		request.put("goodsYesTejiaList", goodsYesTejiaList);
+		String sql="from Novel where novelDel='no' and novelIsnottejia='yes' order by novelCatelogId";
+		List novelYesTejiaList=novelDAO.getHibernateTemplate().find(sql);
+		request.put("novelYesTejiaList", novelYesTejiaList);
 		return ActionSupport.SUCCESS;
 	}
 	
 	
-	public String goodsAllNoTejia()
+	public String novelAllNoTejia()
 	{
         Map request=(Map)ServletActionContext.getContext().get("request");
 		
 		
-		String sql="from Novel where goodsDel='no' and goodsIsnottejia='no' order by goodsCatelogId";
-		List goodsYesTejiaList=goodsDAO.getHibernateTemplate().find(sql);
-		request.put("goodsYesTejiaList", goodsYesTejiaList);
+		String sql="from Novel where novelDel='no' and novelIsnottejia='no' order by novelCatelogId";
+		List novelYesTejiaList=novelDAO.getHibernateTemplate().find(sql);
+		request.put("novelYesTejiaList", novelYesTejiaList);
 		return ActionSupport.SUCCESS;
 	}
 	
 	
-	public String goodsByCatelog()
+	public String novelByCatelog()
 	{
         Map request=(Map)ServletActionContext.getContext().get("request");
 		
-		String sql="from Novel where goodsDel='no' and goodsCatelogId=? order by goodsCatelogId";
+		String sql="from Novel where novelDel='no' and novelCatelogId=? order by novelCatelogId";
 		Object[] con={catelogId};
-		List goodsByCatelogList=goodsDAO.getHibernateTemplate().find(sql,con);
-		request.put("goodsByCatelogList", goodsByCatelogList);
+		List novelByCatelogList=novelDAO.getHibernateTemplate().find(sql,con);
+		request.put("novelByCatelogList", novelByCatelogList);
 		
-		System.out.println(goodsByCatelogList.size()+"^^^"+goodsCatelogId);
+		System.out.println(novelByCatelogList.size()+"^^^"+novelCatelogId);
 		return ActionSupport.SUCCESS;
 	}
 	
 	
-	public String goodSearch()
+	public String novelSearch()
 	{
         Map request=(Map)ServletActionContext.getContext().get("request");
 		String sql="";
 		if(catelogId==0)
 		{
-			sql="from Novel where goodsDel='no' and goodsName like '%"+goodsName+"%'"+" order by goodsCatelogId";
+			sql="from Novel where novelDel='no' and novelName like '%"+novelName+"%'"+" order by novelCatelogId";
 		}
 		else
 		{
-			sql="from Novel where goodsDel='no' and goodsCatelogId="+catelogId+" and goodsName like '%"+goodsName+"%'"+" order by goodsCatelogId";
+			sql="from Novel where novelDel='no' and novelCatelogId="+catelogId+" and novelName like '%"+novelName+"%'"+" order by novelCatelogId";
 		}
 
-		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
-		request.put("goodsList", goodsList);
+		List novelList=novelDAO.getHibernateTemplate().find(sql);
+		request.put("novelList", novelList);
 
 		return ActionSupport.SUCCESS;
 	}
@@ -331,13 +331,13 @@ public class goodsAction extends ActionSupport
 		Tzhangjie zhangjie=new Tzhangjie();
 		zhangjie.setContent(content);
 		zhangjie.setZhangjiename(zhangjiename);
-		zhangjie.setGoodsId(goodsId);
+		zhangjie.setNovelId(novelId);
 		zhangjie.setPushtime(new Date().toLocaleString());
 		Map session=ActionContext.getContext().getSession();
 		
 		zhangjieDAO.save(zhangjie);
 		this.setMessage("发布成功");
-		request.put("goodsId", goodsId);
+		request.put("novelId", novelId);
 		this.setPath("zhangjieMana.action");
 		return "succeed";
 	}
@@ -359,7 +359,7 @@ public class goodsAction extends ActionSupport
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		
 		Tzhangjie zhangjie=zhangjieDAO.findById(zhangjieId);
-		request.put("goodsId", goodsId);
+		request.put("novelId", novelId);
 		request.put("zhangjie", zhangjie);
 		return ActionSupport.SUCCESS;
 	}
@@ -369,19 +369,19 @@ public class goodsAction extends ActionSupport
 		Map request=(Map)ServletActionContext.getContext().get("request");
 	
 		Tzhangjie zhangjie=zhangjieDAO.findById(zhangjieId);
-		Novel goods=goodsDAO.findById(zhangjie.getGoodsId());
+		Novel novel=novelDAO.findById(zhangjie.getNovelId());
 		request.put("zhangjie", zhangjie);
-		request.put("goods", goods);
+		request.put("novel", novel);
 		return ActionSupport.SUCCESS;
 	}
 	
 	
 	public String zhangjieMana()
 	{
-		List zhangjieList=zhangjieDAO.findByProperty("goodsId", goodsId);
+		List zhangjieList=zhangjieDAO.findByProperty("novelId", novelId);
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		request.put("zhangjieList", zhangjieList);
-		request.put("goodsId", goodsId);
+		request.put("novelId", novelId);
 		return ActionSupport.SUCCESS;
 	}
 	
@@ -430,21 +430,21 @@ public class goodsAction extends ActionSupport
 		this.catelogId = catelogId;
 	}
 
-	public int getGoodsCatelogId()
+	public int getNovelCatelogId()
 	{
-		return goodsCatelogId;
+		return novelCatelogId;
 	}
-	public void setGoodsCatelogId(int goodsCatelogId)
+	public void setNovelCatelogId(int novelCatelogId)
 	{
-		this.goodsCatelogId = goodsCatelogId;
+		this.novelCatelogId = novelCatelogId;
 	}
-	public NovelDAO getGoodsDAO()
+	public NovelDAO getNovelDAO()
 	{
-		return goodsDAO;
+		return novelDAO;
 	}
-	public void setGoodsDAO(NovelDAO goodsDAO)
+	public void setNovelDAO(NovelDAO novelDAO)
 	{
-		this.goodsDAO = goodsDAO;
+		this.novelDAO = novelDAO;
 	}
 	
 	public int getRukushuliang()
@@ -457,25 +457,25 @@ public class goodsAction extends ActionSupport
 		this.rukushuliang = rukushuliang;
 	}
 
-	public int getGoodsId()
+	public int getNovelId()
 	{
-		return goodsId;
+		return novelId;
 	}
-	public void setGoodsId(int goodsId)
+	public void setNovelId(int novelId)
 	{
-		this.goodsId = goodsId;
+		this.novelId = novelId;
 	}
-	public String getGoodsMiaoshu()
+	public String getNovelMiaoshu()
 	{
-		return goodsMiaoshu;
+		return novelMiaoshu;
 	}
-	public void setGoodsMiaoshu(String goodsMiaoshu)
+	public void setNovelMiaoshu(String novelMiaoshu)
 	{
-		this.goodsMiaoshu = goodsMiaoshu;
+		this.novelMiaoshu = novelMiaoshu;
 	}
-	public String getGoodsName()
+	public String getNovelName()
 	{
-		return goodsName;
+		return novelName;
 	}
 	
 	public String getFujian()
@@ -483,14 +483,14 @@ public class goodsAction extends ActionSupport
 		return fujian;
 	}
 
-	public String getGoodsKucun()
+	public String getNovelKucun()
 	{
-		return goodsKucun;
+		return novelKucun;
 	}
 
-	public void setGoodsKucun(String goodsKucun)
+	public void setNovelKucun(String novelKucun)
 	{
-		this.goodsKucun = goodsKucun;
+		this.novelKucun = novelKucun;
 	}
 
 	public void setFujian(String fujian)
@@ -498,9 +498,9 @@ public class goodsAction extends ActionSupport
 		this.fujian = fujian;
 	}
 
-	public void setGoodsName(String goodsName)
+	public void setNovelName(String novelName)
 	{
-		this.goodsName = goodsName;
+		this.novelName = novelName;
 	}
 	
 	public TCatelogDAO getCatelogDAO()
@@ -513,29 +513,29 @@ public class goodsAction extends ActionSupport
 		this.catelogDAO = catelogDAO;
 	}
 
-	public int getGoodsShichangjia()
+	public int getNovelShichangjia()
 	{
-		return goodsShichangjia;
+		return novelShichangjia;
 	}
-	public void setGoodsShichangjia(int goodsShichangjia)
+	public void setNovelShichangjia(int novelShichangjia)
 	{
-		this.goodsShichangjia = goodsShichangjia;
+		this.novelShichangjia = novelShichangjia;
 	}
-	public int getGoodsTejia()
+	public int getNovelTejia()
 	{
-		return goodsTejia;
+		return novelTejia;
 	}
-	public void setGoodsTejia(int goodsTejia)
+	public void setNovelTejia(int novelTejia)
 	{
-		this.goodsTejia = goodsTejia;
+		this.novelTejia = novelTejia;
 	}
-	public String getGoodsYanse()
+	public String getNovelYanse()
 	{
-		return goodsYanse;
+		return novelYanse;
 	}
-	public void setGoodsYanse(String goodsYanse)
+	public void setNovelYanse(String novelYanse)
 	{
-		this.goodsYanse = goodsYanse;
+		this.novelYanse = novelYanse;
 	}
 	public String getMessage()
 	{

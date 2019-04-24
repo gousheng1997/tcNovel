@@ -21,23 +21,23 @@ public class NovelDAO extends HibernateDaoSupport
 	private static final Log log = LogFactory.getLog(NovelDAO.class);
 
 	// property constants
-	public static final String GOODS_NAME = "goodsName";
+	public static final String NOVEL_NAME = "novelName";
 
-	public static final String GOODS_MIAOSHU = "goodsMiaoshu";
+	public static final String NOVEL_MIAOSHU = "novelMiaoshu";
 
-	public static final String GOODS_PIC = "goodsPic";
+	public static final String NOVEL_PIC = "novelPic";
 
-	public static final String GOODS_YANSE = "goodsYanse";
+	public static final String NOVEL_YANSE = "novelYanse";
 
-	public static final String GOODS_SHICHANGJIA = "goodsShichangjia";
+	public static final String NOVEL_SHICHANGJIA = "novelShichangjia";
 
-	public static final String GOODS_TEJIA = "goodsTejia";
+	public static final String NOVEL_TEJIA = "novelTejia";
 
-	public static final String GOODS_ISNOTTEJIA = "goodsIsnottejia";
+	public static final String NOVEL_ISNOTTEJIA = "novelIsnottejia";
 
-	public static final String GOODS_ISNOTTUIJIAN = "goodsIsnottuijian";
+	public static final String NOVEL_ISNOTTUIJIAN = "novelIsnottuijian";
 
-	public static final String GOODS_CATELOG_ID = "goodsCatelogId";
+	public static final String NOVEL_CATELOG_ID = "novelCatelogId";
 
 	protected void initDao()
 	{
@@ -119,49 +119,49 @@ public class NovelDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByGoodsName(Object goodsName)
+	public List findByNovelName(Object novelName)
 	{
-		return findByProperty(GOODS_NAME, goodsName);
+		return findByProperty(NOVEL_NAME, novelName);
 	}
 
-	public List findByGoodsMiaoshu(Object goodsMiaoshu)
+	public List findByNovelMiaoshu(Object novelMiaoshu)
 	{
-		return findByProperty(GOODS_MIAOSHU, goodsMiaoshu);
+		return findByProperty(NOVEL_MIAOSHU, novelMiaoshu);
 	}
 
-	public List findByGoodsPic(Object goodsPic)
+	public List findByNovelPic(Object novelPic)
 	{
-		return findByProperty(GOODS_PIC, goodsPic);
+		return findByProperty(NOVEL_PIC, novelPic);
 	}
 
-	public List findByGoodsYanse(Object goodsYanse)
+	public List findByNovelYanse(Object novelYanse)
 	{
-		return findByProperty(GOODS_YANSE, goodsYanse);
+		return findByProperty(NOVEL_YANSE, novelYanse);
 	}
 
-	public List findByGoodsShichangjia(Object goodsShichangjia)
+	public List findByNovelShichangjia(Object novelShichangjia)
 	{
-		return findByProperty(GOODS_SHICHANGJIA, goodsShichangjia);
+		return findByProperty(NOVEL_SHICHANGJIA, novelShichangjia);
 	}
 
-	public List findByGoodsTejia(Object goodsTejia)
+	public List findByNovelTejia(Object novelTejia)
 	{
-		return findByProperty(GOODS_TEJIA, goodsTejia);
+		return findByProperty(NOVEL_TEJIA, novelTejia);
 	}
 
-	public List findByGoodsIsnottejia(Object goodsIsnottejia)
+	public List findByNovelIsnottejia(Object novelIsnottejia)
 	{
-		return findByProperty(GOODS_ISNOTTEJIA, goodsIsnottejia);
+		return findByProperty(NOVEL_ISNOTTEJIA, novelIsnottejia);
 	}
 
-	public List findByGoodsIsnottuijian(Object goodsIsnottuijian)
+	public List findByNovelIsnottuijian(Object novelIsnottuijian)
 	{
-		return findByProperty(GOODS_ISNOTTUIJIAN, goodsIsnottuijian);
+		return findByProperty(NOVEL_ISNOTTUIJIAN, novelIsnottuijian);
 	}
 
-	public List findByGoodsCatelogId(Object goodsCatelogId)
+	public List findByNovelCatelogId(Object novelCatelogId)
 	{
-		return findByProperty(GOODS_CATELOG_ID, goodsCatelogId);
+		return findByProperty(NOVEL_CATELOG_ID, novelCatelogId);
 	}
 
 	public List findAll()

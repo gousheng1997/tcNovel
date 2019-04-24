@@ -18,7 +18,7 @@ public class zhangjieAction extends ActionSupport
 	private int zhangjieId;
 	private String zhangjiename;
 	private String content;
-	private Integer goodsId;
+	private Integer novelId;
 	private TzhangjieDAO zhangjieDAO;
 	private String message;
 	private String path;
@@ -38,7 +38,7 @@ public class zhangjieAction extends ActionSupport
 		Tzhangjie zhangjie=new Tzhangjie();
 		zhangjie.setContent(content);
 		zhangjie.setZhangjiename(zhangjiename);
-		zhangjie.setGoodsId(goodsId);
+		zhangjie.setNovelId(novelId);
 		zhangjie.setPushtime(new Date().toLocaleString());
 		Map session=ActionContext.getContext().getSession();
 		
@@ -93,12 +93,12 @@ public class zhangjieAction extends ActionSupport
 		this.content = content;
 	}
 
-	public Integer getGoodsId() {
-		return goodsId;
+	public Integer getNovelId() {
+		return novelId;
 	}
 
-	public void setGoodsId(Integer goodsId) {
-		this.goodsId = goodsId;
+	public void setNovelId(Integer novelId) {
+		this.novelId = novelId;
 	}
 
 	public TzhangjieDAO getZhangjieDAO() {

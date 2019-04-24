@@ -24,7 +24,7 @@ String path = request.getContextPath();
         <table align="center">
           <tr>
              <td>
-                  <s:property value="#request.goods.goodsMiaoshu" escape="false"/>
+                  <s:property value="#request.novel.novelMiaoshu" escape="false"/>
              </td>
           </tr>
       </table>

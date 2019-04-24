@@ -17,9 +17,9 @@ String path = request.getContextPath();
 		<script language="JavaScript" src="<%=path %>/js/public.js" type="text/javascript"></script>
 		<script type="text/javascript" src="<%=path %>/js/popup.js"></script>
         <script language="javascript">
-           function goodsDetailHou(goodsId)
+           function novelDetailHou(novelId)
            {
-                 var url="<%=path %>/goodsDetailHou.action?goodsId="+goodsId;
+                 var url="<%=path %>/novelDetailHou.action?novelId="+novelId;
                  var n="";
                  var w="480px";
                  var h="500px";
@@ -27,17 +27,17 @@ String path = request.getContextPath();
 				 openWin(url,n,w,h,s);
            }
            
-           function goodsNoTejiaDel(goodsId)
+           function novelNoTejiaDel(novelId)
            {
                if(confirm('您确定删除吗？'))
                {
-                   window.location.href="<%=path %>/goodsNoTejiaDel.action?goodsId="+goodsId;
+                   window.location.href="<%=path %>/novelNoTejiaDel.action?novelId="+novelId;
                }
            }
            
-           function goodsNoTejiaAdd()
+           function novelNoTejiaAdd()
            {
-                 var url="<%=path %>/admin/goods/goodsNoTejiaAdd.jsp";
+                 var url="<%=path %>/admin/novel/novelNoTejiaAdd.jsp";
                  //var n="";
                  //var w="480px";
                  //var h="500px";
@@ -46,10 +46,10 @@ String path = request.getContextPath();
 				 window.location.href=url;
            }
            
-           function goodsShezhiTejia(goodsId)
+           function novelShezhiTejia(novelId)
            {
                 var pop=new Popup({ contentType:1,isReloadOnClose:false,width:400,height:200});
-	            pop.setContent("contentUrl","<%=path %>/admin/goods/goodsShezhiTejia.jsp?goodsId="+goodsId);
+	            pop.setContent("contentUrl","<%=path %>/admin/novel/novelShezhiTejia.jsp?novelId="+novelId);
 	            pop.setContent("title","文件上传");
 	            pop.build();
 	            pop.show();
@@ -98,41 +98,41 @@ String path = request.getContextPath();
 					<td width="10%">小说热度</td>
 					<td width="10%">操作</td>
 		        </tr>	
-				<s:iterator value="#request.goodsList" id="goods">
+				<s:iterator value="#request.novelList" id="novel">
 				<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 					
 					<td bgcolor="#FFFFFF" align="center">
-						<s:property value="#goods.goodsName"/>
+						<s:property value="#novel.novelName"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					    <a href="#" onclick="goodsDetailHou(<s:property value="#goods.goodsId"/>)" class="pn-loperator">小说描述</a>
+					    <a href="#" onclick="novelDetailHou(<s:property value="#novel.novelId"/>)" class="pn-loperator">小说描述</a>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					    <s:property value="#goods.goodsCatelogName"/>
+					    <s:property value="#novel.novelCatelogName"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					   <div onmouseover = "over('<%=path %>/<s:property value="#goods.goodsPic"/>')" onmouseout = "out()" style="cursor:hand;">
+					   <div onmouseover = "over('<%=path %>/<s:property value="#novel.novelPic"/>')" onmouseout = "out()" style="cursor:hand;">
 								查看图片
 					   </div>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					     <s:property value="#goods.goodsAuthor"/>
+					     <s:property value="#novel.novelAuthor"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					     <s:if test="#goods.goodsIsnottejia=='no'">无推荐&nbsp;&nbsp;&nbsp;
-					         <a href="#" style="color: red" onclick="goodsShezhiTejia(<s:property value="#goods.goodsId"/>)">设为推荐</a>
+					     <s:if test="#novel.novelIsnottejia=='no'">无推荐&nbsp;&nbsp;&nbsp;
+					         <a href="#" style="color: red" onclick="novelShezhiTejia(<s:property value="#novel.novelId"/>)">设为推荐</a>
 					     </s:if>
-					     <s:if test="#goods.goodsIsnottejia=='yes'">
-					        <s:property value="#goods.goodsTejia"/>
+					     <s:if test="#novel.novelIsnottejia=='yes'">
+					        <s:property value="#novel.novelTejia"/>
 					     </s:if>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					     <s:property value="#goods.goodsKucun"/>
+					     <s:property value="#novel.novelKucun"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						<a href="#" onclick="goodsNoTejiaDel(<s:property value="#goods.goodsId"/>)" class="pn-loperator">删除</a>
-						<a style="color: red" href="#" onclick="kefangComment(<s:property value="#goods.goodsId"/>)" class="pn-loperator">评论管理</a>
-							<a style="color: red" href="<%=path %>/zhangjieMana.action?goodsId=<s:property value="#goods.goodsId"/>"  class="pn-loperator">章节管理</a>
+						<a href="#" onclick="novelNoTejiaDel(<s:property value="#novel.novelId"/>)" class="pn-loperator">删除</a>
+						<a style="color: red" href="#" onclick="kefangComment(<s:property value="#novel.novelId"/>)" class="pn-loperator">评论管理</a>
+							<a style="color: red" href="<%=path %>/zhangjieMana.action?novelId=<s:property value="#novel.novelId"/>"  class="pn-loperator">章节管理</a>
 					</td>
 				</tr>
 				</s:iterator>
@@ -141,7 +141,7 @@ String path = request.getContextPath();
 			<table width='98%'  border='0'style="margin-top:8px;margin-left: 5px;">
 			  <tr>
 			    <td>
-			        <input type="button" value="添加" style="width: 80px;" onclick="goodsNoTejiaAdd()" />
+			        <input type="button" value="添加" style="width: 80px;" onclick="novelNoTejiaAdd()" />
 			    </td>
 			  </tr>
 		    </table>

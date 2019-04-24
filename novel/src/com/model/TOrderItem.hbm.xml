@@ -13,11 +13,11 @@
         <property name="orderId" type="java.lang.Integer">
             <column name="order_id" />
         </property>
-        <property name="goodsId" type="java.lang.Integer">
-            <column name="goods_id" />
+        <property name="novelId" type="java.lang.Integer">
+            <column name="novel_id" />
         </property>
-        <property name="goodsQuantity" type="java.lang.Integer">
-            <column name="goods_quantity" />
+        <property name="novelQuantity" type="java.lang.Integer">
+            <column name="novel_quantity" />
         </property>
     </class>
 </hibernate-mapping>

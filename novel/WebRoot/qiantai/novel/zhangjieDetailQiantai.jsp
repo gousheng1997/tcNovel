@@ -20,20 +20,6 @@
 		
 		<script language="JavaScript" src="<%=path %>/js/public.js" type="text/javascript"></script>
 		<script type="text/javascript">
-	        function buy1()
-	        {
-	            <s:if test="#session.user==null">
-	                  alert("请先登录");
-	            </s:if>
-	            <s:else>
-	            if(document.buy.quantity.value=="")
-	            {
-	                alert("请输入购买数量");
-	                return false;
-	            }
-	            document.buy.submit();
-	            </s:else>
-	        }
 	    </script>
 	</head>
 
@@ -42,32 +28,22 @@
 		<div class="page_row">
 			<!--左边的 -->
 			<div class="page_main_msg left">		
-		        <div class="left_row">
+		        <div class="left_row">  
 		            <div class="list pic_news">
-		  	                <div class="list_bar">&nbsp;推荐区</div>
-						  	<table width="99%" border="0" cellpadding="2" cellspacing="1" bgcolor="#FFFFFF" align="center" style="margin-top:8px">
-					              <tr align="center" bgcolor="#FAFAF1" height="22">
-					                  <td>小说名称</td>
-					                  <td>推荐热度</td>
-					                  <td>小说图片</td>
-					                  <td>查看详情</td>
-					              </tr>
-								  <s:iterator value="#request.goodsByCatelogList" id="goods">
-								  <tr align='center' bgcolor="#FFFFFF" height="22">
-									  <td><s:property value="#goods.goodsName"/></td>
-									  <td>
-									      <s:if test="#goods.goodsShichangjia==#goods.goodsTejia">
-									          无推荐
-									      </s:if>
-									      <s:else>
-									        <s:property value="#goods.goodsTejia"/>
-									      </s:else>
-									  </td>
-									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"> <img src="<%=path %><s:property value="#goods.goodsPic"/>" width="80" height="80" border="0"/> </a></td>
-									  <td><a href="<%=path %>/goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>"><img alt="" src="<%=path %>/images/search.png" width="40" height="40" border="0"/></a></td>
-								  </tr>
-								  </s:iterator>
-		        			</table>
+		  	                <div class="list_bar">&nbsp;<s:property value="#request.novel.novelName"/></div>
+						  	<div class="ctitle ctitle1"><s:property value="#request.zhangjie.zhangjiename"/></div>
+							<div class="ctitleinfo"><s:property value="#request.zhangjie.pushtime"/>&nbsp;&nbsp;&nbsp;<%--查看次数：5 次--%></div>
+							<div class="pbox"><s:property value="#request.zhangjie.content" escape="false"/></div>
+				            <div class="page_no">
+				                <div class="pg-3">
+					                 <%--分页--%>
+				                </div>
+				            </div>
+							<div class="arti_ref">
+							    <%--【上一篇】: <a href="#" title="">应需而生 长安铃木全新天语SX4突破升级</a>
+				                &nbsp;&nbsp;
+				                 【下一篇】: <span>没有了</span>--%>
+				            </div>	
 		             </div>
 		         </div>	
 	        </div>
@@ -81,7 +57,7 @@
 						</div>
 						<div class="list_content">
 							<div id="div">
-								<jsp:include flush="true" page="/qiantai/userlogin/userlogin.jsp"></jsp:include>
+							    <jsp:include flush="true" page="/qiantai/userlogin/userlogin.jsp"></jsp:include>
 							</div>
 						</div>
 					</div>

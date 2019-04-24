@@ -20,7 +20,7 @@ public class catelogAction extends ActionSupport
 	private String path;
 	
 	private TCatelogDAO catelogDAO;
-	private NovelDAO goodsDAO;
+	private NovelDAO novelDAO;
 	
 	
 	public String catelogMana()
@@ -57,9 +57,9 @@ public class catelogAction extends ActionSupport
 	
 	public String catelogDel()
 	{
-		String sql="from Novel where goodsDel='no' and goodsCatelogId="+catelogId;
-		List goodsList=goodsDAO.getHibernateTemplate().find(sql);
-		if(goodsList.size()>0)
+		String sql="from Novel where novelDel='no' and novelCatelogId="+catelogId;
+		List novelList=novelDAO.getHibernateTemplate().find(sql);
+		if(novelList.size()>0)
 		{
 			this.setMessage("请先删除此类别下的商品");
 			this.setPath("catelogMana.action");
@@ -159,16 +159,16 @@ public class catelogAction extends ActionSupport
 
 
 
-	public NovelDAO getGoodsDAO()
+	public NovelDAO getNovelDAO()
 	{
-		return goodsDAO;
+		return novelDAO;
 	}
 
 
 
-	public void setGoodsDAO(NovelDAO goodsDAO)
+	public void setNovelDAO(NovelDAO novelDAO)
 	{
-		this.goodsDAO = goodsDAO;
+		this.novelDAO = novelDAO;
 	}
 	
 

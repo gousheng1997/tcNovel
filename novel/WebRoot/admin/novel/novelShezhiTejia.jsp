@@ -22,14 +22,14 @@ String path = request.getContextPath();
 	</head>
 
 	<body leftmargin="2" topmargin="9" background='<%=path %>/images/allbg.gif'>
-			<form action="<%=path %>/goodsShezhiTejia.action" name="formAdd" method="post">
+			<form action="<%=path %>/novelShezhiTejia.action" name="formAdd" method="post">
 				     <table width="98%" align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC" style="margin-bottom:8px">
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						    <td width="25%" bgcolor="#FFFFFF" align="right">
 						         推荐：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						         <input type="text" name="goodsTejia" size="20" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+						         <input type="text" name="novelTejia" size="20" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
 						    </td>
 						</tr>
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
@@ -37,7 +37,7 @@ String path = request.getContextPath();
 						        &nbsp;
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						       <input type="hidden" name="goodsId" value="<%=request.getParameter("goodsId") %>"/>
+						       <input type="hidden" name="novelId" value="<%=request.getParameter("novelId") %>"/>
 						       <input type="submit" value="提交"/>&nbsp; 
 						       <input type="reset" value="重置"/>&nbsp;
 						    </td>

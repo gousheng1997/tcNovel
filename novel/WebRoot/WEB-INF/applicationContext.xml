@@ -47,7 +47,7 @@
 	
 	
 	<bean id="indexAction" class="com.action.indexAction" scope="prototype">
-	    <property name="goodsDAO">
+	    <property name="novelDAO">
 			<ref bean="NovelDAO" />
 		</property>
 		<property name="orderItemDAO">
@@ -86,7 +86,7 @@
 		</property>
 	</bean>
 	<bean id="cartService" class="com.service.cartService">
-	    <property name="goodsDAO">
+	    <property name="novelDAO">
 			<ref bean="NovelDAO" />
 		</property>
 	</bean>
@@ -150,7 +150,7 @@
 		<property name="catelogDAO">
 			<ref bean="TCatelogDAO" />
 		</property>
-		<property name="goodsDAO">
+		<property name="novelDAO">
 			<ref bean="NovelDAO" />
 		</property>
 	</bean>
@@ -166,8 +166,8 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="goodsAction" class="com.action.goodsAction" scope="prototype">
-		<property name="goodsDAO">
+	<bean id="novelAction" class="com.action.novelAction" scope="prototype">
+		<property name="novelDAO">
 			<ref bean="NovelDAO" />
 		</property>
 		<property name="catelogDAO">
@@ -204,7 +204,7 @@
 	
 	
 	<bean id="buyAction" class="com.action.buyAction" scope="prototype">
-		<property name="goodsDAO">
+		<property name="novelDAO">
 			<ref bean="NovelDAO" />
 		</property>
 		<property name="orderDAO">

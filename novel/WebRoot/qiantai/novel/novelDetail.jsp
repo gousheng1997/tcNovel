@@ -52,7 +52,7 @@
        
 	       function commentAdd(id)
 	       {
-	            var url="<%=path %>/qiantai/goods/commentAdd.jsp?kefangId="+id;
+	            var url="<%=path %>/qiantai/novel/commentAdd.jsp?kefangId="+id;
 	            var pop=new Popup({ contentType:1,isReloadOnClose:false,width:700,height:400});
 	            pop.setContent("contentUrl",url);
 	            pop.setContent("title","写评论");
@@ -74,15 +74,15 @@
 		  	                <div class="list_bar">&nbsp;详情</div>
 						  	<form action="<%=path %>/addToCart.action" method="post" name="buy">
                                   <table border="0" cellpadding="6">
-                                      <tr><td width="30"></td><td style="font-size: 11px;" width="60">小说名：</td><td style="font-size: 11px;"><s:property value="#request.goods.goodsName"/></td></tr>
-                                      <tr><td width="30"></td><td style="font-size: 11px;">简介：</td><td style="font-size: 11px;"><s:property value="#request.goods.goodsMiaoshu" escape="false"/></td></tr>
-                                      <tr><td width="30"></td><td style="font-size: 11px;">作者：</td><td style="font-size: 11px;"><s:property value="#request.goods.goodsAuthor"/></td></tr>
-                                      <tr><td width="30"></td><td style="font-size: 11px;">类别：</td><td style="font-size: 11px;"><s:property value="#request.goods.goodsCatelogName"/></td></tr>
-                                        <tr><td width="30"></td><td style="font-size: 11px;">点赞：</td><td style="font-size: 11px;"><s:property value="#request.goods.goodsShichangjia"/></td></tr>
-                                          <tr><td width="30"></td><td style="font-size: 11px;"></td><td style="font-size: 11px;"><s:property value="#request.goods.goodsYanse"/></td></tr>
-                                      <tr><td width="30"></td><td style="font-size: 11px;"> <a href="#" style="color: red" onclick="commentAll(<s:property value="#request.goods.goodsId"/>)">查看评论</a></td>
+                                      <tr><td width="30"></td><td style="font-size: 11px;" width="60">小说名：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelName"/></td></tr>
+                                      <tr><td width="30"></td><td style="font-size: 11px;">简介：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelMiaoshu" escape="false"/></td></tr>
+                                      <tr><td width="30"></td><td style="font-size: 11px;">作者：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelAuthor"/></td></tr>
+                                      <tr><td width="30"></td><td style="font-size: 11px;">类别：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelCatelogName"/></td></tr>
+                                        <tr><td width="30"></td><td style="font-size: 11px;">点赞：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelShichangjia"/></td></tr>
+                                          <tr><td width="30"></td><td style="font-size: 11px;"></td><td style="font-size: 11px;"><s:property value="#request.novel.novelYanse"/></td></tr>
+                                      <tr><td width="30"></td><td style="font-size: 11px;"> <a href="#" style="color: red" onclick="commentAll(<s:property value="#request.novel.novelId"/>)">查看评论</a></td>
                                       
-                                    <td style="font-size: 11px;"> <a href="#" style="color: red" onclick="commentAdd(<s:property value="#request.goods.goodsId"/>)">我要评论</a>   <a href="<%=path %>/dianzan.action?goodsId=<s:property value="#request.goods.goodsId"/>" style="color: red" >点赞</a></td></tr>
+                                    <td style="font-size: 11px;"> <a href="#" style="color: red" onclick="commentAdd(<s:property value="#request.novel.novelId"/>)">我要评论</a>   <a href="<%=path %>/dianzan.action?novelId=<s:property value="#request.novel.novelId"/>" style="color: red" >点赞</a></td></tr>
                                     
                                   </table>
                             </form>

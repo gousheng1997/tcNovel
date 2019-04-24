@@ -100,7 +100,7 @@ FCKDomRangeIterator.prototype =
 			// so the range can be closed.
 			var closeRange = false ;
 
-			// includeNode indicates that the current node is good to be part
+			// includeNode indicates that the current node is novel to be part
 			// of the range. By default, any non-element node is ok for it.
 			var includeNode = ( currentNode.nodeType != 1 ) ;
 
@@ -167,7 +167,7 @@ FCKDomRangeIterator.prototype =
 					includeNode = false ;
 			}
 
-			// The current node is good to be part of the range and we are
+			// The current node is novel to be part of the range and we are
 			// starting a new range, initialize it first.
 			if ( includeNode && !range )
 			{

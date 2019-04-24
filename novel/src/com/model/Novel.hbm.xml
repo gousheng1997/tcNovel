@@ -6,47 +6,47 @@
 -->
 <hibernate-mapping>
     <class name="com.model.Novel" table="novel">
-        <id name="goodsId" type="java.lang.Integer">
-            <column name="goods_id" />
+        <id name="novelId" type="java.lang.Integer">
+            <column name="novel_id" />
             <generator class="increment" />
         </id>
-        <property name="goodsName" type="java.lang.String">
-            <column name="goods_name" length="50" />
+        <property name="novelName" type="java.lang.String">
+            <column name="novel_name" length="50" />
         </property>
         
-       <property name="goodsAuthor" type="java.lang.String">
-            <column name="goods_author" length="50" />
+       <property name="novelAuthor" type="java.lang.String">
+            <column name="novel_author" length="50" />
         </property>
         
-        <property name="goodsMiaoshu" type="java.lang.String">
-            <column name="goods_miaoshu" length="5000" />
+        <property name="novelMiaoshu" type="java.lang.String">
+            <column name="novel_miaoshu" length="5000" />
         </property>
-        <property name="goodsPic" type="java.lang.String">
-            <column name="goods_pic" length="50" />
+        <property name="novelPic" type="java.lang.String">
+            <column name="novel_pic" length="50" />
         </property>
-        <property name="goodsYanse" type="java.lang.String">
-            <column name="goods_yanse" length="50" />
+        <property name="novelYanse" type="java.lang.String">
+            <column name="novel_yanse" length="50" />
         </property>
-        <property name="goodsShichangjia" type="java.lang.Integer">
-            <column name="goods_shichangjia" />
+        <property name="novelShichangjia" type="java.lang.Integer">
+            <column name="novel_shichangjia" />
         </property>
-        <property name="goodsTejia" type="java.lang.Integer">
-            <column name="goods_tejia" />
+        <property name="novelTejia" type="java.lang.Integer">
+            <column name="novel_tejia" />
         </property>
-        <property name="goodsIsnottejia" type="java.lang.String">
-            <column name="goods_isnottejia" length="50" />
+        <property name="novelIsnottejia" type="java.lang.String">
+            <column name="novel_isnottejia" length="50" />
         </property>
-        <property name="goodsIsnottuijian" type="java.lang.String">
-            <column name="goods_isnottuijian" length="50" />
+        <property name="novelIsnottuijian" type="java.lang.String">
+            <column name="novel_isnottuijian" length="50" />
         </property>
-        <property name="goodsCatelogId" type="java.lang.Integer">
-            <column name="goods_catelog_id" />
+        <property name="novelCatelogId" type="java.lang.Integer">
+            <column name="novel_catelog_id" />
         </property>
-        <property name="goodsKucun" type="java.lang.String">
-            <column name="goods_kucun" />
+        <property name="novelKucun" type="java.lang.String">
+            <column name="novel_kucun" />
         </property>
-        <property name="goodsDel" type="java.lang.String">
-            <column name="goods_Del" length="50" />
+        <property name="novelDel" type="java.lang.String">
+            <column name="novel_Del" length="50" />
         </property>
     </class>
 </hibernate-mapping>

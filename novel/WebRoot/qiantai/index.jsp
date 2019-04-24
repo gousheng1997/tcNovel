@@ -59,10 +59,10 @@
 			<div id="wrapper" style="width:100%;overflow:hidden;white-space:nowrap;"><!-- 最外层部分 -->
     <div id="banner"><!-- 轮播部分 -->
       <ul class="imgList"><!-- 图片部分 -->
-       <s:iterator value="#request.goodsYesTejiaList" id="goods">
+       <s:iterator value="#request.novelYesTejiaList" id="novel">
       <li>
-      <a href="<%=path %>goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>">
-	<img width="940px" height="300px"  src="<%=path %><s:property value="#goods.goodsPic"/>"/>
+      <a href="<%=path %>novelDetail.action?novelId=<s:property value="#novel.novelId"/>">
+	<img width="940px" height="300px"  src="<%=path %><s:property value="#novel.novelPic"/>"/>
 	</a>
       </li>
       </s:iterator>
@@ -70,8 +70,8 @@
     
       <div class="bg"></div> <!-- 图片底部背景层部分-->
       <ul class="infoList"><!-- 图片左下角文字信息部分 -->
-       <s:iterator value="#request.goodsYesTejiaList" id="goods" >
-        <li> <s:property value="#goods.goodsName"/></li>
+       <s:iterator value="#request.novelYesTejiaList" id="novel" >
+        <li> <s:property value="#novel.novelName"/></li>
        </s:iterator>
       </ul>
          <img src="/img/prev.png" width="40px" height="80px" id="prev">
@@ -79,7 +79,7 @@
       <div class="bg"></div> <!-- 图片底部背景层部分-->
       <ul class="indexList"><!-- 图片右下角序号部分 -->
       <% int i=1; %>
-       <s:iterator value="#request.goodsYesTejiaList" id="goods" >
+       <s:iterator value="#request.novelYesTejiaList" id="novel" >
             <li><%=i++ %> </li>
         </s:iterator>
        
@@ -106,22 +106,22 @@
 							<div style="width:100%;overflow:hidden;white-space:nowrap;">
 								<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
 									<tr>
-									    <s:iterator value="#request.goodsList" id="goods">
+									    <s:iterator value="#request.novelList" id="novel">
 										<td>
 											<table width="100%" cellpadding="0" cellspacing="0" border="0">
 												<tr>
 													<td sytle="height:28px;">
 														<dl style="width:100%;height:130px;padding-right:10px;">
 															<dd style="margin-left:0;">
-																<a href="<%=path %>goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>">
-																   <img width="105" height="100" src="<%=path %><s:property value="#goods.goodsPic"/>"/>
+																<a href="<%=path %>novelDetail.action?novelId=<s:property value="#novel.novelId"/>">
+																   <img width="105" height="100" src="<%=path %><s:property value="#novel.novelPic"/>"/>
 																</a>
 															</dd>
 															<dt>
-																<s:property value="#goods.goodsName"/>
+																<s:property value="#novel.novelName"/>
 															</dt>
 															<dt>
-																作者：<s:property value="#goods.goodsAuthor"/>
+																作者：<s:property value="#novel.novelAuthor"/>
 															</dt>
 														</dl>
 													</td>
@@ -141,28 +141,28 @@
 					<div class="list pic_news">
 						<div class="list_bar">
 							 <span style="float:left">热门推荐</span>
-							 <span style="float:right"><a href="<%=path %>goodsAllYesTejia.action">更多>></a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							 <span style="float:right"><a href="<%=path %>novelAllYesTejia.action">更多>></a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						</div>
 						<div id="tw" class="list_content">
 							<div style="width:100%;overflow:hidden;white-space:nowrap;">
 								<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
 									<tr>
-									    <s:iterator value="#request.goodsYesTejiaList" id="goods">
+									    <s:iterator value="#request.novelYesTejiaList" id="novel">
 										<td>
 											<table width="100%" cellpadding="0" cellspacing="0" border="0">
 												<tr>
 													<td sytle="height:28px;">
 														<dl style="width:100%;height:130px;padding-right:10px;">
 															<dd style="margin-left:0;">
-																<a href="<%=path %>goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>">
-																   <img width="105" height="100" src="<%=path %><s:property value="#goods.goodsPic"/>"/>
+																<a href="<%=path %>novelDetail.action?novelId=<s:property value="#novel.novelId"/>">
+																   <img width="105" height="100" src="<%=path %><s:property value="#novel.novelPic"/>"/>
 																</a>
 															</dd>
 															<dt>
-																<s:property value="#goods.goodsName"/>
+																<s:property value="#novel.novelName"/>
 															</dt>
 															<dt>
-																作者:<s:property value="#goods.goodsAuthor"/>
+																作者:<s:property value="#novel.novelAuthor"/>
 															
 															</dt>
 														</dl>
@@ -183,28 +183,28 @@
 					<div class="list pic_news">
 						<div class="list_bar">
 							 <span style="float:left">最新作品</span>
-							 <span style="float:right"><a href="<%=path %>goodsAllNoTejia.action">更多>></a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							 <span style="float:right"><a href="<%=path %>novelAllNoTejia.action">更多>></a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						</div>
 						<div id="tw" class="list_content">
 							<div style="width:100%;overflow:hidden;white-space:nowrap;">
 								<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
 									<tr>
-									    <s:iterator value="#request.goodsNoTejiaList" id="goods">
+									    <s:iterator value="#request.novelNoTejiaList" id="novel">
 										<td>
 											<table width="100%" cellpadding="0" cellspacing="0" border="0">
 												<tr>
 													<td sytle="height:28px;">
 														<dl style="width:100%;height:130px;padding-right:10px;">
 															<dd style="margin-left:0;">
-																<a href="<%=path %>goodsDetail.action?goodsId=<s:property value="#goods.goodsId"/>">
-																   <img width="105" height="100" src="<%=path %><s:property value="#goods.goodsPic"/>"/>
+																<a href="<%=path %>novelDetail.action?novelId=<s:property value="#novel.novelId"/>">
+																   <img width="105" height="100" src="<%=path %><s:property value="#novel.novelPic"/>"/>
 																</a>
 															</dd>
 															<dt>
-																<s:property value="#goods.goodsName"/>
+																<s:property value="#novel.novelName"/>
 															</dt>
 															<dt>
-																作者:<s:property value="#goods.goodsAuthor"/>
+																作者:<s:property value="#novel.novelAuthor"/>
 															</dt>
 														</dl>
 													</td>

@@ -18,10 +18,10 @@ String path = request.getContextPath();
 		<script type="text/javascript" src="<%=path %>/js/popup.js"></script>
         <script language="javascript">
            
-           function goodsRuku(goodsId)
+           function novelRuku(novelId)
            {
                 var pop=new Popup({ contentType:1,isReloadOnClose:false,width:400,height:200});
-	            pop.setContent("contentUrl","<%=path %>/admin/goods/goodsRuku.jsp?goodsId="+goodsId);
+	            pop.setContent("contentUrl","<%=path %>/admin/novel/novelRuku.jsp?novelId="+novelId);
 	            pop.setContent("title","入库");
 	            pop.build();
 	            pop.show();
@@ -40,16 +40,16 @@ String path = request.getContextPath();
 					<td width="10%">库存</td>
 					<td width="10%">操作</td>
 		        </tr>	
-				<s:iterator value="#request.goodsList" id="goods">
+				<s:iterator value="#request.novelList" id="novel">
 				<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 					<td bgcolor="#FFFFFF" align="center">
-						<s:property value="#goods.goodsName"/>
+						<s:property value="#novel.novelName"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					     <s:property value="#goods.goodsKucun"/>
+					     <s:property value="#novel.novelKucun"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						<a href="#" onclick="goodsRuku(<s:property value="#goods.goodsId"/>)" class="pn-loperator">添加入库</a>
+						<a href="#" onclick="novelRuku(<s:property value="#novel.novelId"/>)" class="pn-loperator">添加入库</a>
 					</td>
 				</tr>
 				</s:iterator>

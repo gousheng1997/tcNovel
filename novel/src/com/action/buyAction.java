@@ -22,12 +22,12 @@ import com.util.Cart;
 
 public class buyAction extends ActionSupport
 {
-	private int goodsId;
+	private int novelId;
 	private int quantity;
 	
 	private int orderId;
 	
-	private NovelDAO goodsDAO;
+	private NovelDAO novelDAO;
 	private TOrderDAO orderDAO;
 	private TOrderItemDAO orderItemDAO;
 	
@@ -39,14 +39,14 @@ public class buyAction extends ActionSupport
 	
 	public String addToCart()
 	{
-		Novel goods=goodsDAO.findById(goodsId);
+		Novel novel=novelDAO.findById(novelId);
 		TOrderItem orderItem=new TOrderItem();
-		orderItem.setGoods(goods);
-		orderItem.setGoodsQuantity(quantity);
+		orderItem.setNovel(novel);
+		orderItem.setNovelQuantity(quantity);
 		
 		Map session= ServletActionContext.getContext().getSession();
 		Cart cart = (Cart)session.get("cart");
-		cart.addGoods(goodsId, orderItem);
+		cart.addNovel(novelId, orderItem);
 		session.put("cart",cart);
 		//this.setMessage("");
 		this.setPath("myCart.action");
@@ -91,8 +91,8 @@ public class buyAction extends ActionSupport
 
 			TOrderItem orderItem = (TOrderItem) it.next();
 			orderItem.setOrderId(order.getOrderId());
-			orderItem.setGoodsId(orderItem.getGoods().getGoodsId());
-	//		goodsDAO.getHibernateTemplate().bulkUpdate("update Novel set goodsKucun=goodsKucun-"+orderItem.getGoodsQuantity() +" where goodsId="+orderItem.getGoods().getGoodsId());
+			orderItem.setNovelId(orderItem.getNovel().getNovelId());
+	//		novelDAO.getHibernateTemplate().bulkUpdate("update Novel set novelKucun=novelKucun-"+orderItem.getNovelQuantity() +" where novelId="+orderItem.getNovel().getNovelId());
 			orderItemDAO.save(orderItem);
 		}
 		
@@ -177,7 +177,7 @@ public class buyAction extends ActionSupport
 		for(int i=0;i<orderItemList.size();i++)
 		{
 			TOrderItem orderItem=(TOrderItem)orderItemList.get(i);
-			orderItem.setGoods(goodsDAO.findById(orderItem.getGoodsId()));
+			orderItem.setNovel(novelDAO.findById(orderItem.getNovelId()));
 		}
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		request.put("orderItemList", orderItemList);
@@ -220,9 +220,9 @@ public class buyAction extends ActionSupport
 		{
 
 			TOrderItem orderItem = (TOrderItem) it.next();
-			Novel goods = orderItem.getGoods();
-			System.out.println(goods.getGoodsName()+"：商品名称");
-			int quantity = orderItem.getGoodsQuantity();
+			Novel novel = orderItem.getNovel();
+			System.out.println(novel.getNovelName()+"：商品名称");
+			int quantity = orderItem.getNovelQuantity();
 			System.out.println(quantity+"：商品数量");
 			System.out.println("--------------------------------------------------");
 			
@@ -231,9 +231,9 @@ public class buyAction extends ActionSupport
 	}
 	
 	
-	public NovelDAO getGoodsDAO()
+	public NovelDAO getNovelDAO()
 	{
-		return goodsDAO;
+		return novelDAO;
 	}
 	
 	public String getOdderFukuangfangshi()
@@ -264,13 +264,13 @@ public class buyAction extends ActionSupport
 
 
 
-	public void setGoodsDAO(NovelDAO goodsDAO)
+	public void setNovelDAO(NovelDAO novelDAO)
 	{
-		this.goodsDAO = goodsDAO;
+		this.novelDAO = novelDAO;
 	}
-	public int getGoodsId()
+	public int getNovelId()
 	{
-		return goodsId;
+		return novelId;
 	}
 	
 	public int getOrderId()
@@ -317,9 +317,9 @@ public class buyAction extends ActionSupport
 	}
 
 
-	public void setGoodsId(int goodsId)
+	public void setNovelId(int novelId)
 	{
-		this.goodsId = goodsId;
+		this.novelId = novelId;
 	}
 	public TOrderDAO getOrderDAO()
 	{

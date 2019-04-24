@@ -14,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class indexAction extends ActionSupport
 {
-	private NovelDAO goodsDAO;
+	private NovelDAO novelDAO;
 	
 	private TOrderItemDAO orderItemDAO;
 	
@@ -25,34 +25,34 @@ public class indexAction extends ActionSupport
 		
 		
 		
-		String sql="from Novel where goodsDel='no' and goodsIsnottejia='yes' order by goodsId desc";
-		List goodsYesTejiaList=goodsDAO.getHibernateTemplate().find(sql);
-		if(goodsYesTejiaList.size()>5)
+		String sql="from Novel where novelDel='no' and novelIsnottejia='yes' order by novelId desc";
+		List novelYesTejiaList=novelDAO.getHibernateTemplate().find(sql);
+		if(novelYesTejiaList.size()>5)
 		{
-			goodsYesTejiaList=goodsYesTejiaList.subList(0, 5);
+			novelYesTejiaList=novelYesTejiaList.subList(0, 5);
 		}
-		request.put("goodsYesTejiaList", goodsYesTejiaList);
+		request.put("novelYesTejiaList", novelYesTejiaList);
 		
 		
 		
-		sql="from Novel where goodsDel='no' and goodsIsnottejia='no' order by goodsId desc";
-		List goodsNoTejiaList=goodsDAO.getHibernateTemplate().find(sql);
-		if(goodsNoTejiaList.size()>5)
+		sql="from Novel where novelDel='no' and novelIsnottejia='no' order by novelId desc";
+		List novelNoTejiaList=novelDAO.getHibernateTemplate().find(sql);
+		if(novelNoTejiaList.size()>5)
 		{
-			goodsNoTejiaList=goodsNoTejiaList.subList(0, 5);
+			novelNoTejiaList=novelNoTejiaList.subList(0, 5);
 		}
-		request.put("goodsNoTejiaList", goodsNoTejiaList);
+		request.put("novelNoTejiaList", novelNoTejiaList);
 		
 		
 		//paihangbang
-		List goodsList=new ArrayList();
-		sql="from Novel where goodsDel='no'  order by goodsShichangjia desc";
-		 goodsList=orderItemDAO.getHibernateTemplate().find(sql);
-				if(goodsList.size()>5)
+		List novelList=new ArrayList();
+		sql="from Novel where novelDel='no'  order by novelShichangjia desc";
+		 novelList=orderItemDAO.getHibernateTemplate().find(sql);
+				if(novelList.size()>5)
 		{
-			goodsList=goodsList.subList(0, 5);
+			novelList=novelList.subList(0, 5);
 		}
-		request.put("goodsList", goodsList);
+		request.put("novelList", novelList);
 		//paihangbang
 		
 		
@@ -60,14 +60,14 @@ public class indexAction extends ActionSupport
 	}
 	
 
-	public NovelDAO getGoodsDAO()
+	public NovelDAO getNovelDAO()
 	{
-		return goodsDAO;
+		return novelDAO;
 	}
 
-	public void setGoodsDAO(NovelDAO goodsDAO)
+	public void setNovelDAO(NovelDAO novelDAO)
 	{
-		this.goodsDAO = goodsDAO;
+		this.novelDAO = novelDAO;
 	}
 
 

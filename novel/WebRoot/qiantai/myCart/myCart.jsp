@@ -22,7 +22,7 @@
 	    <script type='text/javascript' src='<%=path %>/dwr/util.js'></script>
 		<script language="JavaScript" src="<%=path %>/js/public.js" type="text/javascript"></script>
 		<script type="text/javascript">
-	        function modiNum(goodsId,quantity)
+	        function modiNum(novelId,quantity)
 	        {
 	            var r1= /^[0-9]*[1-9][0-9]*$/　　//正整数 
 	            var val=r1.test(quantity); //str为你要判断的字符 执行返回结果 true 或 false
@@ -33,7 +33,7 @@
 	            else
 	            {
 	                document.getElementById("indicator1").style.display="block";
-	                cartService.modiNum(goodsId,quantity,callback);
+	                cartService.modiNum(novelId,quantity,callback);
 	            }
 	        }
 	        
@@ -49,10 +49,10 @@
 	        }
 	        
 	        
-	        function delGoodsFromCart(goodsId)
+	        function delNovelFromCart(novelId)
 	        {
 	            document.getElementById("indicator1").style.display="block";
-	            cartService.delGoodsFromCart(goodsId,callback);
+	            cartService.delNovelFromCart(novelId,callback);
 	        }
 	        
 	        function clearCart()
@@ -82,11 +82,11 @@
 				                  </tr>
 								  <s:iterator value="#items">
 								  <tr align='center' bgcolor="#FFFFFF" height="22">
-									  <td><s:property value="value.goods.goodsName"/></td>
-									  <td>￥<s:property value="value.goods.goodsTejia"/><br/></td>
-									  <td><input type="text" class="textBox" onChange="modiNum(<s:property value="value.goods.goodsId"/>,this.value)" value="<s:property value="value.goodsQuantity"/>" size="4"/></td>
-									  <td>￥<s:property value="value.goodsQuantity * value.goods.goodsTejia"/></td>
-									  <td><input onClick="delGoodsFromCart(<s:property value="value.goods.goodsId"/>)" type="image" src="<%=path %>/images/delete_01.gif" border="0"/></td>
+									  <td><s:property value="value.novel.novelName"/></td>
+									  <td>￥<s:property value="value.novel.novelTejia"/><br/></td>
+									  <td><input type="text" class="textBox" onChange="modiNum(<s:property value="value.novel.novelId"/>,this.value)" value="<s:property value="value.novelQuantity"/>" size="4"/></td>
+									  <td>￥<s:property value="value.novelQuantity * value.novel.novelTejia"/></td>
+									  <td><input onClick="delNovelFromCart(<s:property value="value.novel.novelId"/>)" type="image" src="<%=path %>/images/delete_01.gif" border="0"/></td>
 								  </tr>
 								  </s:iterator>
 					              <tr>

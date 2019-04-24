@@ -489,7 +489,7 @@ above, provided that you also meet all of these conditions:
     d) If a facility in the modified Library refers to a function or a
     table of data to be supplied by an application program that uses
     the facility, other than as an argument passed when the facility
-    is invoked, then you must make a good faith effort to ensure that,
+    is invoked, then you must make a novel faith effort to ensure that,
     in the event an application does not supply such function or
     table, the facility still operates, and performs whatever part of
     its purpose remains meaningful.
@@ -1187,7 +1187,7 @@ Appendix C: The MPL License
      California, with the losing party responsible for costs, including
      without limitation, court costs and reasonable attorneys' fees and
      expenses. The application of the United Nations Convention on
-     Contracts for the International Sale of Goods is expressly excluded.
+     Contracts for the International Sale of Novel is expressly excluded.
      Any law or regulation which provides that the language of a contract
      shall be construed against the drafter shall not apply to this
      License.

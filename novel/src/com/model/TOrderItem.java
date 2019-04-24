@@ -13,11 +13,11 @@ public class TOrderItem implements java.io.Serializable
 
 	private Integer orderId;
 
-	private Integer goodsId;
+	private Integer novelId;
 
-	private Integer goodsQuantity;
+	private Integer novelQuantity;
 	
-	private Novel goods;//表里没有。自己加的
+	private Novel novel;//表里没有。自己加的
 
 	// Constructors
 
@@ -27,11 +27,11 @@ public class TOrderItem implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public TOrderItem(Integer orderId, Integer goodsId, Integer goodsQuantity)
+	public TOrderItem(Integer orderId, Integer novelId, Integer novelQuantity)
 	{
 		this.orderId = orderId;
-		this.goodsId = goodsId;
-		this.goodsQuantity = goodsQuantity;
+		this.novelId = novelId;
+		this.novelQuantity = novelQuantity;
 	}
 
 	// Property accessors
@@ -56,34 +56,34 @@ public class TOrderItem implements java.io.Serializable
 		this.orderId = orderId;
 	}
 
-	public Integer getGoodsId()
+	public Integer getNovelId()
 	{
-		return this.goodsId;
+		return this.novelId;
 	}
 
-	public Novel getGoods()
+	public Novel getNovel()
 	{
-		return goods;
+		return novel;
 	}
 
-	public void setGoods(Novel goods)
+	public void setNovel(Novel novel)
 	{
-		this.goods = goods;
+		this.novel = novel;
 	}
 
-	public void setGoodsId(Integer goodsId)
+	public void setNovelId(Integer novelId)
 	{
-		this.goodsId = goodsId;
+		this.novelId = novelId;
 	}
 
-	public Integer getGoodsQuantity()
+	public Integer getNovelQuantity()
 	{
-		return this.goodsQuantity;
+		return this.novelQuantity;
 	}
 
-	public void setGoodsQuantity(Integer goodsQuantity)
+	public void setNovelQuantity(Integer novelQuantity)
 	{
-		this.goodsQuantity = goodsQuantity;
+		this.novelQuantity = novelQuantity;
 	}
 
 }

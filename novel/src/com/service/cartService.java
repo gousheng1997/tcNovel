@@ -10,8 +10,8 @@ import com.util.Cart;
 
 public class cartService
 {
-	private NovelDAO goodsDAO;
-	public String modiNum(int goodsId,int quantity)
+	private NovelDAO novelDAO;
+	public String modiNum(int novelId,int quantity)
 	{
 		try
 		{
@@ -25,12 +25,12 @@ public class cartService
 		 WebContext ctx = WebContextFactory.get(); 
 		 HttpSession session=ctx.getSession();
 		 Cart cart=(Cart)session.getAttribute("cart");
-		 cart.updateCart(goodsId, quantity);
+		 cart.updateCart(novelId, quantity);
 		 session.setAttribute("cart", cart);
 		 return "yes";
 	}
 	
-	public String delGoodsFromCart(int goodsId)
+	public String delNovelFromCart(int novelId)
 	{
 		try
 		{
@@ -44,7 +44,7 @@ public class cartService
 		 WebContext ctx = WebContextFactory.get(); 
 		 HttpSession session=ctx.getSession();
 		 Cart cart=(Cart)session.getAttribute("cart");
-		 cart.delGoods(goodsId);
+		 cart.delNovel(novelId);
 		 session.setAttribute("cart", cart);
 		 return "yes";
 	}
@@ -68,14 +68,14 @@ public class cartService
 		 return "yes";
 	}
 
-	public NovelDAO getGoodsDAO()
+	public NovelDAO getNovelDAO()
 	{
-		return goodsDAO;
+		return novelDAO;
 	}
 
-	public void setGoodsDAO(NovelDAO goodsDAO)
+	public void setNovelDAO(NovelDAO novelDAO)
 	{
-		this.goodsDAO = goodsDAO;
+		this.novelDAO = novelDAO;
 	}
 	
 }
