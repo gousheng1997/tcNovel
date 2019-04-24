@@ -133,8 +133,8 @@
         <action name="novelAllYesRecommendWeight" class="novelAction" method="novelAllYesRecommendWeight">
             <result name="success">/qiantai/novel/novelAllYesRecommendWeight.jsp</result>
         </action>
-        <action name="novelAllNoRecommendWeight" class="novelAction" method="novelAllNoRecommendWeight">
-            <result name="success">/qiantai/novel/novelAllNoRecommendWeight.jsp</result>
+        <action name="novelNewest" class="novelAction" method="novelNewest">
+            <result name="success">/qiantai/novel/novelNewest.jsp</result>
         </action>
         <action name="novelByCatelog" class="novelAction" method="novelByCatelog">
             <result name="success">/qiantai/novel/novelByCatelog.jsp</result>

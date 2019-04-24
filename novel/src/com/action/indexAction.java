@@ -16,14 +16,24 @@ public class indexAction extends ActionSupport
 	private NovelDAO novelDAO;
 
 	
-	
+	//首頁方法
 	public String index()
 	{
+
 		Map request=(Map)ServletActionContext.getContext().get("request");
-		
-		
-		
-		String sql="from Novel where novelDel='no' and novelIsrecommend='yes' order by novelId desc";
+
+		//排行榜
+		List novelList=new ArrayList();
+		String sql="from Novel where novelDel='no'  order by novelLikeNum desc";
+		novelList=	novelDAO.getHibernateTemplate().find(sql);
+		if(novelList.size()>5)
+		{
+			novelList=novelList.subList(0, 5);
+		}
+		request.put("novelList", novelList);
+
+		//推薦欄目
+		sql="from Novel where novelDel='no' and novelIsrecommend='yes' order by novelId desc";
 		List novelYesRecommendWeightList=novelDAO.getHibernateTemplate().find(sql);
 		if(novelYesRecommendWeightList.size()>5)
 		{
@@ -32,25 +42,16 @@ public class indexAction extends ActionSupport
 		request.put("novelYesRecommendWeightList", novelYesRecommendWeightList);
 		
 		
-		
-		sql="from Novel where novelDel='no' and novelIsrecommend='no' order by novelId desc";
-		List novelNoRecommendWeightList=novelDAO.getHibernateTemplate().find(sql);
-		if(novelNoRecommendWeightList.size()>5)
+		//最新作品
+		sql="from Novel where novelDel='no' order by novelId desc";
+		List novelNewestList=novelDAO.getHibernateTemplate().find(sql);
+		if(novelNewestList.size()>5)
 		{
-			novelNoRecommendWeightList=novelNoRecommendWeightList.subList(0, 5);
+			novelNewestList=novelNewestList.subList(0, 5);
 		}
-		request.put("novelNoRecommendWeightList", novelNoRecommendWeightList);
+		request.put("novelNewestList", novelNewestList);
 
-		//paihangbang
-		List novelList=new ArrayList();
-		sql="from Novel where novelDel='no'  order by novelLikeNum desc";
-		 novelList=	novelDAO.getHibernateTemplate().find(sql);
-				if(novelList.size()>5)
-		{
-			novelList=novelList.subList(0, 5);
-		}
-		request.put("novelList", novelList);
-		//paihangbang
+
 		
 		
 		return ActionSupport.SUCCESS;
