@@ -94,7 +94,7 @@ String path = request.getContextPath();
 					<td width="10%">分类</td>
 					<td width="10%">小说封面</td>
 					<td width="10%">小说作者</td>
-					<td width="10%">推荐设置</td>
+					<td width="10%">推荐比重</td>
 					<td width="10%">小说热度</td>
 					<td width="10%">操作</td>
 		        </tr>	
@@ -119,13 +119,10 @@ String path = request.getContextPath();
 					     <s:property value="#novel.novelAuthor"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					     <s:if test="#novel.novelIsrecommend=='no'">无推荐&nbsp;&nbsp;&nbsp;
-					         <a href="#" style="color: red" onclick="novelShezhiRecommendWeight(<s:property value="#novel.novelId"/>)">设为推荐</a>
-					     </s:if>
-					     <s:if test="#novel.novelIsrecommend=='yes'">
-							 <a href="#" style="color: red" onclick="novelShezhiRecommendWeight(<s:property value="#novel.novelId"/>)">更改</a>
-					        <s:property value="#novel.novelRecommendWeight"/>
-					     </s:if>
+
+						 <a href="#" style="color: red" onclick="novelShezhiRecommendWeight(<s:property value="#novel.novelId"/>)">更改</a>
+						<s:property value="#novel.novelRecommendWeight"/>
+
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
 					     <s:property value="#novel.novelLikeNum"/>
