@@ -24,17 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				    openWin(url,n,w,h,s);
 	            </s:else>
 	        }
-	        function myCart()
-	        {
-	            <s:if test="#session.user==null">
-	                  alert("请先登录");
-	            </s:if>
-	            
-	            <s:else>
-	                 var s="<%=path %>/myCart.action";
-	                 window.location.href=s;
-	            </s:else>
-	        }
+
 	        
 	        function myOrder()
 	        {
