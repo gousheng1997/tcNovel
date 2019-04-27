@@ -118,9 +118,7 @@
         <action name="novelShezhiRecommendWeight" class="novelAction" method="novelShezhiRecommendWeight">
             <result name="success">/common/succ.jsp</result>
         </action>
-        <action name="novelKucun" class="novelAction" method="novelKucun">
-            <result name="success">/admin/novel/novelKuncun.jsp</result>
-        </action>
+
         <action name="novelRuku" class="novelAction" method="novelRuku">
             <result name="success">/common/succ.jsp</result>
         </action>

@@ -30,7 +30,7 @@ public class Novel implements java.io.Serializable
 
 	private Integer novelCatelogId;
 	
-	private String novelKucun;
+
 	
 	private String novelDel;
 	
@@ -72,15 +72,6 @@ public class Novel implements java.io.Serializable
 		return novelDel;
 	}
 
-	public String getNovelKucun()
-	{
-		return novelKucun;
-	}
-
-	public void setNovelKucun(String novelKucun)
-	{
-		this.novelKucun = novelKucun;
-	}
 
 	public void setNovelDel(String novelDel)
 	{

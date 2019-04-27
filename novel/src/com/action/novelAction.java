@@ -31,7 +31,7 @@ public class novelAction extends ActionSupport
 	private int novelRecommendWeight;
 	
 	private int catelogId;
-	private String novelKucun;
+
 	
 	private String message;
 	private String path;
@@ -115,7 +115,7 @@ public class novelAction extends ActionSupport
 			novel.setNovelIsrecommend("yes");
 		}
 		
-		novel.setNovelKucun(novelKucun);
+
 		novel.setNovelDel("no");
 		
 		novelDAO.save(novel);
@@ -160,19 +160,11 @@ public class novelAction extends ActionSupport
 	}
 	
 	
-	public String novelKucun()
-	{
-		String sql="from Novel where novelDel='no' order by novelIsrecommend";
-		List novelList=novelDAO.getHibernateTemplate().find(sql);
-		Map request=(Map)ServletActionContext.getContext().get("request");
-		request.put("novelList", novelList);
-		return ActionSupport.SUCCESS;
-	}
+
 	
 	public String novelRuku()
 	{
 		Novel novel=novelDAO.findById(novelId);
-		novel.setNovelKucun(novel.getNovelKucun()+rukushuliang);
 		novel.setNovelRecommendWeight(novelRecommendWeight);
 		novelDAO.attachDirty(novel);
 		return ActionSupport.SUCCESS;
@@ -440,15 +432,9 @@ public class novelAction extends ActionSupport
 		return fujian;
 	}
 
-	public String getNovelKucun()
-	{
-		return novelKucun;
-	}
 
-	public void setNovelKucun(String novelKucun)
-	{
-		this.novelKucun = novelKucun;
-	}
+
+
 
 	public void setFujian(String fujian)
 	{

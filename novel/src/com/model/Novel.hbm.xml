@@ -38,9 +38,7 @@
         <property name="novelCatelogId" type="java.lang.Integer">
             <column name="novel_catelog_id" />
         </property>
-        <property name="novelKucun" type="java.lang.String">
-            <column name="novel_kucun" />
-        </property>
+
         <property name="novelDel" type="java.lang.String">
             <column name="novel_Del" length="50" />
         </property>
