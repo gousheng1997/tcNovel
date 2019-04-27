@@ -19,7 +19,7 @@ public class TGonggao implements java.io.Serializable
 
 	private String gonggaoData;
 
-	private String gonggaoFabuzhe;
+
 	
 	private String gonggaoDel;
 
@@ -48,14 +48,14 @@ public class TGonggao implements java.io.Serializable
 
 	/** full constructor */
 	public TGonggao(String gonggaoTitle, String gonggaoContent,
-			Date gonggaoData, String gonggaoFabuzhe, String gonggaoOne1,
+			Date gonggaoData, String gonggaoOne1,
 			String gonggaoOne2, String gonggaoOne3, String gonggaoOne4,
 			Date gonggaoOne5, Date gonggaoOne6, Integer gonggaoOne7,
 			Integer gonggaoOne8)
 	{
 		this.gonggaoTitle = gonggaoTitle;
 		this.gonggaoContent = gonggaoContent;
-		this.gonggaoFabuzhe = gonggaoFabuzhe;
+
 		this.gonggaoOne1 = gonggaoOne1;
 		this.gonggaoOne2 = gonggaoOne2;
 		this.gonggaoOne3 = gonggaoOne3;
@@ -109,15 +109,7 @@ public class TGonggao implements java.io.Serializable
 		this.gonggaoData = gonggaoData;
 	}
 
-	public String getGonggaoFabuzhe()
-	{
-		return this.gonggaoFabuzhe;
-	}
 
-	public void setGonggaoFabuzhe(String gonggaoFabuzhe)
-	{
-		this.gonggaoFabuzhe = gonggaoFabuzhe;
-	}
 
 	public String getGonggaoOne1()
 	{

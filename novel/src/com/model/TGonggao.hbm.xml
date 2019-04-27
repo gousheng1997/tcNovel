@@ -19,9 +19,7 @@
         <property name="gonggaoData" type="java.lang.String">
             <column name="gonggao_data" length="50" />
         </property>
-        <property name="gonggaoFabuzhe" type="java.lang.String">
-            <column name="gonggao_fabuzhe" />
-        </property>
+
         <property name="gonggaoDel" type="java.lang.String">
             <column name="gonggao_del" length="50" />
         </property>

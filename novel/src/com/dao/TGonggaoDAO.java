@@ -26,7 +26,7 @@ public class TGonggaoDAO extends HibernateDaoSupport
 
 	public static final String GONGGAO_CONTENT = "gonggaoContent";
 
-	public static final String GONGGAO_FABUZHE = "gonggaoFabuzhe";
+
 
 	public static final String GONGGAO_ONE1 = "gonggaoOne1";
 
@@ -130,10 +130,7 @@ public class TGonggaoDAO extends HibernateDaoSupport
 		return findByProperty(GONGGAO_CONTENT, gonggaoContent);
 	}
 
-	public List findByGonggaoFabuzhe(Object gonggaoFabuzhe)
-	{
-		return findByProperty(GONGGAO_FABUZHE, gonggaoFabuzhe);
-	}
+
 
 	public List findByGonggaoOne1(Object gonggaoOne1)
 	{

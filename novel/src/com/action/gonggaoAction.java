@@ -18,7 +18,7 @@ public class gonggaoAction extends ActionSupport
 	private String gonggaoTitle;
 	private String gonggaoContent;
 	private String gonggaoData;
-	private String gonggaoFabuzhe;
+
 	
 	private String message;
 	private String path;
@@ -117,15 +117,7 @@ public class gonggaoAction extends ActionSupport
 		this.gonggaoData = gonggaoData;
 	}
 
-	public String getGonggaoFabuzhe()
-	{
-		return gonggaoFabuzhe;
-	}
 
-	public void setGonggaoFabuzhe(String gonggaoFabuzhe)
-	{
-		this.gonggaoFabuzhe = gonggaoFabuzhe;
-	}
 
 	public int getGonggaoId()
 	{
