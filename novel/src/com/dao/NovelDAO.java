@@ -33,7 +33,7 @@ public class NovelDAO extends HibernateDaoSupport
 
 	public static final String NOVEL_RECOMMENDWEIGHT = "novelRecommendWeight";
 
-	public static final String NOVEL_ISRECOMMEND = "novelIsrecommend";
+
 
 
 
@@ -146,10 +146,7 @@ public class NovelDAO extends HibernateDaoSupport
 		return findByProperty(NOVEL_RECOMMENDWEIGHT, novelRecommendWeight);
 	}
 
-	public List findByNovelIsrecommend(Object novelIsrecommend)
-	{
-		return findByProperty(NOVEL_ISRECOMMEND, novelIsrecommend);
-	}
+
 
 
 	public List findByNovelCatelogId(Object novelCatelogId)

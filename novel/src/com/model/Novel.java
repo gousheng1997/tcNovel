@@ -24,7 +24,7 @@ public class Novel implements java.io.Serializable
 
 	private Integer novelRecommendWeight;
 
-	private String novelIsrecommend;
+
 
 
 
@@ -55,7 +55,7 @@ public class Novel implements java.io.Serializable
 
 		this.novelLikeNum = novelLikeNum;
 		this.novelRecommendWeight = novelRecommendWeight;
-		this.novelIsrecommend = novelIsrecommend;
+
 
 		this.novelCatelogId = novelCatelogId;
 	}
@@ -135,15 +135,7 @@ public class Novel implements java.io.Serializable
 		this.novelRecommendWeight = novelRecommendWeight;
 	}
 
-	public String getNovelIsrecommend()
-	{
-		return this.novelIsrecommend;
-	}
 
-	public void setNovelIsrecommend(String novelIsrecommend)
-	{
-		this.novelIsrecommend = novelIsrecommend;
-	}
 
 	public String getNovelAuthor() {
 		return novelAuthor;

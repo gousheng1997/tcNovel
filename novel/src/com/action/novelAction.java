@@ -32,7 +32,6 @@ public class novelAction extends ActionSupport
 	
 	private int catelogId;
 
-	
 	private String message;
 	private String path;
 	
@@ -40,8 +39,6 @@ public class novelAction extends ActionSupport
 	private TCatelogDAO catelogDAO;
 	private CommentDAO commentDAO;
 
-	
-	
 	private int zhangjieId;
 	private String zhangjiename;
 	private String content;
@@ -107,12 +104,12 @@ public class novelAction extends ActionSupport
 		if(novelRecommendWeight==0)//
 		{
 			novel.setNovelRecommendWeight(novelLikeNum);//
-			novel.setNovelIsrecommend("no");
+
 		}
 		else
 		{
 			novel.setNovelRecommendWeight(novelRecommendWeight);
-			novel.setNovelIsrecommend("yes");
+
 		}
 		
 
@@ -137,7 +134,7 @@ public class novelAction extends ActionSupport
 	
 	public String novelManage()
 	{
-		String sql="from Novel where novelDel='no' order by novelIsrecommend";
+		String sql="from Novel where novelDel='no' order by novelRecommendWeight desc";
 		List novelList=novelDAO.getHibernateTemplate().find(sql);
 		for(int i=0;i<novelList.size();i++)
 		{
@@ -153,7 +150,7 @@ public class novelAction extends ActionSupport
 	public String novelShezhiRecommendWeight()
 	{
 		Novel novel=novelDAO.findById(novelId);
-		novel.setNovelIsrecommend("yes");
+
 		novel.setNovelRecommendWeight(novelRecommendWeight);
 		novelDAO.attachDirty(novel);
 		return ActionSupport.SUCCESS;

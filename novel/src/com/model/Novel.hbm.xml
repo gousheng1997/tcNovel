@@ -31,9 +31,8 @@
         <property name="novelRecommendWeight" type="java.lang.Integer">
             <column name="novel_recommend_weight" />
         </property>
-        <property name="novelIsrecommend" type="java.lang.String">
-            <column name="novel_isrecommend" length="50" />
-        </property>
+
+
 
         <property name="novelCatelogId" type="java.lang.Integer">
             <column name="novel_catelog_id" />
