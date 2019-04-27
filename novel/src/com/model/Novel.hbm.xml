@@ -24,9 +24,7 @@
         <property name="novelPic" type="java.lang.String">
             <column name="novel_pic" length="50" />
         </property>
-        <property name="novelYanse" type="java.lang.String">
-            <column name="novel_yanse" length="50" />
-        </property>
+
         <property name="novelLikeNum" type="java.lang.Integer">
             <column name="novel_like_num" />
         </property>

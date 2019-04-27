@@ -79,7 +79,7 @@
                                       <tr><td width="30"></td><td style="font-size: 11px;">作者：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelAuthor"/></td></tr>
                                       <tr><td width="30"></td><td style="font-size: 11px;">类别：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelCatelogName"/></td></tr>
                                         <tr><td width="30"></td><td style="font-size: 11px;">点赞：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelLikeNum"/></td></tr>
-                                          <tr><td width="30"></td><td style="font-size: 11px;"></td><td style="font-size: 11px;"><s:property value="#request.novel.novelYanse"/></td></tr>
+
                                       <tr><td width="30"></td><td style="font-size: 11px;"> <a href="#" style="color: red" onclick="commentAll(<s:property value="#request.novel.novelId"/>)">查看评论</a></td>
                                       
                                     <td style="font-size: 11px;"> <a href="#" style="color: red" onclick="commentAdd(<s:property value="#request.novel.novelId"/>)">我要评论</a>   <a href="<%=path %>/dianzan.action?novelId=<s:property value="#request.novel.novelId"/>" style="color: red" >点赞</a></td></tr>

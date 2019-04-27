@@ -26,7 +26,7 @@ public class novelAction extends ActionSupport
 	private String novelName;
 	private String novelMiaoshu;
 	private String fujian;
-	private String novelYanse;
+
 	private int novelLikeNum;
 	private int novelRecommendWeight;
 	
@@ -486,14 +486,7 @@ public class novelAction extends ActionSupport
 	{
 		this.novelRecommendWeight = novelRecommendWeight;
 	}
-	public String getNovelYanse()
-	{
-		return novelYanse;
-	}
-	public void setNovelYanse(String novelYanse)
-	{
-		this.novelYanse = novelYanse;
-	}
+
 	public String getMessage()
 	{
 		return message;

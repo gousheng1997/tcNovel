@@ -17,7 +17,7 @@ public class Novel implements java.io.Serializable
 
 	private String novelPic;
 
-	private String novelYanse;
+
 	private String novelAuthor;
 
 	private Integer novelLikeNum;
@@ -45,14 +45,14 @@ public class Novel implements java.io.Serializable
 
 	/** full constructor */
 	public Novel(String novelName, String novelMiaoshu, String novelPic,
-				 String novelYanse, Integer novelLikeNum, Integer novelRecommendWeight,
+				  Integer novelLikeNum, Integer novelRecommendWeight,
 
 				 Integer novelCatelogId)
 	{
 		this.novelName = novelName;
 		this.novelMiaoshu = novelMiaoshu;
 		this.novelPic = novelPic;
-		this.novelYanse = novelYanse;
+
 		this.novelLikeNum = novelLikeNum;
 		this.novelRecommendWeight = novelRecommendWeight;
 		this.novelIsrecommend = novelIsrecommend;
@@ -122,15 +122,7 @@ public class Novel implements java.io.Serializable
 		this.novelPic = novelPic;
 	}
 
-	public String getNovelYanse()
-	{
-		return this.novelYanse;
-	}
 
-	public void setNovelYanse(String novelYanse)
-	{
-		this.novelYanse = novelYanse;
-	}
 
 	public Integer getNovelLikeNum()
 	{

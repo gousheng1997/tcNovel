@@ -27,7 +27,7 @@ public class NovelDAO extends HibernateDaoSupport
 
 	public static final String NOVEL_PIC = "novelPic";
 
-	public static final String NOVEL_YANSE = "novelYanse";
+
 
 	public static final String NOVEL_SHICHANGJIA = "novelLikeNum";
 
@@ -134,10 +134,7 @@ public class NovelDAO extends HibernateDaoSupport
 		return findByProperty(NOVEL_PIC, novelPic);
 	}
 
-	public List findByNovelYanse(Object novelYanse)
-	{
-		return findByProperty(NOVEL_YANSE, novelYanse);
-	}
+
 
 	public List findByNovelLikeNum(Object novelLikeNum)
 	{
