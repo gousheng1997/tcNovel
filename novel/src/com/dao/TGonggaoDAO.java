@@ -28,17 +28,7 @@ public class TGonggaoDAO extends HibernateDaoSupport
 
 
 
-	public static final String GONGGAO_ONE1 = "gonggaoOne1";
 
-	public static final String GONGGAO_ONE2 = "gonggaoOne2";
-
-	public static final String GONGGAO_ONE3 = "gonggaoOne3";
-
-	public static final String GONGGAO_ONE4 = "gonggaoOne4";
-
-	public static final String GONGGAO_ONE7 = "gonggaoOne7";
-
-	public static final String GONGGAO_ONE8 = "gonggaoOne8";
 
 	protected void initDao()
 	{
@@ -132,35 +122,7 @@ public class TGonggaoDAO extends HibernateDaoSupport
 
 
 
-	public List findByGonggaoOne1(Object gonggaoOne1)
-	{
-		return findByProperty(GONGGAO_ONE1, gonggaoOne1);
-	}
 
-	public List findByGonggaoOne2(Object gonggaoOne2)
-	{
-		return findByProperty(GONGGAO_ONE2, gonggaoOne2);
-	}
-
-	public List findByGonggaoOne3(Object gonggaoOne3)
-	{
-		return findByProperty(GONGGAO_ONE3, gonggaoOne3);
-	}
-
-	public List findByGonggaoOne4(Object gonggaoOne4)
-	{
-		return findByProperty(GONGGAO_ONE4, gonggaoOne4);
-	}
-
-	public List findByGonggaoOne7(Object gonggaoOne7)
-	{
-		return findByProperty(GONGGAO_ONE7, gonggaoOne7);
-	}
-
-	public List findByGonggaoOne8(Object gonggaoOne8)
-	{
-		return findByProperty(GONGGAO_ONE8, gonggaoOne8);
-	}
 
 	public List findAll()
 	{

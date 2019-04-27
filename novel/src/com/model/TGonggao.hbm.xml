@@ -23,29 +23,6 @@
         <property name="gonggaoDel" type="java.lang.String">
             <column name="gonggao_del" length="50" />
         </property>
-        <property name="gonggaoOne1" type="java.lang.String">
-            <column name="gonggao_one1" length="50" />
-        </property>
-        <property name="gonggaoOne2" type="java.lang.String">
-            <column name="gonggao_one2" length="50" />
-        </property>
-        <property name="gonggaoOne3" type="java.lang.String">
-            <column name="gonggao_one3" length="50" />
-        </property>
-        <property name="gonggaoOne4" type="java.lang.String">
-            <column name="gonggao_one4" length="50" />
-        </property>
-        <property name="gonggaoOne5" type="java.util.Date">
-            <column name="gonggao_one5" length="23" />
-        </property>
-        <property name="gonggaoOne6" type="java.util.Date">
-            <column name="gonggao_one6" length="23" />
-        </property>
-        <property name="gonggaoOne7" type="java.lang.Integer">
-            <column name="gonggao_one7" />
-        </property>
-        <property name="gonggaoOne8" type="java.lang.Integer">
-            <column name="gonggao_one8" />
-        </property>
+
     </class>
 </hibernate-mapping>
