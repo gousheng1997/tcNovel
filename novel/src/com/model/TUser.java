@@ -31,7 +31,7 @@ public class TUser implements java.io.Serializable
 
 	private String userQq;
 
-	private String userMan;
+
 
 	private String userAge;
 
@@ -53,7 +53,7 @@ public class TUser implements java.io.Serializable
 	/** full constructor */
 	public TUser(String userName, String userPw,
 			String userRealname, String userAddress, String userSex,
-			String userTel, String userEmail, String userQq, String userMan,
+			String userTel, String userEmail, String userQq,
 			String userAge, String userBirthday, String userXueli
 			)
 	{
@@ -66,7 +66,7 @@ public class TUser implements java.io.Serializable
 		this.userTel = userTel;
 		this.userEmail = userEmail;
 		this.userQq = userQq;
-		this.userMan = userMan;
+
 		this.userAge = userAge;
 		this.userBirthday = userBirthday;
 		this.userXueli = userXueli;
@@ -179,15 +179,7 @@ public class TUser implements java.io.Serializable
 		this.userQq = userQq;
 	}
 
-	public String getUserMan()
-	{
-		return this.userMan;
-	}
 
-	public void setUserMan(String userMan)
-	{
-		this.userMan = userMan;
-	}
 
 	public String getUserAge()
 	{

@@ -35,9 +35,7 @@
         <property name="userQq" type="java.lang.String">
             <column name="user_qq" length="50" />
         </property>
-        <property name="userMan" type="java.lang.String">
-            <column name="user_man" length="50" />
-        </property>
+
         <property name="userAge" type="java.lang.String">
             <column name="user_age" length="50" />
         </property>
