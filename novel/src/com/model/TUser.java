@@ -33,7 +33,7 @@ public class TUser implements java.io.Serializable
 
 
 
-	private String userAge;
+
 
 	private String userBirthday;
 
@@ -54,7 +54,7 @@ public class TUser implements java.io.Serializable
 	public TUser(String userName, String userPw,
 			String userRealname, String userAddress, String userSex,
 			String userTel, String userEmail, String userQq,
-			String userAge, String userBirthday, String userXueli
+			 String userBirthday, String userXueli
 			)
 	{
 		this.userName = userName;
@@ -67,7 +67,6 @@ public class TUser implements java.io.Serializable
 		this.userEmail = userEmail;
 		this.userQq = userQq;
 
-		this.userAge = userAge;
 		this.userBirthday = userBirthday;
 		this.userXueli = userXueli;
 
@@ -181,15 +180,9 @@ public class TUser implements java.io.Serializable
 
 
 
-	public String getUserAge()
-	{
-		return this.userAge;
-	}
 
-	public void setUserAge(String userAge)
-	{
-		this.userAge = userAge;
-	}
+
+
 
 	public String getUserBirthday()
 	{
