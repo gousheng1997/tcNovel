@@ -39,7 +39,7 @@ public class novelAction extends ActionSupport
 	private NovelDAO novelDAO;
 	private TCatelogDAO catelogDAO;
 	private CommentDAO commentDAO;
-	private int rukushuliang;
+
 	
 	
 	private int zhangjieId;
@@ -162,13 +162,7 @@ public class novelAction extends ActionSupport
 	
 
 	
-	public String novelRuku()
-	{
-		Novel novel=novelDAO.findById(novelId);
-		novel.setNovelRecommendWeight(novelRecommendWeight);
-		novelDAO.attachDirty(novel);
-		return ActionSupport.SUCCESS;
-	}
+
 	
 
 	
@@ -396,15 +390,7 @@ public class novelAction extends ActionSupport
 		this.novelDAO = novelDAO;
 	}
 	
-	public int getRukushuliang()
-	{
-		return rukushuliang;
-	}
 
-	public void setRukushuliang(int rukushuliang)
-	{
-		this.rukushuliang = rukushuliang;
-	}
 
 	public int getNovelId()
 	{

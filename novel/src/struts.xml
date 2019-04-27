@@ -119,9 +119,7 @@
             <result name="success">/common/succ.jsp</result>
         </action>
 
-        <action name="novelRuku" class="novelAction" method="novelRuku">
-            <result name="success">/common/succ.jsp</result>
-        </action>
+
         <action name="novelDetailHou" class="novelAction" method="novelDetailHou">
             <result name="success">/admin/novel/novelDetailHou.jsp</result>
         </action>
