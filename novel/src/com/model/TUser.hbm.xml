@@ -36,13 +36,6 @@
             <column name="user_qq" length="50" />
         </property>
 
-
-        <property name="userBirthday" type="java.lang.String">
-            <column name="user_birthday" length="50" />
-        </property>
-        <property name="userXueli" type="java.lang.String">
-            <column name="user_xueli" length="50" />
-        </property>
         <property name="userDel" type="java.lang.String">
             <column name="user_del" length="50" />
         </property>
