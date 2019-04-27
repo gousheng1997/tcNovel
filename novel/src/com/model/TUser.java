@@ -17,7 +17,7 @@ public class TUser implements java.io.Serializable
 
 	private String userPw;
 
-	private int userType;
+
 
 	private String userRealname;
 
@@ -51,7 +51,7 @@ public class TUser implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public TUser(String userName, String userPw, int userType,
+	public TUser(String userName, String userPw,
 			String userRealname, String userAddress, String userSex,
 			String userTel, String userEmail, String userQq, String userMan,
 			String userAge, String userBirthday, String userXueli
@@ -59,7 +59,7 @@ public class TUser implements java.io.Serializable
 	{
 		this.userName = userName;
 		this.userPw = userPw;
-		this.userType = userType;
+
 		this.userRealname = userRealname;
 		this.userAddress = userAddress;
 		this.userSex = userSex;
@@ -96,15 +96,7 @@ public class TUser implements java.io.Serializable
 		this.userId = userId;
 	}
 
-	public int getUserType()
-	{
-		return userType;
-	}
 
-	public void setUserType(int userType)
-	{
-		this.userType = userType;
-	}
 
 	public String getUserName()
 	{

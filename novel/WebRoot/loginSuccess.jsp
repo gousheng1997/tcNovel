@@ -21,15 +21,10 @@ String path = request.getContextPath();
                <s:if test="#session.userType==0">
                    window.location.href="<%=path %>/admin/index.jsp";
                </s:if>
-               <s:if test="#session.userType==1">
-                   window.location.href="<%=path %>/atea/index.jsp";
-               </s:if>
-               <s:if test="#session.userType==2">
-                   window.location.href="<%=path %>/astu/index.jsp";
-               </s:if>
+
            }
            
-           setTimeout(tiao,1300)
+           setTimeout(tiao,500)
        </script>
        <br> <br> <br> <br> <br> <br> <br> <br> <br>
        <center><img src="<%=path %>/images/loading32.gif">页面跳转中</center>

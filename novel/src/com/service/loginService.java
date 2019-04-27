@@ -68,14 +68,7 @@ public class loginService
 	             result="yes";
 			}
 		}
-		if(userType==1)//老师登陆
-		{
-			
-		}
-		if(userType==2)//学生登陆
-		{
-			
-		}
+
 		return result;
 	}
 

@@ -16,9 +16,7 @@
         <property name="userPw" type="java.lang.String">
             <column name="user_pw" length="50" />
         </property>
-        <property name="userType" type="java.lang.Integer">
-            <column name="user_type"/>
-        </property>
+
         <property name="userRealname" type="java.lang.String">
             <column name="user_realname" length="50" />
         </property>
