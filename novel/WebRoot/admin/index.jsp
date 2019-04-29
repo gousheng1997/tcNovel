@@ -17,7 +17,7 @@ String path = request.getContextPath();
 	{
 	  scrollbar-base-color:#C0D586;
 	  scrollbar-arrow-color:#FFFFFF;
-	  scrollbar-shadow-color:DEEFC6;
+	  scrollbar-shadow-color:#DEEFC6;
 	}
 	</style>
   </head>
