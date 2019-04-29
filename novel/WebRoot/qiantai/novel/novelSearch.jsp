@@ -118,7 +118,7 @@
 				            <div id="div"> 
 				                   <div style="overflow:hidden;height:150px;">
 							             <div id="roll-orig-1607838439">
-										 <s:action name="gonggaoQian5" executeResult="true" flush="true"></s:action>
+										 <s:action name="announcementQian5" executeResult="true" flush="true"></s:action>
 							             </div>
 						                 <div id="roll-copy-1607838439"></div>
 				                   </div>

@@ -76,21 +76,21 @@
         
         
         
-        <action name="gonggaoAdd" class="gonggaoAction" method="gonggaoAdd">
+        <action name="announcementAdd" class="announcementAction" method="announcementAdd">
         </action>
-        <action name="gonggaoDel" class="gonggaoAction" method="gonggaoDel">
+        <action name="announcementDel" class="announcementAction" method="announcementDel">
         </action>
-        <action name="gonggaoMana" class="gonggaoAction" method="gonggaoMana">
-            <result>/admin/gonggao/gonggaoMana.jsp</result>
+        <action name="announcementMana" class="announcementAction" method="announcementMana">
+            <result>/admin/announcement/announcementMana.jsp</result>
         </action>
-        <action name="gonggaoDetail" class="gonggaoAction" method="gonggaoDetail">
-            <result>/admin/gonggao/gonggaoDetail.jsp</result>
+        <action name="announcementDetail" class="announcementAction" method="announcementDetail">
+            <result>/admin/announcement/announcementDetail.jsp</result>
         </action>
-        <action name="gonggaoDetailQian" class="gonggaoAction" method="gonggaoDetailQian">
-            <result>/qiantai/gonggao/gonggaoDetailQian.jsp</result>
+        <action name="announcementDetailQian" class="announcementAction" method="announcementDetailQian">
+            <result>/qiantai/announcement/announcementDetailQian.jsp</result>
         </action>
-        <action name="gonggaoQian5" class="gonggaoAction" method="gonggaoQian5">
-            <result>/qiantai/gonggao/gonggaoQian5.jsp</result>
+        <action name="announcementQian5" class="announcementAction" method="announcementQian5">
+            <result>/qiantai/announcement/announcementQian5.jsp</result>
         </action>
         
         

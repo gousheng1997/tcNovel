@@ -34,7 +34,7 @@
 			<list>
 				<value>com/model/Admin.hbm.xml</value>
 			    <value>com/model/TLiuyan.hbm.xml</value>
-			    <value>com/model/TGonggao.hbm.xml</value>
+			    <value>com/model/Announcement.hbm.xml</value>
 			    <value>com/model/TUser.hbm.xml</value>
 			    <value>com/model/TCatelog.hbm.xml</value>
 			    <value>com/model/Novel.hbm.xml</value>
@@ -114,14 +114,14 @@
 	
 	
 	
-	<bean id="TGonggaoDAO" class="com.dao.TGonggaoDAO">
+	<bean id="AnnouncementDAO" class="com.dao.AnnouncementDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory"></ref>
 		</property>
 	</bean>
-	<bean id="gonggaoAction" class="com.action.gonggaoAction" scope="prototype">
-		<property name="gonggaoDAO">
-			<ref bean="TGonggaoDAO" />
+	<bean id="announcementAction" class="com.action.announcementAction" scope="prototype">
+		<property name="announcementDAO">
+			<ref bean="AnnouncementDAO" />
 		</property>
 	</bean>
 	

@@ -24,7 +24,7 @@ String path = request.getContextPath();
         <table align="center">
           <tr>
              <td>
-                  <s:property value="#request.gonggao.gonggaoContent" escape="false"/>
+                  <s:property value="#request.announcement.announcementContent" escape="false"/>
              </td>
           </tr>
       </table>

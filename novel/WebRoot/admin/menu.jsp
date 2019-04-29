@@ -114,7 +114,7 @@ String path = request.getContextPath();
 	        <dd style='display:block' class='sitem' id='items3_1'>
 	          <ul class='sitemu'>
 	            <li><a href='<%=path %>/liuyanMana.action' target='main'>留言管理</a> </li>
-	            <li><a href='<%=path %>/gonggaoMana.action' target='main'>公告管理</a> </li>
+	            <li><a href='<%=path %>/announcementMana.action' target='main'>公告管理</a> </li>
 	          </ul>
 	        </dd>
 	      </dl>

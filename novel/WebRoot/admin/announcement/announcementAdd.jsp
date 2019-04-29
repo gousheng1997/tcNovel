@@ -29,7 +29,7 @@ String path = request.getContextPath();
 	</head>
 
 	<body leftmargin="2" topmargin="9" background='<%=path %>/images/allbg.gif'>
-			<form action="<%=path %>/gonggaoAdd.action" name="formAdd" method="post">
+			<form action="<%=path %>/announcementAdd.action" name="formAdd" method="post">
 				     <table width="98%" align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC" style="margin-bottom:8px">
 						<tr bgcolor="#EEF4EA">
 					        <td colspan="3" background="<%=path %>/images/wbg.gif" class='title'><span>公告添加</span></td>
@@ -39,7 +39,7 @@ String path = request.getContextPath();
 						          标题：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="gonggaoTitle"/>
+						        <input type="text" name="announcementTitle"/>
 						    </td>
 						</tr>
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
@@ -47,7 +47,7 @@ String path = request.getContextPath();
 						        内容：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <FCK:editor instanceName="gonggaoContent"  basePath="/fckeditor" width="500" height="200" value="请输入内容" toolbarSet="Basic">
+						        <FCK:editor instanceName="announcementContent"  basePath="/fckeditor" width="500" height="200" value="请输入内容" toolbarSet="Basic">
 	                            </FCK:editor>
 						    </td>
 						</tr>

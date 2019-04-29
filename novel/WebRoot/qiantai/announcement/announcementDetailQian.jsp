@@ -31,9 +31,9 @@
 		        <div class="left_row">
 		            <div class="list pic_news">
 		  	                <div class="list_bar">&nbsp;导航</div>
-						  	<div class="ctitle ctitle1"><s:property value="#request.gonggao.gonggaoTitle"/></div>
-							<div class="ctitleinfo"><s:property value="#request.gonggao.gonggaoData"/>&nbsp;&nbsp;&nbsp;<%--查看次数：5 次--%></div>
-							<div class="pbox"><s:property value="#request.gonggao.gonggaoContent" escape="false"/></div>
+						  	<div class="ctitle ctitle1"><s:property value="#request.announcement.announcementTitle"/></div>
+							<div class="ctitleinfo"><s:property value="#request.announcement.announcementData"/>&nbsp;&nbsp;&nbsp;<%--查看次数：5 次--%></div>
+							<div class="pbox"><s:property value="#request.announcement.announcementContent" escape="false"/></div>
 				            <div class="page_no">
 				                <div class="pg-3">
 					                 <%--分页--%>
@@ -84,7 +84,7 @@
 				            <div id="div"> 
 				                   <div style="overflow:hidden;height:150px;">
 							             <div id="roll-orig-1607838439">
-										 <s:action name="gonggaoQian5" executeResult="true" flush="true"></s:action>
+										 <s:action name="announcementQian5" executeResult="true" flush="true"></s:action>
 							             </div>
 						                 <div id="roll-copy-1607838439"></div>
 				                   </div>

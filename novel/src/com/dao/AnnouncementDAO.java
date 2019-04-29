@@ -8,23 +8,23 @@ import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.model.TGonggao;
+import com.model.Announcement;
 
 /**
- * Data access object (DAO) for domain model class TGonggao.
+ * Data access object (DAO) for domain model class Announcement.
  * 
- * @see com.model.TGonggao
+ * @see com.model.Announcement
  * @author MyEclipse Persistence Tools
  */
 
-public class TGonggaoDAO extends HibernateDaoSupport
+public class AnnouncementDAO extends HibernateDaoSupport
 {
-	private static final Log log = LogFactory.getLog(TGonggaoDAO.class);
+	private static final Log log = LogFactory.getLog(AnnouncementDAO.class);
 
 	// property constants
-	public static final String GONGGAO_TITLE = "gonggaoTitle";
+	public static final String ANNOUNCEMENT_TITLE = "announcementTitle";
 
-	public static final String GONGGAO_CONTENT = "gonggaoContent";
+	public static final String ANNOUNCEMENT_CONTENT = "announcementContent";
 
 
 
@@ -35,9 +35,9 @@ public class TGonggaoDAO extends HibernateDaoSupport
 		// do nothing
 	}
 
-	public void save(TGonggao transientInstance)
+	public void save(Announcement transientInstance)
 	{
-		log.debug("saving TGonggao instance");
+		log.debug("saving Announcement instance");
 		try
 		{
 			getHibernateTemplate().save(transientInstance);
@@ -49,9 +49,9 @@ public class TGonggaoDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void delete(TGonggao persistentInstance)
+	public void delete(Announcement persistentInstance)
 	{
-		log.debug("deleting TGonggao instance");
+		log.debug("deleting Announcement instance");
 		try
 		{
 			getHibernateTemplate().delete(persistentInstance);
@@ -63,13 +63,13 @@ public class TGonggaoDAO extends HibernateDaoSupport
 		}
 	}
 
-	public TGonggao findById(java.lang.Integer id)
+	public Announcement findById(java.lang.Integer id)
 	{
-		log.debug("getting TGonggao instance with id: " + id);
+		log.debug("getting Announcement instance with id: " + id);
 		try
 		{
-			TGonggao instance = (TGonggao) getHibernateTemplate().get(
-					"com.model.TGonggao", id);
+			Announcement instance = (Announcement) getHibernateTemplate().get(
+					"com.model.Announcement", id);
 			return instance;
 		} catch (RuntimeException re)
 		{
@@ -78,9 +78,9 @@ public class TGonggaoDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByExample(TGonggao instance)
+	public List findByExample(Announcement instance)
 	{
-		log.debug("finding TGonggao instance by example");
+		log.debug("finding Announcement instance by example");
 		try
 		{
 			List results = getHibernateTemplate().findByExample(instance);
@@ -96,11 +96,11 @@ public class TGonggaoDAO extends HibernateDaoSupport
 
 	public List findByProperty(String propertyName, Object value)
 	{
-		log.debug("finding TGonggao instance with property: " + propertyName
+		log.debug("finding Announcement instance with property: " + propertyName
 				+ ", value: " + value);
 		try
 		{
-			String queryString = "from TGonggao as model where model."
+			String queryString = "from Announcement as model where model."
 					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re)
@@ -110,14 +110,14 @@ public class TGonggaoDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByGonggaoTitle(Object gonggaoTitle)
+	public List findByAnnouncementTitle(Object announcementTitle)
 	{
-		return findByProperty(GONGGAO_TITLE, gonggaoTitle);
+		return findByProperty(ANNOUNCEMENT_TITLE, announcementTitle);
 	}
 
-	public List findByGonggaoContent(Object gonggaoContent)
+	public List findByAnnouncementContent(Object announcementContent)
 	{
-		return findByProperty(GONGGAO_CONTENT, gonggaoContent);
+		return findByProperty(ANNOUNCEMENT_CONTENT, announcementContent);
 	}
 
 
@@ -126,10 +126,10 @@ public class TGonggaoDAO extends HibernateDaoSupport
 
 	public List findAll()
 	{
-		log.debug("finding all TGonggao instances");
+		log.debug("finding all Announcement instances");
 		try
 		{
-			String queryString = "from TGonggao order by gonggaoId desc";
+			String queryString = "from Announcement order by announcementId desc";
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re)
 		{
@@ -138,12 +138,12 @@ public class TGonggaoDAO extends HibernateDaoSupport
 		}
 	}
 
-	public TGonggao merge(TGonggao detachedInstance)
+	public Announcement merge(Announcement detachedInstance)
 	{
-		log.debug("merging TGonggao instance");
+		log.debug("merging Announcement instance");
 		try
 		{
-			TGonggao result = (TGonggao) getHibernateTemplate().merge(
+			Announcement result = (Announcement) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -154,9 +154,9 @@ public class TGonggaoDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void attachDirty(TGonggao instance)
+	public void attachDirty(Announcement instance)
 	{
-		log.debug("attaching dirty TGonggao instance");
+		log.debug("attaching dirty Announcement instance");
 		try
 		{
 			getHibernateTemplate().saveOrUpdate(instance);
@@ -168,9 +168,9 @@ public class TGonggaoDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void attachClean(TGonggao instance)
+	public void attachClean(Announcement instance)
 	{
-		log.debug("attaching clean TGonggao instance");
+		log.debug("attaching clean Announcement instance");
 		try
 		{
 			getHibernateTemplate().lock(instance, LockMode.NONE);
@@ -182,8 +182,8 @@ public class TGonggaoDAO extends HibernateDaoSupport
 		}
 	}
 
-	public static TGonggaoDAO getFromApplicationContext(ApplicationContext ctx)
+	public static AnnouncementDAO getFromApplicationContext(ApplicationContext ctx)
 	{
-		return (TGonggaoDAO) ctx.getBean("TGonggaoDAO");
+		return (AnnouncementDAO) ctx.getBean("AnnouncementDAO");
 	}
 }

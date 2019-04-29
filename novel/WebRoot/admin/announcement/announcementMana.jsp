@@ -18,15 +18,15 @@ String path = request.getContextPath();
 		<script language="JavaScript" src="<%=path %>/js/public.js" type="text/javascript"></script>
 		
         <script language="javascript">
-           function gonggaoAdd()
+           function announcementAdd()
            {
-              var url="<%=path %>/admin/gonggao/gonggaoAdd.jsp";
+              var url="<%=path %>/admin/announcement/announcementAdd.jsp";
               window.location.href=url;
            }
            
-           function gonggaoDetail(gonggaoId)
+           function announcementDetail(announcementId)
            {
-                 var url="<%=path %>/gonggaoDetail.action?gonggaoId="+gonggaoId;
+                 var url="<%=path %>/announcementDetail.action?announcementId="+announcementId;
                  var n="";
                  var w="480px";
                  var h="500px";
@@ -47,19 +47,19 @@ String path = request.getContextPath();
 					<td width="25%">内容</td>
 					<td width="25%">操作</td>
 		        </tr>	
-				<s:iterator value="#request.gonggaoList" id="gonggao">
+				<s:iterator value="#request.announcementList" id="announcement">
 				<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 					<td bgcolor="#FFFFFF" align="center">
-						 <s:property value="#gonggao.gonggaoTitle"/>
+						 <s:property value="#announcement.announcementTitle"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						<s:property value="#gonggao.gonggaoData"/>
+						<s:property value="#announcement.announcementData"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					    <a href="<%=path %>/gonggaoDetail.action?gonggaoId=<s:property value="#gonggao.gonggaoId"/>" target="blank" class="pn-loperator">查看内容</a>
+					    <a href="<%=path %>/announcementDetail.action?announcementId=<s:property value="#announcement.announcementId"/>" target="blank" class="pn-loperator">查看内容</a>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						<a class="pn-loperator" href="<%=path %>/gonggaoDel.action?gonggaoId=<s:property value="#gonggao.gonggaoId"/>">删除</a>
+						<a class="pn-loperator" href="<%=path %>/announcementDel.action?announcementId=<s:property value="#announcement.announcementId"/>">删除</a>
 					</td>
 				</tr>
 				</s:iterator>
@@ -68,7 +68,7 @@ String path = request.getContextPath();
 			<table width='98%'  border='0'style="margin-top:8px;margin-left: 5px;">
 			  <tr>
 			    <td>
-			      <input type="button" value="添加公告" style="width: 80px;" onclick="gonggaoAdd()" />
+			      <input type="button" value="添加公告" style="width: 80px;" onclick="announcementAdd()" />
 			    </td>
 			  </tr>
 		    </table>
