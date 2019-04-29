@@ -12,10 +12,10 @@ import org.apache.struts2.ServletActionContext;
 import com.dao.TCatelogDAO;
 import com.dao.NovelDAO;
 import com.dao.CommentDAO;
-import com.dao.TzhangjieDAO;
+import com.dao.ChapterDAO;
 import com.model.TCatelog;
 import com.model.Comment;
-import com.model.Tzhangjie;
+import com.model.Chapter;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -39,10 +39,10 @@ public class novelAction extends ActionSupport
 	private TCatelogDAO catelogDAO;
 	private CommentDAO commentDAO;
 
-	private int zhangjieId;
-	private String zhangjiename;
+	private int chapterId;
+	private String chaptername;
 	private String content;
-	private TzhangjieDAO zhangjieDAO;
+	private ChapterDAO chapterDAO;
 	
 	public String commentAdd()
 	{
@@ -182,8 +182,8 @@ public class novelAction extends ActionSupport
 		TCatelog catelog=catelogDAO.findById(novel.getNovelCatelogId());
 		novel.setNovelCatelogName(catelog.getCatelogName());
 		
-		List zhangjieList=zhangjieDAO.findByProperty("novelId", novelId);
-		request.put("zhangjieList", zhangjieList);
+		List chapterList=chapterDAO.findByProperty("novelId", novelId);
+		request.put("chapterList", chapterList);
 		
 		request.put("novel", novel);
 		return ActionSupport.SUCCESS;
@@ -199,8 +199,8 @@ public class novelAction extends ActionSupport
 		TCatelog catelog=catelogDAO.findById(novel.getNovelCatelogId());
 		novel.setNovelCatelogName(catelog.getCatelogName());
 		
-		List zhangjieList=zhangjieDAO.findByProperty("novelId", novelId);
-		request.put("zhangjieList", zhangjieList);
+		List chapterList=chapterDAO.findByProperty("novelId", novelId);
+		request.put("chapterList", chapterList);
 		
 		request.put("novel", novel);
 		return ActionSupport.SUCCESS;
@@ -264,81 +264,81 @@ public class novelAction extends ActionSupport
 	}
 	
 	
-	public String zhangjieAdd()
+	public String chapterAdd()
 	{
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		
-		Tzhangjie zhangjie=new Tzhangjie();
-		zhangjie.setContent(content);
-		zhangjie.setZhangjiename(zhangjiename);
-		zhangjie.setNovelId(novelId);
-		zhangjie.setPushtime(new Date().toLocaleString());
+		Chapter chapter=new Chapter();
+		chapter.setContent(content);
+		chapter.setChaptername(chaptername);
+		chapter.setNovelId(novelId);
+		chapter.setPushtime(new Date().toLocaleString());
 		Map session=ActionContext.getContext().getSession();
 		
-		zhangjieDAO.save(zhangjie);
+		chapterDAO.save(chapter);
 		this.setMessage("发布成功");
 		request.put("novelId", novelId);
-		this.setPath("zhangjieMana.action");
+		this.setPath("chapterMana.action");
 		return "succeed";
 	}
 	
 	
-	public String zhangjieDel()
+	public String chapterDel()
 	{
-		Tzhangjie zhangjie=zhangjieDAO.findById(zhangjieId);
-		zhangjieDAO.delete(zhangjie);
+		Chapter chapter=chapterDAO.findById(chapterId);
+		chapterDAO.delete(chapter);
 		this.setMessage("删除成功");
-		this.setPath("zhangjieMana.action");
+		this.setPath("chapterMana.action");
 		return "succeed";
 	}
 	
 	
 	
-	public String zhangjieDetail()
+	public String chapterDetail()
 	{
 		Map request=(Map)ServletActionContext.getContext().get("request");
 		
-		Tzhangjie zhangjie=zhangjieDAO.findById(zhangjieId);
+		Chapter chapter=chapterDAO.findById(chapterId);
 		request.put("novelId", novelId);
-		request.put("zhangjie", zhangjie);
+		request.put("chapter", chapter);
 		return ActionSupport.SUCCESS;
 	}
 	
-	public String zhangjieDetailQiantai()
+	public String chapterDetailQiantai()
 	{
 		Map request=(Map)ServletActionContext.getContext().get("request");
 	
-		Tzhangjie zhangjie=zhangjieDAO.findById(zhangjieId);
-		Novel novel=novelDAO.findById(zhangjie.getNovelId());
-		request.put("zhangjie", zhangjie);
+		Chapter chapter=chapterDAO.findById(chapterId);
+		Novel novel=novelDAO.findById(chapter.getNovelId());
+		request.put("chapter", chapter);
 		request.put("novel", novel);
 		return ActionSupport.SUCCESS;
 	}
 	
 	
-	public String zhangjieMana()
+	public String chapterMana()
 	{
-		List zhangjieList=zhangjieDAO.findByProperty("novelId", novelId);
+		List chapterList=chapterDAO.findByProperty("novelId", novelId);
 		Map request=(Map)ServletActionContext.getContext().get("request");
-		request.put("zhangjieList", zhangjieList);
+		request.put("chapterList", chapterList);
 		request.put("novelId", novelId);
 		return ActionSupport.SUCCESS;
 	}
 	
-	public int getZhangjieId() {
-		return zhangjieId;
+	public int getChapterId() {
+		return chapterId;
 	}
 
-	public void setZhangjieId(int zhangjieId) {
-		this.zhangjieId = zhangjieId;
+	public void setChapterId(int chapterId) {
+		this.chapterId = chapterId;
 	}
 
-	public String getZhangjiename() {
-		return zhangjiename;
+	public String getChaptername() {
+		return chaptername;
 	}
 
-	public void setZhangjiename(String zhangjiename) {
-		this.zhangjiename = zhangjiename;
+	public void setChaptername(String chaptername) {
+		this.chaptername = chaptername;
 	}
 
 	public String getContent() {
@@ -352,12 +352,12 @@ public class novelAction extends ActionSupport
 
 
 
-	public TzhangjieDAO getZhangjieDAO() {
-		return zhangjieDAO;
+	public ChapterDAO getChapterDAO() {
+		return chapterDAO;
 	}
 
-	public void setZhangjieDAO(TzhangjieDAO zhangjieDAO) {
-		this.zhangjieDAO = zhangjieDAO;
+	public void setChapterDAO(ChapterDAO chapterDAO) {
+		this.chapterDAO = chapterDAO;
 	}
 	
 	public int getCatelogId()

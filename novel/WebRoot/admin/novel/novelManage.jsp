@@ -130,7 +130,7 @@ String path = request.getContextPath();
 					<td bgcolor="#FFFFFF" align="center">
 						<a href="#" onclick="novelNoRecommendWeightDel(<s:property value="#novel.novelId"/>)" class="pn-loperator">删除</a>
 						<a style="color: red" href="#" onclick="kefangComment(<s:property value="#novel.novelId"/>)" class="pn-loperator">评论管理</a>
-							<a style="color: red" href="<%=path %>/zhangjieMana.action?novelId=<s:property value="#novel.novelId"/>"  class="pn-loperator">章节管理</a>
+							<a style="color: red" href="<%=path %>/chapterMana.action?novelId=<s:property value="#novel.novelId"/>"  class="pn-loperator">章节管理</a>
 					</td>
 				</tr>
 				</s:iterator>

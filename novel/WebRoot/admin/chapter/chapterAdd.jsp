@@ -32,7 +32,7 @@ String novelId=request.getParameter("novelId");
 
 %>
 	<body leftmargin="2" topmargin="9" background='<%=path %>/images/allbg.gif'>
-			<form action="<%=path %>/zhangjieAdd.action" name="formAdd" method="post">
+			<form action="<%=path %>/chapterAdd.action" name="formAdd" method="post">
 				     <table width="98%" align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC" style="margin-bottom:8px">
 				     <input type="hidden" name="novelId" value="<%=novelId%>"/>
 						<tr bgcolor="#EEF4EA">
@@ -43,7 +43,7 @@ String novelId=request.getParameter("novelId");
 						          章节标题：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="zhangjiename"/>
+						        <input type="text" name="chaptername"/>
 						    </td>
 						</tr>
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">

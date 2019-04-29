@@ -39,7 +39,7 @@
 			    <value>com/model/TCatelog.hbm.xml</value>
 			    <value>com/model/Novel.hbm.xml</value>
 			    <value>com/model/Comment.hbm.xml</value>
-			    <value>com/model/zhangjie.hbm.xml</value>
+			    <value>com/model/Chapter.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -152,7 +152,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="TzhangjieDAO" class="com.dao.TzhangjieDAO">
+	<bean id="ChapterDAO" class="com.dao.ChapterDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -167,8 +167,8 @@
 		<property name="commentDAO">
 			<ref bean="CommentDAO" />
 		</property>
-		<property name="zhangjieDAO">
-			<ref bean="TzhangjieDAO" />
+		<property name="chapterDAO">
+			<ref bean="ChapterDAO" />
 		</property>
 	</bean>
 	</beans>

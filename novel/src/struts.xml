@@ -148,18 +148,18 @@
         </action>
         <action name="commentDel" class="novelAction" method="commentDel">
         </action>
-        <action name="zhangjieMana" class="novelAction" method="zhangjieMana">
-             <result name="success">/admin/zhangjie/zhangjieMana.jsp</result>
+        <action name="chapterMana" class="novelAction" method="chapterMana">
+             <result name="success">/admin/chapter/chapterMana.jsp</result>
         </action>
-          <action name="zhangjieAdd" class="novelAction" method="zhangjieAdd">
+          <action name="chapterAdd" class="novelAction" method="chapterAdd">
         </action>
-          <action name="zhangjieDel" class="novelAction" method="zhangjieDel">
+          <action name="chapterDel" class="novelAction" method="chapterDel">
         </action>
-         <action name="zhangjieDetail" class="novelAction" method="zhangjieDetail">
-            <result>/admin/zhangjie/zhangjieDetail.jsp</result>
+         <action name="chapterDetail" class="novelAction" method="chapterDetail">
+            <result>/admin/chapter/chapterDetail.jsp</result>
         </action>
-         <action name="zhangjieDetailQiantai" class="novelAction" method="zhangjieDetailQiantai">
-            <result>/qiantai/novel/zhangjieDetailQiantai.jsp</result>
+         <action name="chapterDetailQiantai" class="novelAction" method="chapterDetailQiantai">
+            <result>/qiantai/novel/chapterDetailQiantai.jsp</result>
         </action>
         
           <action name="dianzan" class="novelAction" method="dianzan">

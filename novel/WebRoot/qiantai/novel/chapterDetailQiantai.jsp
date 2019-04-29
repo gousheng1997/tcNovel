@@ -31,9 +31,9 @@
 		        <div class="left_row">  
 		            <div class="list pic_news">
 		  	                <div class="list_bar">&nbsp;<s:property value="#request.novel.novelName"/></div>
-						  	<div class="ctitle ctitle1"><s:property value="#request.zhangjie.zhangjiename"/></div>
-							<div class="ctitleinfo"><s:property value="#request.zhangjie.pushtime"/>&nbsp;&nbsp;&nbsp;<%--查看次数：5 次--%></div>
-							<div class="pbox"><s:property value="#request.zhangjie.content" escape="false"/></div>
+						  	<div class="ctitle ctitle1"><s:property value="#request.chapter.chaptername"/></div>
+							<div class="ctitleinfo"><s:property value="#request.chapter.pushtime"/>&nbsp;&nbsp;&nbsp;<%--查看次数：5 次--%></div>
+							<div class="pbox"><s:property value="#request.chapter.content" escape="false"/></div>
 				            <div class="page_no">
 				                <div class="pg-3">
 					                 <%--分页--%>

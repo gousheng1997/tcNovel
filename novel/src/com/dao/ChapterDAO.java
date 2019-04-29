@@ -7,29 +7,29 @@ import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.model.Tzhangjie;
+import com.model.Chapter;
 
 /**
- * Data access object (DAO) for domain model class Tzhangjie.
+ * Data access object (DAO) for domain model class Chapter.
  * 
- * @see com.model.Tzhangjie
+ * @see com.model.Chapter
  * @author MyEclipse Persistence Tools
  */
 
-public class TzhangjieDAO extends HibernateDaoSupport
+public class ChapterDAO extends HibernateDaoSupport
 {
-	private static final Log log = LogFactory.getLog(TzhangjieDAO.class);
+	private static final Log log = LogFactory.getLog(ChapterDAO.class);
 
-	public static final String Zhangjie_Name = "zhangjiename";
+	public static final String Chapter_Name = "chaptername";
 
 	protected void initDao()
 	{
 		// do nothing
 	}
 
-	public void save(Tzhangjie transientInstance)
+	public void save(Chapter transientInstance)
 	{
-		log.debug("saving Tzhangjie instance");
+		log.debug("saving Chapter instance");
 		try
 		{
 			getHibernateTemplate().save(transientInstance);
@@ -41,9 +41,9 @@ public class TzhangjieDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void delete(Tzhangjie persistentInstance)
+	public void delete(Chapter persistentInstance)
 	{
-		log.debug("deleting Tzhangjie instance");
+		log.debug("deleting Chapter instance");
 		try
 		{
 			getHibernateTemplate().delete(persistentInstance);
@@ -55,13 +55,13 @@ public class TzhangjieDAO extends HibernateDaoSupport
 		}
 	}
 
-	public Tzhangjie findById(java.lang.Integer id)
+	public Chapter findById(java.lang.Integer id)
 	{
-		log.debug("getting Tzhangjie instance with id: " + id);
+		log.debug("getting Chapter instance with id: " + id);
 		try
 		{
-			Tzhangjie instance = (Tzhangjie) getHibernateTemplate().get(
-					"com.model.Tzhangjie", id);
+			Chapter instance = (Chapter) getHibernateTemplate().get(
+					"com.model.Chapter", id);
 			return instance;
 		} catch (RuntimeException re)
 		{
@@ -70,9 +70,9 @@ public class TzhangjieDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByExample(Tzhangjie instance)
+	public List findByExample(Chapter instance)
 	{
-		log.debug("finding Tzhangjie instance by example");
+		log.debug("finding Chapter instance by example");
 		try
 		{
 			List results = getHibernateTemplate().findByExample(instance);
@@ -88,11 +88,11 @@ public class TzhangjieDAO extends HibernateDaoSupport
 
 	public List findByProperty(String propertyName, Object value)
 	{
-		log.debug("finding Tzhangjie instance with property: " + propertyName
+		log.debug("finding Chapter instance with property: " + propertyName
 				+ ", value: " + value);
 		try
 		{
-			String queryString = "from Tzhangjie as model where model."
+			String queryString = "from Chapter as model where model."
 					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re)
@@ -102,18 +102,18 @@ public class TzhangjieDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByZhangjiename(Object zhangjiename)
+	public List findByChaptername(Object chaptername)
 	{
-		return findByProperty(Zhangjie_Name, zhangjiename);
+		return findByProperty(Chapter_Name, chaptername);
 	}
 
 
 	public List findAll()
 	{
-		log.debug("finding all Tzhangjie instances");
+		log.debug("finding all Chapter instances");
 		try
 		{
-			String queryString = "from Tzhangjie";
+			String queryString = "from Chapter";
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re)
 		{
@@ -122,12 +122,12 @@ public class TzhangjieDAO extends HibernateDaoSupport
 		}
 	}
 
-	public Tzhangjie merge(Tzhangjie detachedInstance)
+	public Chapter merge(Chapter detachedInstance)
 	{
-		log.debug("merging Tzhangjie instance");
+		log.debug("merging Chapter instance");
 		try
 		{
-			Tzhangjie result = (Tzhangjie) getHibernateTemplate().merge(
+			Chapter result = (Chapter) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -138,9 +138,9 @@ public class TzhangjieDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void attachDirty(Tzhangjie instance)
+	public void attachDirty(Chapter instance)
 	{
-		log.debug("attaching dirty Tzhangjie instance");
+		log.debug("attaching dirty Chapter instance");
 		try
 		{
 			getHibernateTemplate().saveOrUpdate(instance);
@@ -152,9 +152,9 @@ public class TzhangjieDAO extends HibernateDaoSupport
 		}
 	}
 
-	public void attachClean(Tzhangjie instance)
+	public void attachClean(Chapter instance)
 	{
-		log.debug("attaching clean Tzhangjie instance");
+		log.debug("attaching clean Chapter instance");
 		try
 		{
 			getHibernateTemplate().lock(instance, LockMode.NONE);
@@ -166,8 +166,8 @@ public class TzhangjieDAO extends HibernateDaoSupport
 		}
 	}
 
-	public static TzhangjieDAO getFromApplicationContext(ApplicationContext ctx)
+	public static ChapterDAO getFromApplicationContext(ApplicationContext ctx)
 	{
-		return (TzhangjieDAO) ctx.getBean("TzhangjieDAO");
+		return (ChapterDAO) ctx.getBean("ChapterDAO");
 	}
 }

@@ -24,7 +24,7 @@ String path = request.getContextPath();
         <table align="center">
           <tr>
              <td>
-                  <s:property value="#request.zhangjie.content" escape="false"/>
+                  <s:property value="#request.chapter.content" escape="false"/>
              </td>
           </tr>
       </table>

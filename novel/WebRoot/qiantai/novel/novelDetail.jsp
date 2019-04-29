@@ -89,12 +89,12 @@
                             
                              <table border="0" cellpadding="6">
                              
-                             <s:iterator value="#request.zhangjieList" id="zhangjie"  status="status">
+                             <s:iterator value="#request.chapterList" id="chapter"  status="status">
                              <s:if test="#status.index % 4==0">
                       			  <tr>
                   				  </s:if>
                   				  
-                  				  <td style="font-size: 11px;">   <a href="<%=path %>/zhangjieDetailQiantai.action?zhangjieId=<s:property value="#zhangjie.id"/>"> [ <s:property value="#zhangjie.zhangjiename"/>--<s:property value="#zhangjie.pushtime"/>]</a></td>
+                  				  <td style="font-size: 11px;">   <a href="<%=path %>/chapterDetailQiantai.action?chapterId=<s:property value="#chapter.id"/>"> [ <s:property value="#chapter.chaptername"/>--<s:property value="#chapter.pushtime"/>]</a></td>
                   				  
                              <s:if test="#status.index % 4 == 3||#status.last">
                        			 </tr>

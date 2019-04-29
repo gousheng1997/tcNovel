@@ -18,15 +18,15 @@ String path = request.getContextPath();
 		<script language="JavaScript" src="<%=path %>/js/public.js" type="text/javascript"></script>
 		
         <script language="javascript">
-           function zhangjieAdd(novelId)
+           function chapterAdd(novelId)
            {
-              var url="<%=path %>/admin/zhangjie/zhangjieAdd.jsp?novelId="+novelId;
+              var url="<%=path %>/admin/chapter/chapterAdd.jsp?novelId="+novelId;
               window.location.href=url;
            }
            
-           function zhangjieDetail(zhangjieId)
+           function chapterDetail(chapterId)
            {
-                 var url="<%=path %>/zhangjieDetailQiantai.action?zhangjieId="+zhangjieId;
+                 var url="<%=path %>/chapterDetailQiantai.action?chapterId="+chapterId;
                  var n="";
                  var w="480px";
                  var h="500px";
@@ -47,19 +47,19 @@ String path = request.getContextPath();
 					<td width="25%">内容</td>
 					<td width="25%">操作</td>
 		        </tr>	
-				<s:iterator value="#request.zhangjieList" id="zhangjie">
+				<s:iterator value="#request.chapterList" id="chapter">
 				<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 					<td bgcolor="#FFFFFF" align="center">
-						 <s:property value="#zhangjie.zhangjiename"/>
+						 <s:property value="#chapter.chaptername"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						<s:property value="#zhangjie.pushtime"/>
+						<s:property value="#chapter.pushtime"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					    <a href="<%=path %>/zhangjieDetailQiantai.action?zhangjieId=<s:property value="#zhangjie.id"/>" target="blank" class="pn-loperator">查看内容</a>
+					    <a href="<%=path %>/chapterDetailQiantai.action?chapterId=<s:property value="#chapter.id"/>" target="blank" class="pn-loperator">查看内容</a>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						<a class="pn-loperator" href="<%=path %>/zhangjieDel.action?zhangjieId=<s:property value="#zhangjie.id"/>">删除</a>
+						<a class="pn-loperator" href="<%=path %>/chapterDel.action?chapterId=<s:property value="#chapter.id"/>">删除</a>
 					</td>
 				</tr>
 				</s:iterator>
@@ -68,7 +68,7 @@ String path = request.getContextPath();
 			<table width='98%'  border='0'style="margin-top:8px;margin-left: 5px;">
 			  <tr>
 			    <td>
-			      <input type="button" value="添加章节" style="width: 80px;" onclick="zhangjieAdd('${novelId}')" />
+			      <input type="button" value="添加章节" style="width: 80px;" onclick="chapterAdd('${novelId}')" />
 			    </td>
 			  </tr>
 		    </table>
