@@ -33,7 +33,6 @@ String path = request.getContextPath();
 		           catelogService.findAllCatelog(callback);
 		           i=1;
 		        }
-		        
 		    }
 		   
 		    function callback(data)
@@ -53,8 +52,7 @@ String path = request.getContextPath();
 	            pop.show();
 	            //另一红上传方式可以参照进销存
 		    }
-			
-		    
+
 		    function check()
 		    {
 		        if(document.formAdd.novelCatelogId.value==0)
@@ -67,14 +65,9 @@ String path = request.getContextPath();
 		            alert("请填写小说名称");
 		            return false;
 		        }
-		        if(document.formAdd.novelLikeNum.value=="")
+		        if(document.formAdd.novelAuthor.value=="")
 		        {
-		            alert("请填写小说价格");
-		            return false;
-		        }
-		        if(document.formAdd.novelRecommendWeight.value=="")
-		        {
-		            alert("请填写小说特价");
+		            alert("请填写小说作者");
 		            return false;
 		        }
 		        document.formAdd.submit();
@@ -107,6 +100,7 @@ String path = request.getContextPath();
 						        </table>
 						    </td>
 						</tr>
+
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						    <td width="25%" bgcolor="#FFFFFF" align="right">
 						         小说名称：
@@ -115,6 +109,7 @@ String path = request.getContextPath();
 						        <input type="text" name="novelName" size="20"/>
 						    </td>
 						</tr>
+
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						    <td width="25%" bgcolor="#FFFFFF" align="right">
 						        小说描述：
@@ -124,6 +119,7 @@ String path = request.getContextPath();
                                 </FCK:editor>
 						    </td>
 						</tr>
+
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						    <td width="25%" bgcolor="#FFFFFF" align="right">
 						         小说图片：
@@ -134,29 +130,16 @@ String path = request.getContextPath();
 						        <input type="hidden" name="fujianYuanshiming" id="fujianYuanshiming"/>
 						    </td>
 						</tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						         市场价格：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="novelLikeNum" size="20" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
-						    </td>
-						</tr>
-						<tr style="display: none" align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						         特格：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="novelRecommendWeight" size="20" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
-						        (<font color="red">特格为0表示没有特价</font>)
-						    </td>
-						</tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						         商家电话：
-						    </td>
+						 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+							 <td width="25%" bgcolor="#FFFFFF" align="right">
+								 小说作者：
+							 </td>
+							 <td width="75%" bgcolor="#FFFFFF" align="left">
+								 <input type="text" name="novelAuthor" size="20"/>
+							 </td>
+						 </tr>
 
-						</tr>
+
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						    <td width="25%" bgcolor="#FFFFFF" align="right">
 						        &nbsp;
