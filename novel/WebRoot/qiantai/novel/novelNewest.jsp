@@ -20,20 +20,7 @@
 		
 		<script language="JavaScript" src="<%=path %>/js/public.js" type="text/javascript"></script>
 		<script type="text/javascript">
-	        function buy1()
-	        {
-	            <s:if test="#session.user==null">
-	                  alert("请先登录");
-	            </s:if>
-	            <s:else>
-	            if(document.buy.quantity.value=="")
-	            {
-	                alert("请输入购买数量");
-	                return false;
-	            }
-	            document.buy.submit();
-	            </s:else>
-	        }
+
 	    </script>
 	</head>
 
