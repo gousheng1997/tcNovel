@@ -57,7 +57,7 @@
 									  <td><s:property value="#novel.novelName"/></td>
 									  <td>
 									      <s:if test="#novel.novelLikeNum==#novel.novelRecommendWeight">
-									          无推荐
+											  <s:property value="#novel.novelRecommendWeight"/>
 									      </s:if>
 									      <s:else>
 									        <s:property value="#novel.novelRecommendWeight"/>
