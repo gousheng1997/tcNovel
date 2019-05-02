@@ -37,7 +37,7 @@ String path = request.getContextPath();
            
            function novelNoRecommendWeightAdd()
            {
-                 var url="<%=path %>/admin/novel/novelNoRecommendWeightAdd.jsp";
+                 var url="<%=path %>/admin/novel/novelAdd.jsp";
                  //var n="";
                  //var w="480px";
                  //var h="500px";

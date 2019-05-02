@@ -27,6 +27,9 @@ public class novelAction extends ActionSupport
 	private String novelMiaoshu;
 	private String fujian;
 
+
+
+	private String novelAuthor;
 	private int novelLikeNum;
 	private int novelRecommendWeight;
 	
@@ -43,7 +46,16 @@ public class novelAction extends ActionSupport
 	private String chaptername;
 	private String content;
 	private ChapterDAO chapterDAO;
-	
+
+
+	public String getNovelAuthor() {
+		return novelAuthor;
+	}
+
+	public void setNovelAuthor(String novelAuthor) {
+		this.novelAuthor = novelAuthor;
+	}
+
 	public String commentAdd()
 	{
 		HttpServletRequest request=ServletActionContext.getRequest();
@@ -100,6 +112,7 @@ public class novelAction extends ActionSupport
 		novel.setNovelName(novelName);
 		novel.setNovelMiaoshu(novelMiaoshu);
 		novel.setNovelPic(fujian);
+		novel.setNovelAuthor(novelAuthor);
 		novel.setNovelLikeNum(novelLikeNum);
 		if(novelRecommendWeight==0)//
 		{

@@ -61,7 +61,7 @@ public class catelogAction extends ActionSupport
 		List novelList=novelDAO.getHibernateTemplate().find(sql);
 		if(novelList.size()>0)
 		{
-			this.setMessage("请先删除此类别下的商品");
+			this.setMessage("请先删除此类别下的小說");
 			this.setPath("catelogMana.action");
 		}
 		else
