@@ -27,7 +27,7 @@
 	        
 	        function commentAll(id)
 	        {
-	            var url="<%=path %>/commentAll.action?kefangId="+id;
+	            var url="<%=path %>/commentAll.action?novelId="+id;
 	            var pop=new Popup({ contentType:1,isReloadOnClose:false,width:650,height:450});
 	            pop.setContent("contentUrl",url);
 	            pop.setContent("title","评论");
@@ -37,7 +37,7 @@
        
 	       function commentAdd(id)
 	       {
-	            var url="<%=path %>/qiantai/novel/commentAdd.jsp?kefangId="+id;
+	            var url="<%=path %>/qiantai/novel/commentAdd.jsp?novelId="+id;
 	            var pop=new Popup({ contentType:1,isReloadOnClose:false,width:700,height:400});
 	            pop.setContent("contentUrl",url);
 	            pop.setContent("title","写评论");

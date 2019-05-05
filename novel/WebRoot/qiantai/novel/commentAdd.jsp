@@ -42,7 +42,7 @@ String path = request.getContextPath();
 						        &nbsp;
 						    </td>
 						    <td width="90%" bgcolor="#FFFFFF" align="left">
-						       <input type="hidden" name="kefangId" value="<%=request.getParameter("kefangId") %>"/>
+						       <input type="hidden" name="novelId" value="<%=request.getParameter("novelId") %>"/>
 						       <input type="submit" value="提交"/>&nbsp; 
 						    </td>
 						</tr>

@@ -21,7 +21,7 @@ public class CommentDAO extends HibernateDaoSupport
 	private static final Log log = LogFactory.getLog(CommentDAO.class);
 
 	// property constants
-	public static final String KEFANG_ID = "kefangId";
+	public static final String NOVEL_ID = "novelId";
 
 	public static final String CONTENT = "content";
 
@@ -107,9 +107,9 @@ public class CommentDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByKefangId(Object kefangId)
+	public List findBynovelId(Object novelId)
 	{
-		return findByProperty(KEFANG_ID, kefangId);
+		return findByProperty(NOVEL_ID, novelId);
 	}
 
 	public List findByContent(Object content)

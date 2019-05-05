@@ -11,7 +11,7 @@ public class Comment implements java.io.Serializable
 
 	private Integer id;
 
-	private Integer kefangId;
+	private Integer novelId;
 
 	private String content;
 
@@ -25,9 +25,9 @@ public class Comment implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Comment(Integer kefangId, String content, String shijian)
+	public Comment(Integer novelId, String content, String shijian)
 	{
-		this.kefangId = kefangId;
+		this.novelId = novelId;
 		this.content = content;
 		this.shijian = shijian;
 	}
@@ -44,14 +44,14 @@ public class Comment implements java.io.Serializable
 		this.id = id;
 	}
 
-	public Integer getKefangId()
+	public Integer getnovelId()
 	{
-		return this.kefangId;
+		return this.novelId;
 	}
 
-	public void setKefangId(Integer kefangId)
+	public void setnovelId(Integer novelId)
 	{
-		this.kefangId = kefangId;
+		this.novelId = novelId;
 	}
 
 	public String getContent()

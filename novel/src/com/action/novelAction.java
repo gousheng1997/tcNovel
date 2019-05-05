@@ -63,7 +63,7 @@ public class novelAction extends ActionSupport
 		Comment comment=new Comment();
 		comment.setContent(request.getParameter("content"));
 		comment.setShijian(new Date().toLocaleString());
-		comment.setKefangId(Integer.parseInt(request.getParameter("kefangId")));
+		comment.setnovelId(Integer.parseInt(request.getParameter("novelId")));
 		
 		commentDAO.save(comment);
 		request.setAttribute("msg", "ÆÀÂÛ³É¹¦");
@@ -74,7 +74,7 @@ public class novelAction extends ActionSupport
 	{
 		HttpServletRequest request=ServletActionContext.getRequest();
 		
-		String s="from Comment where kefangId="+Integer.parseInt(request.getParameter("kefangId"));
+		String s="from Comment where novelId="+Integer.parseInt(request.getParameter("novelId"));
 		List commentList=commentDAO.getHibernateTemplate().find(s);
 		request.setAttribute("commentList", commentList);
 		return ActionSupport.SUCCESS;
@@ -85,7 +85,7 @@ public class novelAction extends ActionSupport
 	{
 		HttpServletRequest request=ServletActionContext.getRequest();
 		
-		String s="from Comment where kefangId="+Integer.parseInt(request.getParameter("kefangId"));
+		String s="from Comment where novelId="+Integer.parseInt(request.getParameter("novelId"));
 		List commentList=commentDAO.getHibernateTemplate().find(s);
 		request.setAttribute("commentList", commentList);
 		return ActionSupport.SUCCESS;
