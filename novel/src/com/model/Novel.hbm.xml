@@ -18,8 +18,8 @@
             <column name="novel_author" length="50" />
         </property>
         
-        <property name="novelMiaoshu" type="java.lang.String">
-            <column name="novel_miaoshu" length="5000" />
+        <property name="novelDescription" type="java.lang.String">
+            <column name="novel_description" length="5000" />
         </property>
         <property name="novelPic" type="java.lang.String">
             <column name="novel_pic" length="50" />

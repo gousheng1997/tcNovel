@@ -23,7 +23,7 @@ public class TCatelogDAO extends HibernateDaoSupport
 	// property constants
 	public static final String CATELOG_NAME = "catelogName";
 
-	public static final String CATELOG_MIAOSHU = "catelogMiaoshu";
+	public static final String CATELOG_DESCRIPTION = "catelogDescription";
 
 	protected void initDao()
 	{
@@ -110,9 +110,9 @@ public class TCatelogDAO extends HibernateDaoSupport
 		return findByProperty(CATELOG_NAME, catelogName);
 	}
 
-	public List findByCatelogMiaoshu(Object catelogMiaoshu)
+	public List findByCatelogDescription(Object catelogDescription)
 	{
-		return findByProperty(CATELOG_MIAOSHU, catelogMiaoshu);
+		return findByProperty(CATELOG_DESCRIPTION, catelogDescription);
 	}
 
 	public List findAll()

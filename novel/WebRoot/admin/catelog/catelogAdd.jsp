@@ -47,7 +47,7 @@ String path = request.getContextPath();
 						        分类描述：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <FCK:editor instanceName="catelogMiaoshu"  basePath="/fckeditor" width="500" height="200" value="请输入内容" toolbarSet="Basic">
+						        <FCK:editor instanceName="catelogDescription"  basePath="/fckeditor" width="500" height="200" value="请输入内容" toolbarSet="Basic">
                                 </FCK:editor>
 						    </td>
 						</tr>

@@ -13,8 +13,8 @@
         <property name="catelogName" type="java.lang.String">
             <column name="catelog_name" length="50" />
         </property>
-        <property name="catelogMiaoshu" type="java.lang.String">
-            <column name="catelog_miaoshu" length="5000" />
+        <property name="catelogDescription" type="java.lang.String">
+            <column name="catelog_description" length="5000" />
         </property>
         <property name="catelogDel" type="java.lang.String">
             <column name="catelog_del" length="50" />

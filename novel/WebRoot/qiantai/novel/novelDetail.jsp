@@ -60,7 +60,7 @@
 						  	<form action="<%=path %>/addToCart.action" method="post" name="buy">
                                   <table border="0" cellpadding="6">
                                       <tr><td width="30"></td><td style="font-size: 11px;" width="60">小说名：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelName"/></td></tr>
-                                      <tr><td width="30"></td><td style="font-size: 11px;">简介：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelMiaoshu" escape="false"/></td></tr>
+                                      <tr><td width="30"></td><td style="font-size: 11px;">简介：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelDescription" escape="false"/></td></tr>
                                       <tr><td width="30"></td><td style="font-size: 11px;">作者：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelAuthor"/></td></tr>
                                       <tr><td width="30"></td><td style="font-size: 11px;">类别：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelCatelogName"/></td></tr>
                                         <tr><td width="30"></td><td style="font-size: 11px;">点赞：</td><td style="font-size: 11px;"><s:property value="#request.novel.novelLikeNum"/></td></tr>

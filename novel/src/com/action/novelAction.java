@@ -24,7 +24,7 @@ public class novelAction extends ActionSupport
 	private int novelId;
 	private int novelCatelogId;
 	private String novelName;
-	private String novelMiaoshu;
+	private String novelDescription;
 	private String fujian;
 
 
@@ -110,7 +110,7 @@ public class novelAction extends ActionSupport
 		Novel novel=new Novel();
 		novel.setNovelCatelogId(novelCatelogId);
 		novel.setNovelName(novelName);
-		novel.setNovelMiaoshu(novelMiaoshu);
+		novel.setNovelDescription(novelDescription);
 		novel.setNovelPic(fujian);
 		novel.setNovelAuthor(novelAuthor);
 		novel.setNovelLikeNum(novelLikeNum);
@@ -410,13 +410,13 @@ public class novelAction extends ActionSupport
 	{
 		this.novelId = novelId;
 	}
-	public String getNovelMiaoshu()
+	public String getNovelDescription()
 	{
-		return novelMiaoshu;
+		return novelDescription;
 	}
-	public void setNovelMiaoshu(String novelMiaoshu)
+	public void setNovelDescription(String novelDescription)
 	{
-		this.novelMiaoshu = novelMiaoshu;
+		this.novelDescription = novelDescription;
 	}
 	public String getNovelName()
 	{

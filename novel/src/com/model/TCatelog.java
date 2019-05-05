@@ -13,7 +13,7 @@ public class TCatelog implements java.io.Serializable
 
 	private String catelogName;
 
-	private String catelogMiaoshu;
+	private String catelogDescription;
 	
 	private String catelogDel;
 
@@ -25,10 +25,10 @@ public class TCatelog implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public TCatelog(String catelogName, String catelogMiaoshu)
+	public TCatelog(String catelogName, String catelogDescription)
 	{
 		this.catelogName = catelogName;
-		this.catelogMiaoshu = catelogMiaoshu;
+		this.catelogDescription = catelogDescription;
 	}
 
 	// Property accessors
@@ -64,14 +64,14 @@ public class TCatelog implements java.io.Serializable
 		this.catelogName = catelogName;
 	}
 
-	public String getCatelogMiaoshu()
+	public String getCatelogDescription()
 	{
-		return this.catelogMiaoshu;
+		return this.catelogDescription;
 	}
 
-	public void setCatelogMiaoshu(String catelogMiaoshu)
+	public void setCatelogDescription(String catelogDescription)
 	{
-		this.catelogMiaoshu = catelogMiaoshu;
+		this.catelogDescription = catelogDescription;
 	}
 
 }

@@ -13,7 +13,7 @@ public class Novel implements java.io.Serializable
 
 	private String novelName;
 
-	private String novelMiaoshu;
+	private String novelDescription;
 
 	private String novelPic;
 
@@ -44,13 +44,13 @@ public class Novel implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Novel(String novelName, String novelMiaoshu, String novelPic,
+	public Novel(String novelName, String novelDescription, String novelPic,
 				  Integer novelLikeNum, Integer novelRecommendWeight,
 
 				 Integer novelCatelogId)
 	{
 		this.novelName = novelName;
-		this.novelMiaoshu = novelMiaoshu;
+		this.novelDescription = novelDescription;
 		this.novelPic = novelPic;
 
 		this.novelLikeNum = novelLikeNum;
@@ -93,14 +93,14 @@ public class Novel implements java.io.Serializable
 		this.novelName = novelName;
 	}
 
-	public String getNovelMiaoshu()
+	public String getNovelDescription()
 	{
-		return this.novelMiaoshu;
+		return this.novelDescription;
 	}
 
-	public void setNovelMiaoshu(String novelMiaoshu)
+	public void setNovelDescription(String novelDescription)
 	{
-		this.novelMiaoshu = novelMiaoshu;
+		this.novelDescription = novelDescription;
 	}
 
 	public String getNovelPic()

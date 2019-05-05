@@ -115,7 +115,7 @@ String path = request.getContextPath();
 						        小说描述：
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <FCK:editor instanceName="novelMiaoshu"  basePath="/fckeditor" width="500" height="200" value="请输入内容" toolbarSet="Basic">
+						        <FCK:editor instanceName="novelDescription"  basePath="/fckeditor" width="500" height="200" value="请输入内容" toolbarSet="Basic">
                                 </FCK:editor>
 						    </td>
 						</tr>

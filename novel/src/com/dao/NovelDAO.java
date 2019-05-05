@@ -23,7 +23,7 @@ public class NovelDAO extends HibernateDaoSupport
 	// property constants
 	public static final String NOVEL_NAME = "novelName";
 
-	public static final String NOVEL_MIAOSHU = "novelMiaoshu";
+	public static final String NOVEL_DESCRIPTION = "novelDescription";
 
 	public static final String NOVEL_PIC = "novelPic";
 
@@ -124,9 +124,9 @@ public class NovelDAO extends HibernateDaoSupport
 		return findByProperty(NOVEL_NAME, novelName);
 	}
 
-	public List findByNovelMiaoshu(Object novelMiaoshu)
+	public List findByNovelDescription(Object novelDescription)
 	{
-		return findByProperty(NOVEL_MIAOSHU, novelMiaoshu);
+		return findByProperty(NOVEL_DESCRIPTION, novelDescription);
 	}
 
 	public List findByNovelPic(Object novelPic)

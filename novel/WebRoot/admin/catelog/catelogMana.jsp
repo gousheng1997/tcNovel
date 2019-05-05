@@ -62,7 +62,7 @@ String path = request.getContextPath();
 						<s:property value="#catelog.catelogName"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-					    <s:property value="#catelog.catelogMiaoshu"/>
+					    <s:property value="#catelog.catelogDescription"/>
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
 						<a href="#" onclick="catelogDel(<s:property value="#catelog.catelogId"/>)" class="pn-loperator">删除</a>

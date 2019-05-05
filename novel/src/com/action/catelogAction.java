@@ -14,7 +14,7 @@ public class catelogAction extends ActionSupport
 {
 	private int catelogId;
 	private String catelogName;
-	private String catelogMiaoshu;
+	private String catelogDescription;
 	
 	private String message;
 	private String path;
@@ -47,7 +47,7 @@ public class catelogAction extends ActionSupport
 	{
 		TCatelog catelog=new TCatelog();
 		catelog.setCatelogName(catelogName);
-		catelog.setCatelogMiaoshu(catelogMiaoshu);
+		catelog.setCatelogDescription(catelogDescription);
 		catelog.setCatelogDel("no");
 		catelogDAO.save(catelog);
 		this.setMessage("操作成功");
@@ -88,7 +88,7 @@ public class catelogAction extends ActionSupport
 	{
 		TCatelog catelog=catelogDAO.findById(catelogId);
 		catelog.setCatelogName(catelogName);
-		catelog.setCatelogMiaoshu(catelogMiaoshu);
+		catelog.setCatelogDescription(catelogDescription);
 		catelog.setCatelogDel("no");
 		catelogDAO.attachDirty(catelog);
 		this.setMessage("操作成功");
@@ -117,14 +117,14 @@ public class catelogAction extends ActionSupport
 		this.catelogId = catelogId;
 	}
 
-	public String getCatelogMiaoshu()
+	public String getCatelogDescription()
 	{
-		return catelogMiaoshu;
+		return catelogDescription;
 	}
 
-	public void setCatelogMiaoshu(String catelogMiaoshu)
+	public void setCatelogDescription(String catelogDescription)
 	{
-		this.catelogMiaoshu = catelogMiaoshu;
+		this.catelogDescription = catelogDescription;
 	}
 
 	public String getCatelogName()
