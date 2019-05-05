@@ -62,7 +62,7 @@ public class novelAction extends ActionSupport
 		
 		Comment comment=new Comment();
 		comment.setContent(request.getParameter("content"));
-		comment.setShijian(new Date().toLocaleString());
+		comment.setCreateTime(new Date().toLocaleString());
 		comment.setnovelId(Integer.parseInt(request.getParameter("novelId")));
 		
 		commentDAO.save(comment);

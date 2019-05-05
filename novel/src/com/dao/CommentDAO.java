@@ -25,7 +25,7 @@ public class CommentDAO extends HibernateDaoSupport
 
 	public static final String CONTENT = "content";
 
-	public static final String SHIJIAN = "shijian";
+	public static final String CREATETIME = "createTime";
 
 	protected void initDao()
 	{
@@ -117,9 +117,9 @@ public class CommentDAO extends HibernateDaoSupport
 		return findByProperty(CONTENT, content);
 	}
 
-	public List findByShijian(Object shijian)
+	public List findByCreateTime(Object createTime)
 	{
-		return findByProperty(SHIJIAN, shijian);
+		return findByProperty(CREATETIME, createTime);
 	}
 
 	public List findAll()

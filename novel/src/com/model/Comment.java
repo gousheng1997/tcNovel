@@ -15,7 +15,7 @@ public class Comment implements java.io.Serializable
 
 	private String content;
 
-	private String shijian;
+	private String createTime;
 
 	// Constructors
 
@@ -25,11 +25,11 @@ public class Comment implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Comment(Integer novelId, String content, String shijian)
+	public Comment(Integer novelId, String content, String createTime)
 	{
 		this.novelId = novelId;
 		this.content = content;
-		this.shijian = shijian;
+		this.createTime = createTime;
 	}
 
 	// Property accessors
@@ -64,14 +64,14 @@ public class Comment implements java.io.Serializable
 		this.content = content;
 	}
 
-	public String getShijian()
+	public String getCreateTime()
 	{
-		return this.shijian;
+		return this.createTime;
 	}
 
-	public void setShijian(String shijian)
+	public void setCreateTime(String createTime)
 	{
-		this.shijian = shijian;
+		this.createTime = createTime;
 	}
 
 }

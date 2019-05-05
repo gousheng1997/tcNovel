@@ -16,8 +16,8 @@
         <property name="content" type="java.lang.String">
             <column name="content" length="50" />
         </property>
-        <property name="shijian" type="java.lang.String">
-            <column name="shijian" length="50" />
+        <property name="createTime" type="java.lang.String">
+            <column name="createTime" length="50" />
         </property>
     </class>
 </hibernate-mapping>

@@ -24,7 +24,7 @@ String path = request.getContextPath();
 					<td><c:out value="${comment.content }" escapeXml="false"></c:out></td>
 				</TR>
 				<TR>
-					<td align="right"><c:out value="${comment.shijian }" escapeXml="false"></c:out>&nbsp;&nbsp;<a href="<%=path %>/commentDel.action?id=${comment.id }">[删除]</a></td>
+					<td align="right"><c:out value="${comment.createTime }" escapeXml="false"></c:out>&nbsp;&nbsp;<a href="<%=path %>/commentDel.action?id=${comment.id }">[删除]</a></td>
 				</TR>
 				<tr>
 				    <td>
