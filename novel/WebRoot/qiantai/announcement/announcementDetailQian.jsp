@@ -40,7 +40,7 @@
 				                </div>
 				            </div>
 							<div class="arti_ref">
-							    <%--【上一篇】: <a href="#" title="">应需而生 长安铃木全新天语SX4突破升级</a>
+							    <%--【上一篇】: <a href="#" title="">应需而生</a>
 				                &nbsp;&nbsp;
 				                 【下一篇】: <span>没有了</span>--%>
 				            </div>	

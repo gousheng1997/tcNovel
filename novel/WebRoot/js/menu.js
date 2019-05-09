@@ -1,4 +1,4 @@
-<!--
+
 
 function showHide(objname)
 {
@@ -46,6 +46,7 @@ function showHide(objname)
 		}
 	}
 }
+
 //读写cookie函数
 function getCookie(c_name)
 {
@@ -136,4 +137,3 @@ function ShowMainMenu(n)
 	}
 }
 
--->
